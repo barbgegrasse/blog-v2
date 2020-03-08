@@ -3,9 +3,11 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import PostSlices from '../components/blog/PostSlices'
 import { MainTitle } from '../styles/tags/title'
+import SEO from '../components/seo'
 
 const Post = ({ data }) => (
   <>
+    <SEO title={data.prismicPost.data.post_title.text} />
     <MainTitle>{data.prismicPost.data.post_title.text}</MainTitle>
     <PostSlices slices={data.prismicPost.data.post_body} />
   </>
