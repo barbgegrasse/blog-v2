@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Johan Petrikovsky`,
@@ -6,15 +10,14 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-emotion`,
-
-    // {
-    //   resolve: 'gatsby-plugin-web-font-loader',
-    //   options: {
-    //     google: {
-    //       families: ['IBM Plex Mono:200,400', 'Roboto Mono:400'],
-    //     },
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['IBM Plex Mono:200,400', 'Roboto Mono:400'],
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-layout`,
       options: {
@@ -25,7 +28,7 @@ module.exports = {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: 'kovsky-blog',
-        accessToken: `MC5YYXhab1JJQUFDTUF4Qm0y.VO-_ve-_vS3vv73vv70BN--_ve-_ve-_vTHvv70M77-977-9GRtVDxNp77-9W3vvv70lSO-_vUFb77-9`,
+        accessToken: `${process.env.API_KEY}`,
         // Get the correct URLs in blog posts
         linkResolver: () => post => `/${post.uid}`,
       },
