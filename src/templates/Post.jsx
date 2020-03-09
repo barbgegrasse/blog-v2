@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import PostSlices from '../components/blog/PostSlices'
 import { MainTitle } from '../styles/tags/title'
 import SEO from '../components/seo'
@@ -9,6 +10,13 @@ const Post = ({ data }) => (
   <>
     <SEO title={data.prismicPost.data.post_title.text} />
     <MainTitle>{data.prismicPost.data.post_title.text}</MainTitle>
+    {/* <Img
+      style={{
+        margin: '0 auto',
+        maxWidth: data.prismicPost.data.post_hero_image.localFile.childImageSharp.presentationWidth,
+      }}
+      fluid={data.prismicPost.data.post_hero_image.localFile.childImageSharp.fluid}
+    /> */}
     <PostSlices slices={data.prismicPost.data.post_body} />
   </>
 )
