@@ -4,13 +4,14 @@ import { graphql } from 'gatsby'
 import PostSlices from '../components/blog/PostSlices'
 import { MainTitle } from '../styles/tags/title'
 import SEO from '../components/seo'
+import Layout from '../components/Layout'
 
 const Post = ({ data }) => (
-  <>
+  <Layout>
     <SEO title={data.prismicPost.data.post_title.text} />
     <MainTitle>{data.prismicPost.data.post_title.text}</MainTitle>
     <PostSlices slices={data.prismicPost.data.post_body} />
-  </>
+  </Layout>
 )
 
 Post.propTypes = {
