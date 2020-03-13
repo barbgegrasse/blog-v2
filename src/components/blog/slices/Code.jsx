@@ -13,9 +13,7 @@ export default function Code({ slice }) {
   const language = slice.primary.code_snippet.text
   return (
     <CodeSnippet>
-      <SyntaxHighlighter language={language} style={dark}>
-        {codeString}
-      </SyntaxHighlighter>
+      <SyntaxHighlighter language={language}>{codeString}</SyntaxHighlighter>
     </CodeSnippet>
   )
 }
