@@ -3,6 +3,7 @@ const theme = {
     main: '#f2f8e7',
     primary: '#EFBB35',
     secondary: '#ff155e',
+    important: '#15dfff',
   },
   bg: {
     main: '#222831',
