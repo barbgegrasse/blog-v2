@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import styled from '@emotion/styled'
 
 const CodeSnippet = styled('div')`
@@ -13,7 +13,9 @@ export default function Code({ slice }) {
   const language = slice.primary.code_snippet.text
   return (
     <CodeSnippet>
-      <SyntaxHighlighter language={language}>{codeString}</SyntaxHighlighter>
+      <SyntaxHighlighter language={language} style={dracula}>
+        {codeString}
+      </SyntaxHighlighter>
     </CodeSnippet>
   )
 }
