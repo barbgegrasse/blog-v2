@@ -9,6 +9,7 @@ import Layout from '../components/Layout'
 
 const Post = ({ data }) => (
   <Layout>
+    {console.log(data)}
     <SEO title={data.prismicPost.data.post_title.text} />
 
     <MainTitle>{data.prismicPost.data.post_title.text}</MainTitle>
