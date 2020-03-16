@@ -3,10 +3,16 @@ const theme = {
     main: '#f2f8e7',
     primary: '#EFBB35',
     secondary: '#ff155e',
+    tertiary: '#35efde',
     important: '#15dfff',
+    light: '#4972a5',
   },
   bg: {
     main: '#222831',
+    card: '#171c22',
+  },
+  border: {
+    primary: '#576370',
   },
   fonts: {
     main: "'Roboto Mono', serif",
