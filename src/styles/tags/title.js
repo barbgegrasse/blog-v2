@@ -10,6 +10,7 @@ const MainTitle = styled('h1')`
   font-family: ${theme.fonts.title};
   font-weight: 200;
   font-style: italic;
+  text-transform: capitalize;
 `
 
 export { MainTitle }

@@ -8,7 +8,7 @@ const MainContainer = styled('main')`
     padding-top: 40px;
   }
   ${mediaQueries.mobile} {
-    padding-top: 20px;
+    padding: 20px 0 60px 0;
   }
 `
 
