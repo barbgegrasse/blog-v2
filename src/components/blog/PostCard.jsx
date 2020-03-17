@@ -32,7 +32,7 @@ const PostCard = ({ post }) => {
           En savoir plus <span>&#8594;</span>
         </PostCardAction>
         <PostMetas>
-          <PostDate>{Date}</PostDate>
+<PostDate>{Date}</PostDate>
         </PostMetas>
       </div>
     </PostCardContainer>
