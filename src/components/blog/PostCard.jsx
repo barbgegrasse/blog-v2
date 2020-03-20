@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { RichText } from 'prismic-reactjs'
 
 import {
   PostCardContainer,
@@ -12,12 +13,12 @@ import {
 } from '../../styles/components/blog/postCard'
 
 const PostCard = ({ post }) => {
-  const { uid } = post.node
-  const CategorySlug = post.node.data.categories[0].category.slug
-  const CategoryTitle = post.node.data.categories[0].category.document[0].data.name
-  const Title = post.node.data.post_title.text
-  const Preview = post.node.data.post_preview_description.html
-  const Date = post.node.data.post_date
+  const { uid } = post.node._meta
+  const CategorySlug = post.node.categories[0].category._meta.uid
+  const CategoryTitle = post.node.categories[0].category.name
+  const Title = post.node.post_title[0].text
+  const Preview = post.node.post_preview_description
+  const Date = post.node.post_date
 
   return (
     <PostCardContainer>
@@ -26,7 +27,7 @@ const PostCard = ({ post }) => {
         <PostTitle>{Title}</PostTitle>
       </div>
 
-      <PostDescription dangerouslySetInnerHTML={{ __html: Preview }} />
+      <PostDescription>{RichText.render(Preview)}</PostDescription>
       <div>
         <PostCardAction to={`/blog/${uid}`} className="PostCardAction">
           En savoir plus <span>&#8594;</span>

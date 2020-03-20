@@ -9,18 +9,21 @@ import Layout from '../components/Layout'
 
 const Post = ({ data }) => (
   <Layout>
-    <SEO title={data.prismicPost.data.post_title.text} />
+    {console.log(data)}
+    {console.log(data.prismic.post.post_hero_image.dimensions.width)}
+    {console.log(data.post)}
 
-    <MainTitle>{data.prismicPost.data.post_title.text}</MainTitle>
+    <SEO title={data.prismic.post.post_title[0].text} />
+    <MainTitle>{data.prismic.post.post_title[0].text}</MainTitle>
     <Img
       style={{
+        display: 'block',
         margin: '0 auto',
-        padding: '40px 0',
-        maxWidth: data.prismicPost.data.post_hero_image.localFile.childImageSharp.fluid.presentationWidth,
+        maxWidth: data.prismic.post.post_hero_image.dimensions.width,
       }}
-      fluid={data.prismicPost.data.post_hero_image.localFile.childImageSharp.fluid}
+      fluid={data.prismic.post.post_hero_imageSharp.childImageSharp.fluid}
     />
-    <PostSlices slices={data.prismicPost.data.post_body} />
+    <PostSlices slices={data.prismic.post.post_body} />
   </Layout>
 )
 
@@ -29,77 +32,71 @@ Post.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query postQuery($uid: String!) {
-    prismicPost(uid: { eq: $uid }) {
-      data {
-        post_title {
-          html
-          text
-        }
-        post_hero_image {
-          localFile {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-                presentationWidth
-              }
+  query PostQuery($uid: String!) {
+    prismic {
+      post(uid: $uid, lang: "fr-fr") {
+        post_title
+        post_preview_description
+        post_hero_annotation
+        post_date
+        _linkType
+        post_hero_image
+        post_hero_imageSharp {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
-        }
-        post_hero_annotation {
-          text
         }
         post_body {
-          ... on PrismicPostPostBodyText {
-            slice_type
+          ... on PRISMIC_PostPost_bodyText {
+            type
+            label
             primary {
-              rich_text {
-                html
-              }
+              rich_text
             }
           }
-          ... on PrismicPostPostBodyHn {
-            slice_type
+          ... on PRISMIC_PostPost_bodyCode_snippet {
+            type
+            label
             primary {
-              hn {
-                html
-              }
+              code_snippet
+              language
             }
           }
-          ... on PrismicPostPostBodyHighlightedText {
-            slice_type
+          ... on PRISMIC_PostPost_bodyHighlighted_text {
+            type
+            label
             primary {
-              highlight_title {
-                html
-              }
+              highlight_title
             }
           }
-          ... on PrismicPostPostBodyCodeSnippet {
-            slice_type
+          ... on PRISMIC_PostPost_bodyImage {
+            type
+            label
             primary {
-              code_snippet {
-                html
-                text
-              }
-              language {
-                text
-              }
-            }
-          }
-          ... on PrismicPostPostBodyImage {
-            primary {
-              image {
-                localFile {
-                  childImageSharp {
-                    fluid {
-                      ...GatsbyImageSharpFluid
-                      presentationWidth
-                    }
+              imageSharp {
+                childImageSharp {
+                  fluid {
+                    base64
+                    tracedSVG
+                    srcWebp
+                    srcSetWebp
+                    originalImg
+                    originalName
+                    presentationWidth
+                    presentationHeight
                   }
                 }
               }
             }
-            slice_type
+          }
+          ... on PRISMIC_PostPost_bodyHn {
+            type
+            label
+            primary {
+              hn
+            }
           }
         }
       }

@@ -1,7 +1,3 @@
-require('dotenv').config({
-  path: `.env`,
-})
-
 module.exports = {
   siteMetadata: {
     title: `Johan Petrikovsky`,
@@ -18,14 +14,28 @@ module.exports = {
         },
       },
     },
+    // {
+    //   resolve: 'gatsby-source-prismic',
+    //   options: {
+    //     repositoryName: 'kovsky-blog',
+    //     // accessToken: `${process.env.API_KEY}`,
+    //     accessToken: `MC5YYXhab1JJQUFDTUF4Qm0y.VO-_ve-_vS3vv73vv70BN--_ve-_ve-_vTHvv70M77-977-9GRtVDxNp77-9W3vvv70lSO-_vUFb77-9`,
+    //     // Get the correct URLs in blog posts
+    //     linkResolver: () => post => `/${post.uid}`,
+    //   },
+    // },
     {
-      resolve: 'gatsby-source-prismic',
+      resolve: 'gatsby-source-prismic-graphql',
       options: {
-        repositoryName: 'kovsky-blog',
-        // accessToken: `${process.env.API_KEY}`,
-        accessToken: `MC5YYXhab1JJQUFDTUF4Qm0y.VO-_ve-_vS3vv73vv70BN--_ve-_ve-_vTHvv70M77-977-9GRtVDxNp77-9W3vvv70lSO-_vUFb77-9`,
-        // Get the correct URLs in blog posts
-        linkResolver: () => post => `/${post.uid}`,
+        repositoryName: 'kovsky-blog', // (required)
+        // accessToken: '...', // (optional)
+        // prismicRef: '...', // (optional)
+        path: '/preview', // (optional, default: /preview)
+        previews: false, // (optional, default: false)
+        sharpKeys: [
+          /image|photo|picture/, // (default)
+          'profilepic',
+        ],
       },
     },
     `gatsby-plugin-react-helmet`,
