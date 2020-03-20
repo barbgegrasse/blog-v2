@@ -21,6 +21,8 @@ const HeaderContainer = styled('div')`
 
   nav a {
     color: ${theme.colors.main};
+    margin-left: 20px;
+    &:first-child{margin-left:0;}
     &:hover {
       color: ${theme.colors.secondary};
     }

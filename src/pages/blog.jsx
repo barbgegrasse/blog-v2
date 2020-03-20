@@ -3,6 +3,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import SEO from '../components/seo'
+import Layout from '../components/Layout'
 import { BlogGrid } from '../styles/components/blog/listing'
 import { MainTitle } from '../styles/tags/title'
 import PostCard from '../components/blog/PostCard'
@@ -11,15 +12,18 @@ const BlogPage = ({ data }) => {
   const listPosts = data.allPrismicPost.edges
 
   return (
-    <>
-      <SEO title="Blog développeur web" />
+    <Layout>
+      <SEO
+        title="Blog de Johan Petrikovsky. Développeur à Toulouse"
+        description="Une liste d'articles sur le développement web orientés sur Javascript, React, Gatsby, mais pas que."
+      />
       <MainTitle>Blog</MainTitle>
       <BlogGrid>
         {listPosts.map(post => (
           <PostCard key={post.node.uid} post={post} />
         ))}
       </BlogGrid>
-    </>
+    </Layout>
   )
 }
 

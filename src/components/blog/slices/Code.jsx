@@ -7,6 +7,9 @@ import styled from '@emotion/styled'
 const CodeSnippet = styled('div')`
   display: block;
   padding: 40px 0;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 `
 export default function Code({ slice }) {
   const codeString = slice.primary.code_snippet.text

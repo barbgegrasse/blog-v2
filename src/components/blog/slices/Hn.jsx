@@ -19,6 +19,22 @@ const HnTitle = styled('div')`
     font-size: 3em;
     font-style: italic;
   }
+  h3 {
+    font-size: 2.6em;
+    font-style: italic;
+  }
+  h4 {
+    font-size: 2.4em;
+    font-style: italic;
+  }
+  h5 {
+    font-size: 2.2em;
+    font-style: italic;
+  }
+  h6 {
+    font-size: 2em;
+    font-style: italic;
+  }
 `
 
 const Hn = ({ slice }) => <HnTitle dangerouslySetInnerHTML={{ __html: slice.primary.hn.html }}></HnTitle>
