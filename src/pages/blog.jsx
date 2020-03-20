@@ -13,10 +13,7 @@ const BlogPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO
-        title="Blog de Johan Petrikovsky. Développeur à Toulouse"
-        description="Une liste d'articles sur le développement web orientés sur Javascript, React, Gatsby, mais pas que."
-      />
+      <SEO title="Blog développeur web" />
       <MainTitle>Blog</MainTitle>
       <BlogGrid>
         {listPosts.map(post => (
