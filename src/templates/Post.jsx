@@ -9,10 +9,10 @@ import Layout from '../components/Layout'
 
 const Post = ({ data }) => (
   <Layout>
+    test
     {console.log(data)}
     {console.log(data.prismic.post.post_hero_image.dimensions.width)}
     {console.log(data.post)}
-
     <SEO title={data.prismic.post.post_title[0].text} />
     <MainTitle>{data.prismic.post.post_title[0].text}</MainTitle>
     <Img
@@ -75,6 +75,50 @@ export const pageQuery = graphql`
             type
             label
             primary {
+              image
+            }
+          }
+          ... on PRISMIC_PostPost_bodyHn {
+            type
+            label
+            primary {
+              hn
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+/* 
+post_body {
+          ... on PRISMIC_PostPost_bodyText {
+            type
+            label
+            primary {
+              rich_text
+            }
+          }
+          ... on PRISMIC_PostPost_bodyCode_snippet {
+            type
+            label
+            primary {
+              code_snippet
+              language
+            }
+          }
+          ... on PRISMIC_PostPost_bodyHighlighted_text {
+            type
+            label
+            primary {
+              highlight_title
+            }
+          }
+          ... on PRISMIC_PostPost_bodyImage {
+            type
+            label
+            primary {
               imageSharp {
                 childImageSharp {
                   fluid {
@@ -99,9 +143,5 @@ export const pageQuery = graphql`
             }
           }
         }
-      }
-    }
-  }
-`
-
+*/
 export default Post
