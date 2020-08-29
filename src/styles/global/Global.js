@@ -142,10 +142,6 @@ export default function GlobalStyle() {
           min-height: 100vh;
         }
 
-        img {
-          max-width: 100%;
-        }
-
         a {
           color: ${theme.colors.secondary};
           text-decoration: none;

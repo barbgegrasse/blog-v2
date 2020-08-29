@@ -13,23 +13,25 @@ import {
 } from '../../styles/components/blog/postCard'
 
 const PostCard = ({ post }) => {
-  const { uid } = post.node._meta
-  const CategorySlug = post.node.categories[0].category._meta.uid
-  const CategoryTitle = post.node.categories[0].category.name
-  const Title = post.node.post_title[0].text
-  const Preview = post.node.post_preview_description
-  const Date = post.node.post_date
+  const { uid } = post
+  const categorySlug = post.data.categories[0].category.uid
+  const categoryTitle = post.data.categories[0].category.document.dataRaw.name
+  const title = post.data.post_title.text
+  const preview = post.data.post_preview_description
 
   return (
     <PostCardContainer>
       <div>
-        <PostCategory to={`/blog/categorie-${CategorySlug}`}>{CategoryTitle}</PostCategory>
-        <PostTitle>{Title}</PostTitle>
+        <PostCategory to={`/blog/categorie-${categorySlug}`}>
+          {categoryTitle}
+        </PostCategory>
+        <PostTitle>{title}</PostTitle>
       </div>
 
-      <PostDescription>{RichText.render(Preview)}</PostDescription>
+      <PostDescription dangerouslySetInnerHTML={{ __html: preview.html }} />
+
       <div>
-        <PostCardAction to={`/blog/${uid}`} className="PostCardAction">
+        <PostCardAction to={`/blog/${uid}`}>
           En savoir plus <span>&#8594;</span>
         </PostCardAction>
         <PostMetas>

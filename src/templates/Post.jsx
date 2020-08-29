@@ -7,82 +7,106 @@ import { MainTitle } from '../styles/tags/title'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
 
-const Post = ({ data }) => (
-  <Layout>
-    test
-    {console.log(data)}
-    {console.log(data.prismic.post.post_hero_image.dimensions.width)}
-    {console.log(data.post)}
-    <SEO title={data.prismic.post.post_title[0].text} />
-    <MainTitle>{data.prismic.post.post_title[0].text}</MainTitle>
-    <Img
-      style={{
-        display: 'block',
-        margin: '0 auto',
-        maxWidth: data.prismic.post.post_hero_image.dimensions.width,
-      }}
-      fluid={data.prismic.post.post_hero_imageSharp.childImageSharp.fluid}
-    />
-    <PostSlices slices={data.prismic.post.post_body} />
-  </Layout>
-)
+const Post = ({ data: { prismicPost } }) => {
+  console.log('Post -> data', prismicPost)
+  return (
+    <Layout>
+      test
+      <SEO title={prismicPost.data.post_title.text} />
+      <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
+      <Img
+        style={{
+          display: 'block',
+          margin: '0 auto',
+          maxWidth: prismicPost.data.post_hero_image.dimensions.width,
+          maxHeight: prismicPost.data.post_hero_image.dimensions.height,
+        }}
+        fluid={prismicPost.data.post_hero_image.localFile.childImageSharp.fluid}
+      />
+      <PostSlices slices={prismicPost.data.post_body} />
+    </Layout>
+  )
+}
 
 Post.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export const pageQuery = graphql`
-  query PostQuery($uid: String!) {
-    prismic {
-      post(uid: $uid, lang: "fr-fr") {
-        post_title
-        post_preview_description
-        post_hero_annotation
-        post_date
-        _linkType
-        post_hero_image
-        post_hero_imageSharp {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+export const query = graphql`
+  query PostBySlug($uid: String!) {
+    prismicPost(uid: { eq: $uid }) {
+      id
+      data {
+        post_title {
+          text
+        }
+        post_body {
+          ... on PrismicPostPostBodyText {
+            id
+            primary {
+              rich_text {
+                html
+              }
+            }
+            slice_type
+          }
+          ... on PrismicPostPostBodyHn {
+            id
+            primary {
+              hn {
+                html
+              }
+            }
+          }
+          ... on PrismicPostPostBodyCodeSnippet {
+            id
+            primary {
+              code_snippet {
+                text
+              }
+              language {
+                text
+              }
+            }
+          }
+          ... on PrismicPostPostBodyHighlightedText {
+            id
+            primary {
+              highlight_title {
+                html
+              }
+            }
+            slice_type
+          }
+          ... on PrismicPostPostBodyImage {
+            id
+            primary {
+              image {
+                dimensions {
+                  height
+                  width
+                }
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid_withWebp
+                    }
+                  }
+                }
+              }
             }
           }
         }
-        post_body {
-          ... on PRISMIC_PostPost_bodyText {
-            type
-            label
-            primary {
-              rich_text
-            }
+        post_hero_image {
+          dimensions {
+            height
+            width
           }
-          ... on PRISMIC_PostPost_bodyCode_snippet {
-            type
-            label
-            primary {
-              code_snippet
-              language
-            }
-          }
-          ... on PRISMIC_PostPost_bodyHighlighted_text {
-            type
-            label
-            primary {
-              highlight_title
-            }
-          }
-          ... on PRISMIC_PostPost_bodyImage {
-            type
-            label
-            primary {
-              image
-            }
-          }
-          ... on PRISMIC_PostPost_bodyHn {
-            type
-            label
-            primary {
-              hn
+          localFile {
+            childImageSharp {
+              fluid(quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
             }
           }
         }
@@ -90,58 +114,4 @@ export const pageQuery = graphql`
     }
   }
 `
-
-/* 
-post_body {
-          ... on PRISMIC_PostPost_bodyText {
-            type
-            label
-            primary {
-              rich_text
-            }
-          }
-          ... on PRISMIC_PostPost_bodyCode_snippet {
-            type
-            label
-            primary {
-              code_snippet
-              language
-            }
-          }
-          ... on PRISMIC_PostPost_bodyHighlighted_text {
-            type
-            label
-            primary {
-              highlight_title
-            }
-          }
-          ... on PRISMIC_PostPost_bodyImage {
-            type
-            label
-            primary {
-              imageSharp {
-                childImageSharp {
-                  fluid {
-                    base64
-                    tracedSVG
-                    srcWebp
-                    srcSetWebp
-                    originalImg
-                    originalName
-                    presentationWidth
-                    presentationHeight
-                  }
-                }
-              }
-            }
-          }
-          ... on PRISMIC_PostPost_bodyHn {
-            type
-            label
-            primary {
-              hn
-            }
-          }
-        }
-*/
 export default Post

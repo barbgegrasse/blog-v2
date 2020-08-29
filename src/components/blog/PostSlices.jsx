@@ -13,15 +13,15 @@ const PostSlices = ({ slices }) =>
 
     const res = (() => {
       switch (slice.__typename) {
-        case 'PRISMIC_PostPost_bodyCode_snippet':
+        case 'PrismicPostPostBodyCodeSnippet':
           return <Code slice={slice} />
-        case 'PRISMIC_PostPost_bodyHighlightedText':
+        case 'PrismicPostPostBodyHighlightedText':
           return <HighLight slice={slice} />
-        case 'PRISMIC_PostPost_bodyHn':
+        case 'PrismicPostPostBodyHn':
           return <Hn slice={slice} />
-        case 'PRISMIC_PostPost_bodyText':
+        case 'PrismicPostPostBodyText':
           return <Text slice={slice} />
-        case 'PRISMIC_PostPost_bodyImage':
+        case 'PrismicPostPostBodyImage':
           return <Image slice={slice} />
         default:
           return false
