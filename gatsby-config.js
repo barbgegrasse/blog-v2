@@ -1,3 +1,6 @@
+const post = require('./src/schemas/post.json')
+const category = require('./src/schemas/category.json')
+
 module.exports = {
   siteMetadata: {
     title: `Johan Petrikovsky`,
@@ -14,28 +17,19 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: 'gatsby-source-prismic',
-    //   options: {
-    //     repositoryName: 'kovsky-blog',
-    //     // accessToken: `${process.env.API_KEY}`,
-    //     accessToken: `MC5YYXhab1JJQUFDTUF4Qm0y.VO-_ve-_vS3vv73vv70BN--_ve-_ve-_vTHvv70M77-977-9GRtVDxNp77-9W3vvv70lSO-_vUFb77-9`,
-    //     // Get the correct URLs in blog posts
-    //     linkResolver: () => post => `/${post.uid}`,
-    //   },
-    // },
     {
-      resolve: 'gatsby-source-prismic-graphql',
+      resolve: 'gatsby-source-prismic',
       options: {
-        repositoryName: 'kovsky-blog', // (required)
-        // accessToken: '...', // (optional)
-        // prismicRef: '...', // (optional)
-        path: '/preview', // (optional, default: /preview)
-        previews: false, // (optional, default: false)
-        sharpKeys: [
-          /image|photo|picture/, // (default)
-          'profilepic',
-        ],
+        repositoryName: 'kovsky-blog',
+        // accessToken: `${process.env.API_KEY}`,
+        accessToken: `MC5YYXhab1JJQUFDTUF4Qm0y.VO-_ve-_vS3vv73vv70BN--_ve-_ve-_vTHvv70M77-977-9GRtVDxNp77-9W3vvv70lSO-_vUFb77-9`,
+        // Get the correct URLs in blog posts
+        linkResolver: () => blogpost => `/${blogpost.uid}`,
+        lang: 'fr-fr',
+        schemas: {
+          post,
+          category,
+        },
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -58,14 +52,6 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-matomo',
-      options: {
-        siteId: '1',
-        matomoUrl: 'https://developpeurwebtech.matomo.cloud/',
-        siteUrl: 'https://www.developpeur-web.tech/',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

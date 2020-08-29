@@ -37,7 +37,9 @@ const HnTitle = styled('div')`
   }
 `
 
-const Hn = ({ slice }) => <HnTitle dangerouslySetInnerHTML={{ __html: slice.primary.hn.html }}></HnTitle>
+const Hn = ({ slice }) => (
+  <HnTitle dangerouslySetInnerHTML={{ __html: slice.primary.hn.html }} />
+)
 
 Hn.propTypes = {
   slice: PropTypes.element.isRequired,

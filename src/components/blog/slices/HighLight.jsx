@@ -12,10 +12,10 @@ export default function HighLight({ slice }) {
     <HighLightContainer
       style={{ padding: '20px' }}
       dangerouslySetInnerHTML={{ __html: slice.primary.highlight_title.html }}
-    ></HighLightContainer>
+    />
   )
 }
 
 HighLight.propTypes = {
-  slice: PropTypes.element.isRequired,
+  slice: PropTypes.object.isRequired,
 }

@@ -9,15 +9,16 @@ import { MainTitle } from '../styles/tags/title'
 import PostCard from '../components/blog/PostCard'
 
 const BlogPage = ({ data }) => {
-  const listPosts = data.prismic.allPosts.edges
+  const listPosts = data.allPrismicPost.edges
+  console.info(listPosts)
 
   return (
     <Layout>
-      <SEO title="Blog développeur web" />
+      <SEO title="Blog développeur web à Toulouse" />
       <MainTitle>Blog</MainTitle>
       <BlogGrid>
         {listPosts.map(post => (
-          <PostCard key={post.node._meta.uid} post={post} />
+          <PostCard key={post.node.uid} post={post.node} />
         ))}
       </BlogGrid>
     </Layout>
@@ -29,24 +30,31 @@ BlogPage.propTypes = {
 }
 
 export const BlogQuery = graphql`
-  query MyQuery {
-    prismic {
-      allPosts {
-        edges {
-          node {
-            _meta {
-              uid
+  {
+    allPrismicPost {
+      edges {
+        node {
+          uid
+          data {
+            post_title {
+              html
+              text
             }
-            post_title
-            post_preview_description
+            post_preview_description {
+              html
+              text
+            }
             post_date
             categories {
               category {
-                ... on PRISMIC_Category {
-                  _meta {
-                    uid
+                uid
+                document {
+                  ... on PrismicCategory {
+                    id
+                    dataRaw {
+                      name
+                    }
                   }
-                  name
                 }
               }
             }
