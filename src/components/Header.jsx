@@ -1,10 +1,10 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import { HeaderContainer } from '../styles/components/header/header'
-import logo from '../images/logo.svg'
+import { WrapperHeader, Logo } from '../styles/components/header/header'
 
 const Header = () => (
-  <HeaderContainer>
+  <WrapperHeader>
+    <Logo>Johan Petrikovsky</Logo>
     <nav>
       <ul>
         <li>
@@ -13,7 +13,7 @@ const Header = () => (
         </li>
       </ul>
     </nav>
-  </HeaderContainer>
+  </WrapperHeader>
 )
 
 export default Header

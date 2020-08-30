@@ -27,7 +27,9 @@ const IndexPage = () => {
             <BlockMaintTitle tl={tl} />
             <BlockPresentation tl={tl} />
           </div>
-          <BlockIllu tl={tl} />
+          <div className="right-col">
+            <BlockIllu tl={tl} />
+          </div>
         </GridHome>
       </Layout>
     </>
