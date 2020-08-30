@@ -18,4 +18,9 @@ const GlobalWrapper = styled('div')`
   min-height: 100vh;
 `
 
-export { MainContainer, GlobalWrapper }
+const FooterWrapper = styled('footer')`
+  margin-top: 2em;
+  margin-bottom: 1em;
+`
+
+export { MainContainer, GlobalWrapper, FooterWrapper }

@@ -22,6 +22,7 @@
     "gatsby-source-prismic": "^2.3.0-previews.12",
     "gatsby-source-prismic-graphql": "^3.5.0",
     "gatsby-transformer-sharp": "^2.3.13",
+    "gsap": "^3.5.1",
     "prismic-reactjs": "^1.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
