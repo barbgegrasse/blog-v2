@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import gsap, { TweenMax, Expo, TimelineLite } from 'gsap'
+import gsap from 'gsap'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
 import { MainTitle } from '../styles/tags/title'
@@ -17,7 +17,7 @@ const IndexPage = () => {
       <Layout>
         <SEO
           title="Johan Petrikovsky Développeur web à toulouse"
-          description="Développeur web depuis 8ans."
+          description="Développeur web depuis 8ans basé à Toulouse. J'apprécie travailler avec React, GatsbyJS, et GSAP"
         />
 
         <GridHome>
