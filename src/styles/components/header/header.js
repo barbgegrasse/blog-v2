@@ -2,6 +2,11 @@ import styled from '@emotion/styled'
 import theme from '../../global/theme'
 import mediaQueries from '../../global/mediaQueries'
 
+const Logo = styled('p')`
+  font-size: 16px;
+  font-weight: 200;
+`
+
 const HeaderBg = styled('header')`
   position: absolute;
   top: 0;
@@ -10,7 +15,7 @@ const HeaderBg = styled('header')`
   z-index: 900;
 `
 
-const HeaderContainer = styled('div')`
+const WrapperHeader = styled('div')`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,4 +40,4 @@ const HeaderContainer = styled('div')`
   }
 `
 
-export { HeaderContainer, HeaderBg }
+export { WrapperHeader, HeaderBg, Logo }

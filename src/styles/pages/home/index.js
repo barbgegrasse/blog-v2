@@ -17,6 +17,11 @@ const GridHome = styled('section')`
     justify-content: space-evenly;
   }
 
+  .right-col {
+    display: flex;
+    align-items: center;
+  }
+
   h1 {
     margin-bottom: 1em;
     text-align: left;

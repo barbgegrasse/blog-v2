@@ -13,7 +13,7 @@ const BlockPresentation = ({ tl }) => {
       1.0,
       {
         opacity: 0,
-        y: '100%',
+        y: '25%',
         ease: Expo.easeInOut,
       },
       '-=1'
@@ -24,7 +24,7 @@ const BlockPresentation = ({ tl }) => {
       1.0,
       {
         opacity: 0,
-        y: '100%',
+        y: '25%',
         ease: Expo.easeInOut,
       },
       '-=0.8'
@@ -35,7 +35,7 @@ const BlockPresentation = ({ tl }) => {
       1.0,
       {
         opacity: 0,
-        y: '100%',
+        y: '25%',
         ease: Expo.easeInOut,
       },
       '-=0.8'

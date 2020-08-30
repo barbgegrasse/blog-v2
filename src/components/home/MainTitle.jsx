@@ -12,7 +12,8 @@ const BlockMaintTitle = ({ tl }) => {
       refTitle1.current,
       1,
       {
-        y: '100%',
+        opacity: 0,
+        y: '50%',
         ease: Expo.easeInOut,
       },
       '-=0.8'
@@ -22,7 +23,8 @@ const BlockMaintTitle = ({ tl }) => {
       refTitle2.current,
       1,
       {
-        y: '100%',
+        opacity: 0,
+        y: '50%',
         ease: Expo.easeInOut,
       },
       '-=0.8'
