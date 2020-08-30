@@ -2,8 +2,10 @@ import React, { useRef } from 'react'
 import gsap from 'gsap'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
-import { MainTitle } from '../styles/tags/title'
-import illu from '../images/web_developer.svg'
+import BlockMaintTitle from '../components/home/MainTitle'
+import BlockPresentation from '../components/home/BlockPresentation'
+import BlockIllu from '../components/home/BlockIllu'
+
 import { GridHome } from '../styles/pages/home/index'
 import Overlay from '../components/home/Overlay'
 
@@ -22,25 +24,10 @@ const IndexPage = () => {
 
         <GridHome>
           <div className="left-col">
-            <MainTitle as="h1">
-              Développeur <br />
-              front-end à Toulouse.
-            </MainTitle>
-            <p>
-              Bonjour 👋 je suis Johan Petrikovsky développeur front-end basé à
-              Toulouse.
-            </p>
-            <p>
-              J'ai l'œil pour la conception d'interface avec une approche du
-              développement axée sur l'utilisateur.
-            </p>
-            <p>
-              Pendant mon temps libre, je travaille sur GSAP et diverses
-              animations CSS. J'apprends actuellement à écrire de meilleurs
-              tests avec Cypress.
-            </p>
+            <BlockMaintTitle tl={tl} />
+            <BlockPresentation tl={tl} />
           </div>
-          <img src={illu} alt="" />
+          <BlockIllu tl={tl} />
         </GridHome>
       </Layout>
     </>
