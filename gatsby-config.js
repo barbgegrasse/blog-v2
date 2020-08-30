@@ -4,7 +4,7 @@ const category = require('./src/schemas/category.json')
 module.exports = {
   siteMetadata: {
     title: `Johan Petrikovsky`,
-    description: `Site internet de Johan Petrikovsky, apprenti développeur.`,
+    description: `Site internet de Johan Petrikovsky, développeur front-end à Toulouse.`,
     author: `@kovskyD`,
   },
   plugins: [
@@ -51,7 +51,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon/android-chrome-512x512.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
