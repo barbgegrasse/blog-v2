@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import GlobalStyle from '../styles/global/Global'
 import Header from './Header'
-import { MainContainer } from '../styles/global/layout'
+import { MainContainer, GlobalWrapper } from '../styles/global/layout'
 
 const Layout = ({ children }) => (
-  <>
+  <GlobalWrapper>
     <GlobalStyle />
     <Header />
 
@@ -14,7 +14,7 @@ const Layout = ({ children }) => (
       © {new Date().getFullYear()}, Built with
       <a href="https://www.gatsbyjs.org"> Gatsby</a>
     </footer>
-  </>
+  </GlobalWrapper>
 )
 
 Layout.propTypes = {

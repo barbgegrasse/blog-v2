@@ -9,10 +9,16 @@ const PostSlice = styled('div')`
 `
 
 export default function Image({ slice }) {
+  console.log('Image -> slice', slice)
+
   return (
     <PostSlice>
       <Img
-        style={{ margin: '0 auto', maxWidth: slice.primary.image.localFile.childImageSharp.fluid.presentationWidth }}
+        style={{
+          margin: '0 auto',
+          maxWidth: slice.primary.image.dimensions.width,
+          maxHeight: slice.primary.image.dimensions.height,
+        }}
         fluid={slice.primary.image.localFile.childImageSharp.fluid}
       />
     </PostSlice>
