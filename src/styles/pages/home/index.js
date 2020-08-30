@@ -31,7 +31,7 @@ const GridHome = styled('section')`
   p {
     font-size: 24px;
     line-height: 1.4;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
   }
 `
 

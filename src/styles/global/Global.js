@@ -158,6 +158,20 @@ export default function GlobalStyle() {
             padding: 0 5%;
           }
         }
+
+        .d-block {
+          display: block;
+        }
+
+        .v-hidden {
+          visibility: hidden;
+        }
+
+        .hide-text {
+          display: block;
+          overflow: hidden;
+          line-height: 1;
+        }
       `}
     />
   )
