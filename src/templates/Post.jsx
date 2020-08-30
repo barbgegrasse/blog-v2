@@ -7,26 +7,22 @@ import { MainTitle } from '../styles/tags/title'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
 
-const Post = ({ data: { prismicPost } }) => {
-  console.log('Post -> data', prismicPost)
-  return (
-    <Layout>
-      test
-      <SEO title={prismicPost.data.post_title.text} />
-      <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
-      <Img
-        style={{
-          display: 'block',
-          margin: '0 auto',
-          maxWidth: prismicPost.data.post_hero_image.dimensions.width,
-          maxHeight: prismicPost.data.post_hero_image.dimensions.height,
-        }}
-        fluid={prismicPost.data.post_hero_image.localFile.childImageSharp.fluid}
-      />
-      <PostSlices slices={prismicPost.data.post_body} />
-    </Layout>
-  )
-}
+const Post = ({ data: { prismicPost } }) => (
+  <Layout>
+    <SEO title={prismicPost.data.post_title.text} />
+    <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
+    <Img
+      style={{
+        display: 'block',
+        margin: '0 auto',
+        maxWidth: prismicPost.data.post_hero_image.dimensions.width,
+        maxHeight: prismicPost.data.post_hero_image.dimensions.height,
+      }}
+      fluid={prismicPost.data.post_hero_image.localFile.childImageSharp.fluid}
+    />
+    <PostSlices slices={prismicPost.data.post_body} />
+  </Layout>
+)
 
 Post.propTypes = {
   data: PropTypes.object.isRequired,
@@ -88,7 +84,7 @@ export const query = graphql`
                 }
                 localFile {
                   childImageSharp {
-                    fluid {
+                    fluid(quality: 100) {
                       ...GatsbyImageSharpFluid_withWebp
                     }
                   }
