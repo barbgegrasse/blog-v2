@@ -6,10 +6,11 @@ const BlogGrid = styled('section')`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2.5em;
 
-  ${mediaQueries.tabletLandscape} {
+  ${mediaQueries.desktopFlorent} {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5em;
   }
+
   ${mediaQueries.mobile} {
     grid-template-columns: 1fr;
   }

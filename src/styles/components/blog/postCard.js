@@ -18,7 +18,7 @@ const PostCardContainer = styled('div')`
     box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.1);
     transition: all 150ms ease-in-out;
     border: 1px solid ${theme.colors.primary};
-    cursor: pointer;
+
     .PostCardAction {
       color: ${theme.colors.primary};
       transition: all 150ms ease-in-out;
@@ -61,12 +61,15 @@ const PostDate = styled('div')`
 const PostDescription = styled('div')`
   margin-top: 2em;
   margin-bottom: 4em;
+  line-height: 1.3;
   p:last-of-type {
     margin: 0;
   }
 `
 
 const PostCardAction = styled(Link)`
+  display: block;
+  text-align: right;
   font-weight: 600;
   text-decoration: none;
   color: currentColor;
@@ -79,4 +82,12 @@ const PostCardAction = styled(Link)`
   }
 `
 
-export { PostCardContainer, PostCategory, PostTitle, PostMetas, PostDate, PostDescription, PostCardAction }
+export {
+  PostCardContainer,
+  PostCategory,
+  PostTitle,
+  PostMetas,
+  PostDate,
+  PostDescription,
+  PostCardAction,
+}

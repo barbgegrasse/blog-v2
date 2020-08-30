@@ -2,7 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import GlobalStyle from '../styles/global/Global'
 import Header from './Header'
-import { MainContainer, GlobalWrapper } from '../styles/global/layout'
+import {
+  MainContainer,
+  GlobalWrapper,
+  FooterWrapper,
+} from '../styles/global/layout'
 
 const Layout = ({ children }) => (
   <GlobalWrapper>
@@ -10,10 +14,11 @@ const Layout = ({ children }) => (
     <Header />
 
     <MainContainer className="max-container">{children}</MainContainer>
-    <footer className="max-container">
-      © {new Date().getFullYear()}, Built with
-      <a href="https://www.gatsbyjs.org"> Gatsby</a>
-    </footer>
+    <FooterWrapper className="max-container">
+      © {new Date().getFullYear()}, Construit avec passion
+      <a href="https://www.gatsbyjs.org"> Gatsby</a> et{' '}
+      <a href="https://prismic.io/">Prismic</a>
+    </FooterWrapper>
   </GlobalWrapper>
 )
 
