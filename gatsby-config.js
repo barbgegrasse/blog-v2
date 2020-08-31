@@ -18,6 +18,22 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-ackee-tracker',
+      options: {
+        // Domain ID found when adding a domain in the admin panel.
+        domainId: '<your domain id>',
+        // URL to Server eg: "https://analytics.test.com".
+        server: 'https://ackee-server.herokuapp.com',
+        // Disabled analytic tracking when running locally
+        // IMPORTANT: Set this back to false when you are done testing
+        ignoreLocalhost: true,
+        // If enabled it will collect info on OS, BrowserInfo, Device  & ScreenSize
+        // False due to detailed information being personalized:
+        // https://github.com/electerious/Ackee/blob/master/docs/Anonymization.md#personal-data
+        detailed: false,
+      },
+    },
+    {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: 'kovsky-blog',
