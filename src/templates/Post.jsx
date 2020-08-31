@@ -14,7 +14,9 @@ const Post = ({ data: { prismicPost } }) => (
     <Img
       style={{
         display: 'block',
-        margin: '0 auto',
+        marginRight: 'auto',
+        marginLeft: 'auto',
+        marginBottom: '60px',
         maxWidth: prismicPost.data.post_hero_image.dimensions.width,
         maxHeight: prismicPost.data.post_hero_image.dimensions.height,
       }}
