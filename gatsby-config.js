@@ -18,7 +18,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-ackee-tracker',
+      resolve: '@willthevideoman/gatsby-plugin-ackee-tracker',
       options: {
         // Domatin ID found when adding a domain in the admin panel.
         domainId: 'e35ba5a9-5290-4fd2-bf34-901d049b4462',
