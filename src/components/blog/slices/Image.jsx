@@ -3,16 +3,15 @@ import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import Img from 'gatsby-image'
 
-const PostSlice = styled('div')`
-  text-align: center;
-  padding: 2rem 0;
+const ImageWrapper = styled('div')`
+  margin-bottom: 60px;
 `
 
 export default function Image({ slice }) {
   console.log('Image -> slice', slice)
 
   return (
-    <PostSlice>
+    <ImageWrapper>
       <Img
         style={{
           margin: '0 auto',
@@ -21,7 +20,7 @@ export default function Image({ slice }) {
         }}
         fluid={slice.primary.image.localFile.childImageSharp.fluid}
       />
-    </PostSlice>
+    </ImageWrapper>
   )
 }
 

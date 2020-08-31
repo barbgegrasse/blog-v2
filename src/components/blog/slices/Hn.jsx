@@ -9,7 +9,7 @@ const HnTitle = styled('div')`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 40px;
+  padding: 20px 0 60px;
 
   color: ${theme.colors.primary};
   font-family: ${theme.fonts.title};
