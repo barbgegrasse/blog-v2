@@ -1,12 +1,13 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import theme from '../../global/theme'
+import mediaQueries from '../../global/mediaQueries'
 
 const PostCardContainer = styled('div')`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2.5em 2.5em 2.25em 2.5em;
+  padding: 60px 55px;
 
   border-radius: 3px;
   background-color: ${theme.bg.card};
@@ -33,6 +34,7 @@ const PostCardContainer = styled('div')`
 
 const PostCategory = styled('h3')`
   font-weight: lighter;
+  text-transform: uppercase;
   color: ${theme.colors.light};
 `
 
@@ -43,6 +45,10 @@ const PostTitle = styled('h2')`
   font-size: 3rem;
   color: ${theme.colors.primary};
   line-height: 1.3;
+
+  ${mediaQueries.desktopFlorent} {
+    font-size: 2.8rem;
+  }
 `
 
 const PostMetas = styled('div')`
@@ -61,7 +67,7 @@ const PostDate = styled('div')`
 const PostDescription = styled('div')`
   margin-top: 2em;
   margin-bottom: 4em;
-  line-height: 1.3;
+  line-height: 1.4;
   p:last-of-type {
     margin: 0;
   }
