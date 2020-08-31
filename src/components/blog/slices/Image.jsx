@@ -8,15 +8,19 @@ const ImageWrapper = styled('div')`
 `
 
 export default function Image({ slice }) {
-  console.log('Image -> slice', slice)
-
   return (
     <ImageWrapper>
       <Img
         style={{
           margin: '0 auto',
+          width: 'auto',
+          height: 'auto',
           maxWidth: slice.primary.image.dimensions.width,
           maxHeight: slice.primary.image.dimensions.height,
+        }}
+        imgStyle={{
+          maxWidth: '100%',
+          height: 'auto',
         }}
         fluid={slice.primary.image.localFile.childImageSharp.fluid}
       />
