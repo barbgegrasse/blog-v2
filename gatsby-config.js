@@ -17,7 +17,6 @@ module.exports = {
         },
       },
     },
-
     {
       resolve: 'gatsby-plugin-ackee-tracker',
       options: {

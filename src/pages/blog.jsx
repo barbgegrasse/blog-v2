@@ -10,7 +10,6 @@ import PostCard from '../components/blog/PostCard'
 
 const BlogPage = ({ data }) => {
   const listPosts = data.allPrismicPost.edges
-  console.info(listPosts)
 
   return (
     <Layout>

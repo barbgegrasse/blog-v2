@@ -9,7 +9,10 @@ import Layout from '../components/Layout'
 
 const Post = ({ data: { prismicPost } }) => (
   <Layout>
-    <SEO title={prismicPost.data.post_title.text} />
+    <SEO
+      title={prismicPost.data.post_title.text}
+      description={prismicPost.data.post_preview_description.text}
+    />
     <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
     <Img
       style={{
@@ -36,6 +39,9 @@ export const query = graphql`
       id
       data {
         post_title {
+          text
+        }
+        post_preview_description {
           text
         }
         post_body {
