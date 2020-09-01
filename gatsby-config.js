@@ -25,7 +25,7 @@ module.exports = {
         // URL to Server eg: "https://analytics.test.com".
         server: 'https://ackee-dev-blog.herokuapp.com',
         // Disabled analytic tracking when running localy
-        ignoreLocalhost: false,
+        ignoreLocalhost: true,
         // If enabled it will collect info on OS, BrowserInfo, Device  & ScreenSize
         detailed: true,
       },
