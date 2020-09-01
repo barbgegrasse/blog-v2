@@ -7,27 +7,53 @@ import { MainTitle } from '../styles/tags/title'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
 
-const Post = ({ data: { prismicPost } }) => (
-  <Layout>
-    <SEO
-      title={prismicPost.data.post_title.text}
-      description={prismicPost.data.post_preview_description.text}
-    />
-    <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
-    <Img
-      style={{
-        display: 'block',
-        marginRight: 'auto',
-        marginLeft: 'auto',
-        marginBottom: '60px',
-        maxWidth: prismicPost.data.post_hero_image.dimensions.width,
-        maxHeight: prismicPost.data.post_hero_image.dimensions.height,
-      }}
-      fluid={prismicPost.data.post_hero_image.localFile.childImageSharp.fluid}
-    />
-    <PostSlices slices={prismicPost.data.post_body} />
-  </Layout>
-)
+const Post = ({ data: { prismicPost } }) => {
+  console.info(prismicPost)
+  const handleHeroImage = () => {
+    if (prismicPost.data.post_hero_image.localFile.childImageSharp) {
+      return (
+        <Img
+          style={{
+            display: 'block',
+            marginRight: 'auto',
+            marginLeft: 'auto',
+            marginBottom: '60px',
+            maxWidth: prismicPost.data.post_hero_image.dimensions.width,
+            maxHeight: prismicPost.data.post_hero_image.dimensions.height,
+          }}
+          fluid={
+            prismicPost.data.post_hero_image.localFile.childImageSharp.fluid
+          }
+        />
+      )
+    }
+
+    return (
+      <img
+        style={{
+          display: 'block',
+          marginRight: 'auto',
+          marginLeft: 'auto',
+          maxWidth: '980px',
+        }}
+        src={prismicPost.dataRaw.post_hero_image.url}
+        alt={prismicPost.dataRaw.post_hero_image.alt}
+      />
+    )
+  }
+
+  return (
+    <Layout>
+      <SEO
+        title={prismicPost.data.post_title.text}
+        description={prismicPost.data.post_preview_description.text}
+      />
+      <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
+      {handleHeroImage()}
+      <PostSlices slices={prismicPost.data.post_body} />
+    </Layout>
+  )
+}
 
 Post.propTypes = {
   data: PropTypes.object.isRequired,
@@ -113,6 +139,12 @@ export const query = graphql`
               }
             }
           }
+        }
+      }
+      dataRaw {
+        post_hero_image {
+          url
+          alt
         }
       }
     }

@@ -9,8 +9,6 @@ import { ArticleContainer } from '../../styles/components/blog/postSlices'
 
 const PostSlices = ({ slices }) =>
   slices.map(slice => {
-    console.log(slice)
-
     const res = (() => {
       switch (slice.__typename) {
         case 'PrismicPostPostBodyCodeSnippet':
