@@ -16,6 +16,10 @@ const GlobalWrapper = styled('div')`
   display: grid;
   grid-template-rows: 100px auto 100px;
   min-height: 100vh;
+
+  ${mediaQueries.mobile} {
+    grid-template-rows: 60px auto 100px;
+  }
 `
 
 const FooterWrapper = styled('footer')`

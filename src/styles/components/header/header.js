@@ -34,10 +34,6 @@ const WrapperHeader = styled('div')`
       color: ${theme.colors.secondary};
     }
   }
-
-  ${mediaQueries.tabletLandscape} {
-    padding: 0 10px;
-  }
 `
 
 export { WrapperHeader, HeaderBg, Logo }
