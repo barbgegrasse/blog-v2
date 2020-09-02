@@ -6,6 +6,7 @@ import PostSlices from '../components/blog/PostSlices'
 import { MainTitle } from '../styles/tags/title'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
+import { ArticleContainer } from '../styles/components/blog/postSlices'
 
 const Post = ({ data: { prismicPost } }) => {
   const handleHeroImage = () => {
@@ -47,9 +48,13 @@ const Post = ({ data: { prismicPost } }) => {
         title={prismicPost.data.post_title.text}
         description={prismicPost.data.post_preview_description.text}
       />
-      <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
-      {handleHeroImage()}
-      <PostSlices slices={prismicPost.data.post_body} />
+      <div style={{ contentVisibility: 'auto' }}>
+        <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
+        {handleHeroImage()}
+      </div>
+      <ArticleContainer>
+        <PostSlices slices={prismicPost.data.post_body} />
+      </ArticleContainer>
     </Layout>
   )
 }
