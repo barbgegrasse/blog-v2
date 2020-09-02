@@ -4,13 +4,13 @@ import styled from '@emotion/styled'
 import theme from '../../../styles/global/theme'
 
 const HnTitle = styled('div')`
-  width: ${theme.maxWidthContent};
   max-width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
   padding: 20px 0 60px;
 
+  text-align: center;
   color: ${theme.colors.primary};
   font-family: ${theme.fonts.title};
   font-weight: 200;

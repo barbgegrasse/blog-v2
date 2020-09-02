@@ -5,7 +5,6 @@ import Text from './slices/Text'
 import Hn from './slices/Hn'
 import HighLight from './slices/HighLight'
 import Image from './slices/Image'
-import { ArticleContainer } from '../../styles/components/blog/postSlices'
 
 const PostSlices = ({ slices }) =>
   slices.map(slice => {
