@@ -10,10 +10,21 @@ module.exports = {
   plugins: [
     `gatsby-plugin-emotion`,
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `IBM Plex Mono`,
+            variants: [`200`, `400`],
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['IBM Plex Mono:200,400', 'Roboto Mono:400'],
+          families: ['Roboto Mono:400'],
         },
       },
     },
