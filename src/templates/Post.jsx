@@ -8,7 +8,6 @@ import SEO from '../components/seo'
 import Layout from '../components/Layout'
 
 const Post = ({ data: { prismicPost } }) => {
-  console.info(prismicPost)
   const handleHeroImage = () => {
     if (prismicPost.data.post_hero_image.localFile.childImageSharp) {
       return (
