@@ -9,23 +9,25 @@ import { ArticleContainer } from '../../styles/components/blog/postSlices'
 
 const PostSlices = ({ slices }) =>
   slices.map(slice => {
-    const res = (() => {
+    const result = (() => {
       switch (slice.__typename) {
         case 'PrismicPostPostBodyCodeSnippet':
-          return <Code slice={slice} />
+          return <Code style={{ contentVisibility: 'auto' }} slice={slice} />
         case 'PrismicPostPostBodyHighlightedText':
-          return <HighLight slice={slice} />
+          return (
+            <HighLight style={{ contentVisibility: 'auto' }} slice={slice} />
+          )
         case 'PrismicPostPostBodyHn':
-          return <Hn slice={slice} />
+          return <Hn style={{ contentVisibility: 'auto' }} slice={slice} />
         case 'PrismicPostPostBodyText':
-          return <Text slice={slice} />
+          return <Text style={{ contentVisibility: 'auto' }} slice={slice} />
         case 'PrismicPostPostBodyImage':
-          return <Image slice={slice} />
+          return <Image style={{ contentVisibility: 'auto' }} slice={slice} />
         default:
           return false
       }
     })()
-    return <ArticleContainer>{res}</ArticleContainer>
+    return result
   })
 
 export default PostSlices

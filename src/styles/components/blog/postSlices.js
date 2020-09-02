@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import theme from '../../global/theme'
 
 const ArticleContainer = styled('div')`
   line-height: 1.5;
@@ -14,8 +13,7 @@ const ArticleContainer = styled('div')`
     list-style-type: initial;
   }
   em {
-    font-weight: bold;
-    color: ${theme.colors.important};
+    font-style: italic;
   }
 `
 
