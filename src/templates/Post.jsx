@@ -34,6 +34,7 @@ const Post = ({ data: { prismicPost } }) => {
           display: 'block',
           marginRight: 'auto',
           marginLeft: 'auto',
+          maxHeight: '430px',
           maxWidth: '980px',
         }}
         src={prismicPost.dataRaw.post_hero_image.url}
