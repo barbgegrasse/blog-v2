@@ -140,6 +140,14 @@ export default function GlobalStyle() {
           font-size: 24px;
           font-family: ${theme.fonts.main};
           min-height: 100vh;
+
+          ${mediaQueries.tabletLandscape} {
+            font-size: 22px;
+          }
+
+          ${mediaQueries.tabletLandscape} {
+            font-size: 18px;
+          }
         }
 
         a {

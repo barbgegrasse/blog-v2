@@ -22,7 +22,7 @@ const MainTitle = styled('h1')`
   }
 
   ${mediaQueries.mobile} {
-    font-size: 3em;
+    font-size: 2em;
   }
 `
 

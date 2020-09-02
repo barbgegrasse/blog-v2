@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import theme from '../../../styles/global/theme'
+import mediaQueries from '../../../styles/global/mediaQueries'
 
 const HnTitle = styled('div')`
   max-width: 100%;
@@ -15,9 +16,16 @@ const HnTitle = styled('div')`
   font-family: ${theme.fonts.title};
   font-weight: 200;
 
+  ${mediaQueries.mobile} {
+    text-align: left;
+  }
+
   h2 {
     font-size: 3em;
     font-style: italic;
+    ${mediaQueries.desktopFlorent} {
+      font-size: 1.8em;
+    }
   }
   h3 {
     font-size: 2.6em;
