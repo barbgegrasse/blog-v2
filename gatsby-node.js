@@ -56,15 +56,15 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const categoryList = Array.from(categorySet)
+  // const categoryList = Array.from(categorySet)
 
-  categoryList.forEach(category => {
-    createPage({
-      path: `/blog/categorie-${category}`,
-      component: categoryTemplate,
-      context: {
-        category,
-      },
-    })
-  })
+  // categoryList.forEach(category => {
+  //   createPage({
+  //     path: `/blog/categorie-${category}`,
+  //     component: categoryTemplate,
+  //     context: {
+  //       category,
+  //     },
+  //   })
+  // })
 }
