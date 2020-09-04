@@ -24,7 +24,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <Overlay tl={tl} homeAnimation={homeAnimation} />
+      {/* <Overlay tl={tl} homeAnimation={homeAnimation} /> */}
       <Layout>
         <SEO
           title="Johan Petrikovsky Développeur web à toulouse"
