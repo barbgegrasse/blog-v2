@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useContext, useEffect } from 'react'
 import gsap from 'gsap'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
@@ -9,13 +9,22 @@ import BlockIllu from '../components/home/BlockIllu'
 import { GridHome } from '../styles/pages/home/index'
 import Overlay from '../components/home/Overlay'
 
+import { myContext } from '../../provider'
+
 const IndexPage = () => {
   const tl = useRef()
   tl.current = gsap.timeline()
 
+  const contextValue = useContext(myContext)
+  const { homeAnimation, changeHomeAnimation } = contextValue
+
+  useEffect(() => {
+    changeHomeAnimation(false)
+  })
+
   return (
     <>
-      <Overlay tl={tl} />
+      <Overlay tl={tl} homeAnimation={homeAnimation} />
       <Layout>
         <SEO
           title="Johan Petrikovsky Développeur web à toulouse"
@@ -24,11 +33,11 @@ const IndexPage = () => {
 
         <GridHome>
           <div className="left-col">
-            <BlockMaintTitle tl={tl} />
-            <BlockPresentation tl={tl} />
+            <BlockMaintTitle homeAnimation={homeAnimation} tl={tl} />
+            <BlockPresentation homeAnimation={homeAnimation} tl={tl} />
           </div>
           <div className="right-col">
-            <BlockIllu tl={tl} />
+            <BlockIllu homeAnimation={homeAnimation} tl={tl} />
           </div>
         </GridHome>
       </Layout>

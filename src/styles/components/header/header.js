@@ -27,7 +27,7 @@ const WrapperHeader = styled('div')`
   nav a {
     color: ${theme.colors.main};
     margin-left: 20px;
-    &:first-child {
+    &:first-of-type {
       margin-left: 0;
     }
     &:hover {
