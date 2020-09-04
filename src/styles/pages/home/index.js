@@ -5,6 +5,7 @@ import mediaQueries from '../../global/mediaQueries'
 const GridHome = styled('section')`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  min-height: 100%;
 
   ${mediaQueries.mobile} {
     grid-template-columns: 1fr;
@@ -20,6 +21,7 @@ const GridHome = styled('section')`
   .right-col {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   h1 {

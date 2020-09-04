@@ -3,32 +3,34 @@ import React, { useRef, useEffect } from 'react'
 import { Expo } from 'gsap'
 import { MainTitle } from '../../styles/tags/title'
 
-const BlockMaintTitle = ({ tl }) => {
+const BlockMaintTitle = ({ tl, homeAnimation }) => {
   const refTitle1 = useRef(null)
   const refTitle2 = useRef(null)
 
   useEffect(() => {
-    tl.current.from(
-      refTitle1.current,
-      1,
-      {
-        opacity: 0,
-        y: '50%',
-        ease: Expo.easeInOut,
-      },
-      '-=0.8'
-    )
+    if (homeAnimation) {
+      tl.current.from(
+        refTitle1.current,
+        1,
+        {
+          opacity: 0,
+          y: '50%',
+          ease: Expo.easeInOut,
+        },
+        '-=0.8'
+      )
 
-    tl.current.from(
-      refTitle2.current,
-      1,
-      {
-        opacity: 0,
-        y: '50%',
-        ease: Expo.easeInOut,
-      },
-      '-=0.8'
-    )
+      tl.current.from(
+        refTitle2.current,
+        1,
+        {
+          opacity: 0,
+          y: '50%',
+          ease: Expo.easeInOut,
+        },
+        '-=0.8'
+      )
+    }
   })
 
   return (
@@ -48,6 +50,7 @@ const BlockMaintTitle = ({ tl }) => {
 }
 
 BlockMaintTitle.propTypes = {
+  homeAnimation: PropTypes.bool.isRequired,
   tl: PropTypes.object.isRequired,
 }
 

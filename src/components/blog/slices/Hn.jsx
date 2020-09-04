@@ -24,24 +24,51 @@ const HnTitle = styled('div')`
     font-size: 3em;
     font-style: italic;
     ${mediaQueries.desktopFlorent} {
+      font-size: 2.8em;
+    }
+    ${mediaQueries.mobile} {
       font-size: 1.8em;
     }
   }
   h3 {
     font-size: 2.6em;
     font-style: italic;
+    ${mediaQueries.desktopFlorent} {
+      font-size: 2.4em;
+    }
+    ${mediaQueries.mobile} {
+      font-size: 1.6em;
+    }
   }
   h4 {
     font-size: 2.4em;
     font-style: italic;
+    ${mediaQueries.desktopFlorent} {
+      font-size: 2.2em;
+    }
+    ${mediaQueries.mobile} {
+      font-size: 1.5em;
+    }
   }
   h5 {
     font-size: 2.2em;
     font-style: italic;
+    ${mediaQueries.desktopFlorent} {
+      font-size: 2.1em;
+    }
+    ${mediaQueries.mobile} {
+      font-size: 1.45em;
+    }
   }
   h6 {
     font-size: 2em;
     font-style: italic;
+    ${mediaQueries.desktopFlorent} {
+      font-size: 1.9em;
+    }
+    ${mediaQueries.mobile} {
+      font-size: 1.4em;
+    }
   }
 `
 

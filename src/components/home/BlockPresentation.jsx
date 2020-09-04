@@ -2,44 +2,46 @@ import PropTypes from 'prop-types'
 import React, { useRef, useEffect } from 'react'
 import { Expo } from 'gsap'
 
-const BlockPresentation = ({ tl }) => {
+const BlockPresentation = ({ tl, homeAnimation }) => {
   const text1 = useRef(null)
   const text2 = useRef(null)
   const text3 = useRef(null)
 
   useEffect(() => {
-    tl.current.from(
-      text1.current,
-      1.0,
-      {
-        opacity: 0,
-        y: '25%',
-        ease: Expo.easeInOut,
-      },
-      '-=1'
-    )
+    if (homeAnimation) {
+      tl.current.from(
+        text1.current,
+        1.0,
+        {
+          opacity: 0,
+          y: '25%',
+          ease: Expo.easeInOut,
+        },
+        '-=1'
+      )
 
-    tl.current.from(
-      text2.current,
-      1.0,
-      {
-        opacity: 0,
-        y: '25%',
-        ease: Expo.easeInOut,
-      },
-      '-=0.8'
-    )
+      tl.current.from(
+        text2.current,
+        1.0,
+        {
+          opacity: 0,
+          y: '25%',
+          ease: Expo.easeInOut,
+        },
+        '-=0.8'
+      )
 
-    tl.current.from(
-      text3.current,
-      1.0,
-      {
-        opacity: 0,
-        y: '25%',
-        ease: Expo.easeInOut,
-      },
-      '-=0.8'
-    )
+      tl.current.from(
+        text3.current,
+        1.0,
+        {
+          opacity: 0,
+          y: '25%',
+          ease: Expo.easeInOut,
+        },
+        '-=0.8'
+      )
+    }
   })
 
   return (
@@ -74,6 +76,7 @@ const BlockPresentation = ({ tl }) => {
 }
 
 BlockPresentation.propTypes = {
+  homeAnimation: PropTypes.bool.isRequired,
   tl: PropTypes.shape({
     current: PropTypes.shape({
       from: PropTypes.func,
