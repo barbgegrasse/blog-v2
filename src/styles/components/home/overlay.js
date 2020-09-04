@@ -19,6 +19,12 @@ const OverlayItem = styled('div')`
     background: #efbb35;
     left: calc((100% / 3) * 2);
   }
+  &.show {
+    display: inherit;
+  }
+  &.hide {
+    display: none;
+  }
 `
 
 export { OverlayItem }
