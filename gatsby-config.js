@@ -6,9 +6,11 @@ module.exports = {
     title: `Johan Petrikovsky`,
     description: `Site internet de Johan Petrikovsky, développeur front-end à Toulouse.`,
     author: `@kovskyD`,
+    siteUrl: `https://www.developpeur-web.tech`,
   },
   plugins: [
     `gatsby-plugin-emotion`,
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
