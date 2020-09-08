@@ -117,6 +117,7 @@ export const query = graphql`
             id
             primary {
               image {
+                alt
                 dimensions {
                   height
                   width

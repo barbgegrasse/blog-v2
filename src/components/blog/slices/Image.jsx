@@ -8,9 +8,11 @@ const ImageWrapper = styled('div')`
 `
 
 export default function Image({ slice }) {
+  console.info(slice)
   return (
     <ImageWrapper>
       <Img
+        alt={slice.primary.image.alt}
         style={{
           margin: '0 auto',
           width: 'auto',
