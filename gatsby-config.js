@@ -11,6 +11,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-emotion`,
     'gatsby-plugin-sitemap',
+    `gatsby-plugin-preload-fonts`,
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
