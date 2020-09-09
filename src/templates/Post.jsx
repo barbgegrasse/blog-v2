@@ -13,6 +13,7 @@ const Post = ({ data: { prismicPost } }) => {
     if (prismicPost.data.post_hero_image.localFile.childImageSharp) {
       return (
         <Img
+          alt={prismicPost.data.post_hero_image.alt}
           style={{
             display: 'block',
             marginRight: 'auto',
@@ -21,6 +22,7 @@ const Post = ({ data: { prismicPost } }) => {
             maxWidth: prismicPost.data.post_hero_image.dimensions.width,
             maxHeight: prismicPost.data.post_hero_image.dimensions.height,
           }}
+          durationFadeIn={250}
           fluid={
             prismicPost.data.post_hero_image.localFile.childImageSharp.fluid
           }
@@ -30,6 +32,7 @@ const Post = ({ data: { prismicPost } }) => {
 
     return (
       <img
+        alt={prismicPost.data.post_hero_image}
         style={{
           display: 'block',
           marginRight: 'auto',
@@ -38,7 +41,6 @@ const Post = ({ data: { prismicPost } }) => {
           maxWidth: '980px',
         }}
         src={prismicPost.dataRaw.post_hero_image.url}
-        alt={prismicPost.dataRaw.post_hero_image.alt}
       />
     )
   }
@@ -134,6 +136,7 @@ export const query = graphql`
           }
         }
         post_hero_image {
+          alt
           dimensions {
             height
             width

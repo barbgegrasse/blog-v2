@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 
 const ArticleContainer = styled('div')`
+  content-visibility: auto;
   .block-img {
     img {
       max-width: 100%;

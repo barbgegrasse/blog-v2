@@ -24,6 +24,7 @@ export default function Image({ slice }) {
           maxWidth: '100%',
           height: 'auto',
         }}
+        durationFadeIn={250}
         fluid={slice.primary.image.localFile.childImageSharp.fluid}
       />
     </ImageWrapper>
