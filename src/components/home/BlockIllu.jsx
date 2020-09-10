@@ -26,12 +26,12 @@ const BlockIllu = ({ tl, homeAnimation }) => {
 
   return (
     <IllustrationWrapper className="hide-text">
-      <img
+      {/* <img
         ref={refIllu}
         src={illu}
         alt="Développeur web à Toulouse"
         title="Développeur Web à Toulouse"
-      />
+      /> */}
     </IllustrationWrapper>
   )
 }

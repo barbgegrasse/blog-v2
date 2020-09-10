@@ -134,19 +134,63 @@ export default function GlobalStyle() {
           border-spacing: 0;
         }
 
+        /* FONTS */
+
+        @font-face {
+          font-family: 'Monument Grotesk';
+          src: url('../../../static/fonts/monument/MonumentGrotesk-Regular.eot');
+          src: local('Monument Grotesk Regular'),
+            local('../../../static/fonts/monument/MonumentGrotesk-Regular'),
+            url('../../../static/fonts/monument/MonumentGrotesk-Regular.eot?#iefix')
+              format('embedded-opentype'),
+            url('../../../static/fonts/monument/MonumentGrotesk-Regular.woff2')
+              format('woff2'),
+            url('../../../static/fonts/monument/MonumentGrotesk-Regular.woff')
+              format('woff'),
+            url('../../../static/fonts/monument/MonumentGrotesk-Regular.ttf')
+              format('truetype');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+        }
+
+        @font-face {
+          font-family: 'Monument Grotesk Bold';
+          src: url('../../../static/fonts/monument/MonumentGrotesk-Bold.eot');
+          src: local('Monument Grotesk Bold'), local('MonumentGrotesk-Bold'),
+            url('../../../static/fonts/monument/MonumentGrotesk-Bold.eot?#iefix')
+              format('embedded-opentype'),
+            url('../../../static/fonts/monument/MonumentGrotesk-Bold.woff2')
+              format('woff2'),
+            url('../../../static/fonts/monument/MonumentGrotesk-Bold.woff')
+              format('woff'),
+            url('../../../static/fonts/monument/MonumentGrotesk-Bold.ttf')
+              format('truetype');
+          font-weight: bold;
+          font-style: normal;
+          font-display: swap;
+        }
+
         body {
-          background: ${theme.bg.main};
-          color: ${theme.colors.main};
-          font-size: 24px;
-          font-family: ${theme.fonts.main};
           min-height: 100vh;
 
-          ${mediaQueries.tabletLandscape} {
-            font-size: 22px;
-          }
+          background: ${theme.bg.main};
+          color: ${theme.colors.main};
+
+          font-family: ${theme.fonts.main};
+          font-size: 0.972vw;
+          font-size: clamp(1.2rem, 0.972vw, 2.8rem);
+          font-style: normal;
+
+          line-height: 1.389vw;
+          letter-spacing: 0.02em;
 
           ${mediaQueries.tabletLandscape} {
-            font-size: 18px;
+          }
+
+          ${mediaQueries.mobile} {
+            /* font-size: 3.889vw;
+            line-height: 5.833vw; */
           }
         }
 
@@ -154,6 +198,10 @@ export default function GlobalStyle() {
           color: ${theme.colors.secondary};
           text-decoration: none;
           transition: color 0.3s ease-in-out;
+        }
+
+        #app {
+          visibility: hidden;
         }
 
         /* HELPERS */

@@ -35,16 +35,17 @@ const BlockMaintTitle = ({ tl, homeAnimation }) => {
 
   return (
     <MainTitle as="h1">
-      <span className="hide-text">
+      Développeur Web à Toulouse.
+      {/* <span className="hide-text">
         <span className="d-block" ref={refTitle1}>
-          Développeur
+ 
         </span>
       </span>
       <span className="hide-text">
         <span className="d-block" ref={refTitle2}>
-          front-end à Toulouse.
+          
         </span>
-      </span>
+      </span> */}
     </MainTitle>
   )
 }
