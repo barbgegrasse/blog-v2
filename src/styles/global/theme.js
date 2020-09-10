@@ -15,8 +15,8 @@ const theme = {
     primary: '#576370',
   },
   fonts: {
-    main: "'Roboto Mono', serif",
-    title: "'IBM Plex Mono', serif",
+    main: "'Monument Grotesk', serif",
+    title: "'Monument Grotesk Bold', serif",
   },
   maxWidth: '90%',
   maxWidthContent: '980px',

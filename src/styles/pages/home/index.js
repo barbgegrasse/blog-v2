@@ -27,12 +27,7 @@ const GridHome = styled('section')`
   h1 {
     margin-bottom: 1em;
     text-align: left;
-    color: ${theme.colors.primary};
-    font-size: 2.5em;
-    line-height: 1.5;
     font-family: ${theme.fonts.title};
-    font-weight: 200;
-    font-style: italic;
   }
 
   p {

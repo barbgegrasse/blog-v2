@@ -3,7 +3,7 @@ const category = require('./src/schemas/category.json')
 
 module.exports = {
   siteMetadata: {
-    title: `Johan Petrikovsky`,
+    title: `Johan Petrikovsky développeur web à Toulouse`,
     description: `Site internet de Johan Petrikovsky, développeur front-end à Toulouse.`,
     author: `@kovskyD`,
     siteUrl: `https://www.developpeur-web.tech`,
@@ -11,26 +11,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-emotion`,
     'gatsby-plugin-sitemap',
-    `gatsby-plugin-preload-fonts`,
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `IBM Plex Mono`,
-            variants: [`200`, `400`],
-          },
-        ],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Roboto Mono:400'],
-        },
-      },
-    },
     {
       resolve: '@willthevideoman/gatsby-plugin-ackee-tracker',
       options: {
