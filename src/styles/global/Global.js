@@ -136,56 +136,6 @@ export default function GlobalStyle() {
 
         /* FONTS */
 
-        /* @font-face {
-          font-family: 'Monument Grotesk';
-          src: url('../../../static/fonts/monument/MonumentGrotesk-Regular.eot');
-          src: local('Monument Grotesk Regular'),
-            local('../../../static/fonts/monument/MonumentGrotesk-Regular'),
-            url('../../../static/fonts/monument/MonumentGrotesk-Regular.eot?#iefix')
-              format('embedded-opentype'),
-            url('../../../static/fonts/monument/MonumentGrotesk-Regular.woff2')
-              format('woff2'),
-            url('../../../static/fonts/monument/MonumentGrotesk-Regular.woff')
-              format('woff'),
-            url('../../../static/fonts/monument/MonumentGrotesk-Regular.ttf')
-              format('truetype');
-          font-weight: normal;
-          font-style: normal;
-          font-display: swap;
-        } */
-        /* 
-        @font-face {
-          font-family: 'Monument Grotesk Bold';
-          src: url('../../../static/fonts/monument/MonumentGrotesk-Bold.eot');
-          src: local('Monument Grotesk Bold'), local('MonumentGrotesk-Bold'),
-            url('../../../static/fonts/monument/MonumentGrotesk-Bold.eot?#iefix')
-              format('embedded-opentype'),
-            url('../../../static/fonts/monument/MonumentGrotesk-Bold.woff2')
-              format('woff2'),
-            url('../../../static/fonts/monument/MonumentGrotesk-Bold.woff')
-              format('woff'),
-            url('../../../static/fonts/monument/MonumentGrotesk-Bold.ttf')
-              format('truetype');
-          font-weight: bold;
-          font-style: normal;
-          font-display: swap;
-        } */
-        /* 
-        @font-face {
-          font-family: 'MTTMilano-UltraBold';
-          src: url('//db.onlinewebfonts.com/t/dc085b992551ffb9efd9a0adb99a7918.eot');
-          src: url('//db.onlinewebfonts.com/t/dc085b992551ffb9efd9a0adb99a7918.eot?#iefix')
-              format('embedded-opentype'),
-            url('//db.onlinewebfonts.com/t/dc085b992551ffb9efd9a0adb99a7918.woff2')
-              format('woff2'),
-            url('//db.onlinewebfonts.com/t/dc085b992551ffb9efd9a0adb99a7918.woff')
-              format('woff'),
-            url('//db.onlinewebfonts.com/t/dc085b992551ffb9efd9a0adb99a7918.ttf')
-              format('truetype'),
-            url('//db.onlinewebfonts.com/t/dc085b992551ffb9efd9a0adb99a7918.svg#MTTMilano-UltraBold')
-              format('svg');
-        } */
-
         @font-face {
           font-family: 'Gilroy';
           src: url('//db.onlinewebfonts.com/t/1dc8ecd8056a5ea7aa7de1db42b5b639.eot');
@@ -212,6 +162,21 @@ export default function GlobalStyle() {
             url('//db.onlinewebfonts.com/t/1064f0ad1cb65fdab43bb592ddd8aa91.ttf')
               format('truetype'),
             url('//db.onlinewebfonts.com/t/1064f0ad1cb65fdab43bb592ddd8aa91.svg#Gilroy-Bold')
+              format('svg');
+        }
+
+        @font-face {
+          font-family: 'Druk Wide Bold';
+          src: url('//db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.eot');
+          src: url('//db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.eot?#iefix')
+              format('embedded-opentype'),
+            url('//db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.woff2')
+              format('woff2'),
+            url('//db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.woff')
+              format('woff'),
+            url('//db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.ttf')
+              format('truetype'),
+            url('//db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.svg#Druk Wide Bold')
               format('svg');
         }
 

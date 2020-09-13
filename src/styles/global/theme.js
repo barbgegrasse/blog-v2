@@ -16,6 +16,7 @@ const theme = {
   fonts: {
     main: "Gilroy, 'Helvetica Neue',Helvetica,Arial,sans-serif",
     title: "'Gilroy-Bold'",
+    // title: "'Druk Wide Bold'",
   },
   maxWidth: '90%',
   maxWidthContent: '980px',
