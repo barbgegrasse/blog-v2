@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
 import { BlogGrid } from '../styles/components/blog/listing'
-import { MainTitle } from '../styles/tags/title'
+import { MainTitle } from '../styles/common/title'
 import PostCard from '../components/blog/PostCard'
 
 const BlogPage = ({ data }) => {
