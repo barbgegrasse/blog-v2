@@ -35,23 +35,22 @@ const IndexPage = () => {
             />
 
             <GridHome>
-              <div className="left-col">
-                <BlockMaintTitle
-                  style={{
-                    position: 'relative',
-                    transform: `translate3d(0, ${context.scrollPosition /
-                      2}px, 0)`,
-                  }}
-                  homeAnimation={homeAnimation}
-                  tl={tl}
-                />
+              <div
+                className="left-col"
+                style={{
+                  position: 'relative',
+                  transform: `translate3d(0, ${context.scrollPosition /
+                    4}px, 0)`,
+                }}
+              >
+                <BlockMaintTitle homeAnimation={homeAnimation} tl={tl} />
               </div>
               <div
                 className="right-col"
                 style={{
                   position: 'relative',
                   transform: `translate3d(0, ${context.scrollPosition /
-                    4}px, 0)`,
+                    2}px, 0)`,
                 }}
               >
                 <ImgJohanPetrikovsky />
