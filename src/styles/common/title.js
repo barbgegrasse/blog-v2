@@ -11,7 +11,6 @@ const MainTitle = styled('h1')`
 
   .highlight {
     display: block;
-    color: ${theme.colors.primary};
   }
   .toulouse {
     font-size: 3.5vw;

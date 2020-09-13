@@ -33,7 +33,6 @@ const IndexPage = () => {
               title="Développeur Web à Toulouse - Johan Petrikovsky."
               description="Développeur web depuis 8ans basé à Toulouse. J'apprécie travailler avec React, GatsbyJS, et GSAP"
             />
-
             <GridHome>
               <div
                 className="left-col"
@@ -57,6 +56,14 @@ const IndexPage = () => {
                 {/* <BlockIllu homeAnimation={homeAnimation} tl={tl} /> */}
               </div>
             </GridHome>
+            <div
+              style={{
+                position: 'relative',
+                transform: `translate3d(0, ${context.scrollPosition / 2}px, 0)`,
+              }}
+            >
+              <BlockPresentation homeAnimation={homeAnimation} tl={tl} />
+            </div>
           </Layout>
         </>
       )}

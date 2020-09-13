@@ -31,8 +31,6 @@ const Image = ({ src, alt }) => (
         return null
       }
 
-      console.info(image.node)
-
       const imageSizes = image.node.childImageSharp.sizes
       return (
         <Img

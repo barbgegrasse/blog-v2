@@ -1,18 +1,24 @@
 import PropTypes from 'prop-types'
 import React, { useRef, useEffect } from 'react'
-import { Expo } from 'gsap'
-import SplitText from 'gsap/SplitText'
+import { gsap } from 'gsap'
+// import SplitText from 'gsap/SplitText'
 import { SubTitle } from '../../styles/pages/home/index'
 import { MainTitle } from '../../styles/common/title'
+
+// TypeError: Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'
+if (typeof window !== 'undefined') {
+  // gsap.registerPlugin(SplitText)
+}
 
 const BlockMainTitle = ({ tl, homeAnimation }) => {
   const refJob = useRef(null)
   const refTitle2 = useRef(null)
 
-  console.info('test')
   useEffect(() => {
-    const split = new SplitText(refJob)
-    console.info(split, refJob)
+    // if (typeof window !== 'undefined') {
+    //   const split = new SplitText(refJob)
+    //   console.info(split, refJob)
+    // }
     // if (homeAnimation) {
     // tl.current.from(
     //   refJob.current,
