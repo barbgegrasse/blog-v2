@@ -165,21 +165,6 @@ export default function GlobalStyle() {
               format('svg');
         }
 
-        @font-face {
-          font-family: 'Druk Wide Bold';
-          src: url('//db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.eot');
-          src: url('//db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.eot?#iefix')
-              format('embedded-opentype'),
-            url('//db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.woff2')
-              format('woff2'),
-            url('//db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.woff')
-              format('woff'),
-            url('//db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.ttf')
-              format('truetype'),
-            url('//db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.svg#Druk Wide Bold')
-              format('svg');
-        }
-
         body {
           background: ${theme.bg.main};
           color: ${theme.colors.main};
@@ -233,6 +218,10 @@ export default function GlobalStyle() {
           display: block;
           overflow: hidden;
           line-height: 1;
+        }
+
+        .clr-second {
+          color: ${theme.colors.secondary};
         }
       `}
     />

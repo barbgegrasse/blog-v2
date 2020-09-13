@@ -6,7 +6,7 @@ export const myContext = React.createContext()
 const ProviderComponent = ({ children }) => {
   const [homeAnimation, setHomeAnimation] = useState(true)
   const [scrollPosition, setScrollPosition] = useState(0)
-  const [damping, setdamping] = useState(0.3) // Set scroll harschness
+  const [damping, setdamping] = useState(0.2) // Set scroll harschness
 
   return (
     <myContext.Provider
