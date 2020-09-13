@@ -2,38 +2,108 @@ import styled from '@emotion/styled'
 import theme from '../../global/theme'
 import mediaQueries from '../../global/mediaQueries'
 
-const Logo = styled('p')`
-  font-size: 16px;
-  font-weight: 200;
-`
-
-const HeaderBg = styled('header')`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 900;
-`
-
 const WrapperHeader = styled('div')`
+  z-index: 990;
+  position: fixed;
+  top: 32px;
+  left: 32px;
+
+  width: calc(100% - 64px);
+  padding: 0 0 0 88px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: ${theme.maxWidth};
+
+  height: 88px;
+
   margin-left: auto;
   margin-right: auto;
 
-  nav a {
-    color: ${theme.colors.main};
-    margin-left: 20px;
-    &:first-of-type {
-      margin-left: 0;
+  mix-blend-mode: exclusion;
+  nav {
+    display: flex;
+    flex-grow: 1;
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      flex-grow: 1;
+      li {
+        margin-right: 32px;
+      }
     }
-    &:hover {
-      color: ${theme.colors.secondary};
+    a {
+      color: ${theme.colors.main};
+      margin-left: 20px;
+      &:first-of-type {
+        margin-left: 0;
+      }
+      &:hover {
+        color: ${theme.colors.secondary};
+      }
     }
   }
 `
 
-export { WrapperHeader, HeaderBg, Logo }
+const LogoWrapper = styled('div')`
+  width: 88px;
+  height: 88px;
+  svg {
+    fill: #fff;
+  }
+`
+
+const LineWrapper = styled('div')`
+  z-index: 990;
+  mix-blend-mode: exclusion;
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  bottom: 32px;
+  left: 32px;
+  pointer-events: none;
+`
+const Line = styled('span')`
+  position: absolute;
+  display: block;
+
+  background: #7d7d7d;
+  &.horizontal1 {
+    width: 100%;
+    height: 1px;
+    top: 0;
+    left: 0;
+  }
+  &.horizontal2 {
+    width: 100%;
+    height: 32px;
+    top: 88px;
+    left: 0;
+    background-color: #fff;
+  }
+  &.close1 {
+    top: 0%;
+    right: 0;
+    width: 1px;
+    height: 88px;
+  }
+
+  &.vertical1 {
+    height: 100%;
+    width: 1px;
+    top: 0;
+    left: 0;
+  }
+  &.vertical2 {
+    height: 100%;
+    width: 1px;
+    top: 0;
+    left: 88px;
+  }
+  &.close2 {
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 88px;
+  }
+`
+
+export { WrapperHeader, Line, LineWrapper, LogoWrapper }

@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types'
 import React, { useRef, useEffect } from 'react'
 import { Expo } from 'gsap'
-import { MainTitle } from '../../styles/tags/title'
+import { SubTitle } from '../../styles/pages/home/index'
+import { MainTitle } from '../../styles/common/title'
 
-const BlockMaintTitle = ({ tl, homeAnimation }) => {
+const BlockMainTitle = ({ tl, homeAnimation }) => {
   const refTitle1 = useRef(null)
   const refTitle2 = useRef(null)
 
@@ -34,9 +35,11 @@ const BlockMaintTitle = ({ tl, homeAnimation }) => {
   })
 
   return (
-    <MainTitle as="h1">
-      Développeur Web à Toulouse.
-      {/* <span className="hide-text">
+    <>
+      <SubTitle>Johan Petrikovsky</SubTitle>
+      <MainTitle as="h1">
+        Développeur <span>Web</span>à Toulouse.
+        {/* <span className="hide-text">
         <span className="d-block" ref={refTitle1}>
  
         </span>
@@ -46,13 +49,14 @@ const BlockMaintTitle = ({ tl, homeAnimation }) => {
           
         </span>
       </span> */}
-    </MainTitle>
+      </MainTitle>
+    </>
   )
 }
 
-BlockMaintTitle.propTypes = {
+BlockMainTitle.propTypes = {
   homeAnimation: PropTypes.bool.isRequired,
   tl: PropTypes.object.isRequired,
 }
 
-export default BlockMaintTitle
+export default BlockMainTitle

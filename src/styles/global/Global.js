@@ -136,7 +136,7 @@ export default function GlobalStyle() {
 
         /* FONTS */
 
-        @font-face {
+        /* @font-face {
           font-family: 'Monument Grotesk';
           src: url('../../../static/fonts/monument/MonumentGrotesk-Regular.eot');
           src: local('Monument Grotesk Regular'),
@@ -152,8 +152,8 @@ export default function GlobalStyle() {
           font-weight: normal;
           font-style: normal;
           font-display: swap;
-        }
-
+        } */
+        /* 
         @font-face {
           font-family: 'Monument Grotesk Bold';
           src: url('../../../static/fonts/monument/MonumentGrotesk-Bold.eot');
@@ -169,11 +169,53 @@ export default function GlobalStyle() {
           font-weight: bold;
           font-style: normal;
           font-display: swap;
+        } */
+        /* 
+        @font-face {
+          font-family: 'MTTMilano-UltraBold';
+          src: url('//db.onlinewebfonts.com/t/dc085b992551ffb9efd9a0adb99a7918.eot');
+          src: url('//db.onlinewebfonts.com/t/dc085b992551ffb9efd9a0adb99a7918.eot?#iefix')
+              format('embedded-opentype'),
+            url('//db.onlinewebfonts.com/t/dc085b992551ffb9efd9a0adb99a7918.woff2')
+              format('woff2'),
+            url('//db.onlinewebfonts.com/t/dc085b992551ffb9efd9a0adb99a7918.woff')
+              format('woff'),
+            url('//db.onlinewebfonts.com/t/dc085b992551ffb9efd9a0adb99a7918.ttf')
+              format('truetype'),
+            url('//db.onlinewebfonts.com/t/dc085b992551ffb9efd9a0adb99a7918.svg#MTTMilano-UltraBold')
+              format('svg');
+        } */
+
+        @font-face {
+          font-family: 'Gilroy';
+          src: url('//db.onlinewebfonts.com/t/1dc8ecd8056a5ea7aa7de1db42b5b639.eot');
+          src: url('//db.onlinewebfonts.com/t/1dc8ecd8056a5ea7aa7de1db42b5b639.eot?#iefix')
+              format('embedded-opentype'),
+            url('//db.onlinewebfonts.com/t/1dc8ecd8056a5ea7aa7de1db42b5b639.woff2')
+              format('woff2'),
+            url('//db.onlinewebfonts.com/t/1dc8ecd8056a5ea7aa7de1db42b5b639.woff')
+              format('woff'),
+            url('//db.onlinewebfonts.com/t/1dc8ecd8056a5ea7aa7de1db42b5b639.ttf')
+              format('truetype'),
+            url('//db.onlinewebfonts.com/t/1dc8ecd8056a5ea7aa7de1db42b5b639.svg#Gilroy')
+              format('svg');
+        }
+        @font-face {
+          font-family: 'Gilroy-Bold';
+          src: url('//db.onlinewebfonts.com/t/1064f0ad1cb65fdab43bb592ddd8aa91.eot');
+          src: url('//db.onlinewebfonts.com/t/1064f0ad1cb65fdab43bb592ddd8aa91.eot?#iefix')
+              format('embedded-opentype'),
+            url('//db.onlinewebfonts.com/t/1064f0ad1cb65fdab43bb592ddd8aa91.woff2')
+              format('woff2'),
+            url('//db.onlinewebfonts.com/t/1064f0ad1cb65fdab43bb592ddd8aa91.woff')
+              format('woff'),
+            url('//db.onlinewebfonts.com/t/1064f0ad1cb65fdab43bb592ddd8aa91.ttf')
+              format('truetype'),
+            url('//db.onlinewebfonts.com/t/1064f0ad1cb65fdab43bb592ddd8aa91.svg#Gilroy-Bold')
+              format('svg');
         }
 
         body {
-          min-height: 100vh;
-
           background: ${theme.bg.main};
           color: ${theme.colors.main};
 
@@ -182,7 +224,6 @@ export default function GlobalStyle() {
           font-size: clamp(1.2rem, 0.972vw, 2.8rem);
           font-style: normal;
 
-          line-height: 1.389vw;
           letter-spacing: 0.02em;
 
           ${mediaQueries.tabletLandscape} {

@@ -5,7 +5,6 @@ import mediaQueries from '../../global/mediaQueries'
 const GridHome = styled('section')`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 100%;
 
   ${mediaQueries.mobile} {
     grid-template-columns: 1fr;
@@ -15,7 +14,9 @@ const GridHome = styled('section')`
   .left-col {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+
+    min-height: calc(100vh - 270px);
   }
 
   .right-col {
@@ -25,7 +26,7 @@ const GridHome = styled('section')`
   }
 
   h1 {
-    margin-bottom: 1em;
+    margin-bottom: 64px;
     text-align: left;
     font-family: ${theme.fonts.title};
   }
@@ -37,4 +38,19 @@ const GridHome = styled('section')`
   }
 `
 
-export { GridHome }
+const SubTitle = styled('div')`
+  margin-bottom: 64px;
+  position: relative;
+  letter-spacing: 0.08em;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 2px;
+    margin-top: 32px;
+    background-color: ${theme.border.primary};
+  }
+`
+
+export { GridHome, SubTitle }

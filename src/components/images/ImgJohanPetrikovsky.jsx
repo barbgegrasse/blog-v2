@@ -1,6 +1,13 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import styled from '@emotion/styled'
+
+const ImageWrapper = styled('div')`
+  position: absolute;
+  top: -64px;
+  width: min(628px, 100%);
+`
 
 const ImgJohanPetrikovsky = () => {
   const data = useStaticQuery(graphql`
@@ -16,11 +23,11 @@ const ImgJohanPetrikovsky = () => {
       }
     }
   `)
-  console.info(data)
+
   return (
-    <div style={{ width: 'min(628px,100%)' }}>
+    <ImageWrapper>
       <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-    </div>
+    </ImageWrapper>
   )
 }
 
