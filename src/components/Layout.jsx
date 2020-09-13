@@ -1,39 +1,52 @@
-import React, { useRef, useEffect } from 'react'
-import gsap from 'gsap'
-
 import PropTypes from 'prop-types'
+import React, { useRef, useEffect, useContext } from 'react'
+import gsap from 'gsap'
+import Scrollbar from 'react-smooth-scrollbar'
+
+import { myContext } from '../../provider'
 import GlobalStyle from '../styles/global/Global'
 import Header from './Header'
-import {
-  MainContainer,
-  GlobalWrapper,
-  FooterWrapper,
-} from '../styles/global/layout'
+import { MainContainer, GlobalWrapper } from '../styles/global/layout'
 
 const Layout = ({ children }) => {
-  const refApp = useRef(null)
+  let refApp = useRef(null)
 
   // memoise the inital timeline in a ref so it doesnt get recreated each render.
   const { current: tl } = useRef(gsap.timeline({ paused: true }))
 
   useEffect(() => {
-    tl.to('#app', {
+    tl.to(refApp, {
       visibility: 'visible',
     })
     tl.play()
   })
 
   return (
-    <GlobalWrapper id="app">
-      <GlobalStyle />
-      <Header />
-      <MainContainer className="max-container">{children}</MainContainer>
-      <FooterWrapper className="max-container">
-        © {new Date().getFullYear()}, Construit avec passion
-        <a href="https://www.gatsbyjs.org"> Gatsby</a> et{' '}
-        <a href="https://prismic.io/">Prismic</a>
-      </FooterWrapper>
-    </GlobalWrapper>
+    <myContext.Consumer>
+      {context => (
+        <>
+          <Header />
+          <Scrollbar
+            onScroll={(status, data) => {
+              context.updateScroll(data.offset.y)
+            }}
+            damping={0.05}
+          >
+            <div style={{ maxHeight: '100vh' }}>
+              <GlobalWrapper
+                ref={element => {
+                  refApp = element
+                }}
+              >
+                <GlobalStyle />
+
+                <MainContainer>{children}</MainContainer>
+              </GlobalWrapper>
+            </div>
+          </Scrollbar>
+        </>
+      )}
+    </myContext.Consumer>
   )
 }
 

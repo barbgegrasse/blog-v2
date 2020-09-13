@@ -1,9 +1,14 @@
 import styled from '@emotion/styled'
 import mediaQueries from './mediaQueries'
 
+const GlobalWrapper = styled('div')`
+  min-height: 100vh;
+  visibility: hidden;
+  padding: 120px 0 0 120px;
+`
+
 const MainContainer = styled('main')`
-  /* padding-top: 80px; */
-  flex-grow: 1;
+  padding: 120px 0 0 64px;
   ${mediaQueries.tabletLandscape} {
     padding-top: 40px;
   }
@@ -12,19 +17,4 @@ const MainContainer = styled('main')`
   }
 `
 
-const GlobalWrapper = styled('div')`
-  display: grid;
-  grid-template-rows: 100px auto 100px;
-  min-height: 100vh;
-
-  ${mediaQueries.mobile} {
-    grid-template-rows: 60px auto 100px;
-  }
-`
-
-const FooterWrapper = styled('footer')`
-  margin-top: 2em;
-  margin-bottom: 1em;
-`
-
-export { MainContainer, GlobalWrapper, FooterWrapper }
+export { MainContainer, GlobalWrapper }

@@ -10,6 +10,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-emotion`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        include: /assets/,
+      },
+    },
     'gatsby-plugin-sitemap',
     {
       resolve: '@willthevideoman/gatsby-plugin-ackee-tracker',
