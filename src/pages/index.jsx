@@ -5,7 +5,6 @@ import SEO from '../components/seo'
 import Layout from '../components/Layout'
 import BlockMaintTitle from '../components/home/MainTitle'
 import BlockPresentation from '../components/home/BlockPresentation'
-import BlockIllu from '../components/home/BlockIllu'
 import ImgJohanPetrikovsky from '../components/images/ImgJohanPetrikovsky'
 
 import { GridHome } from '../styles/pages/home/index'
@@ -31,16 +30,42 @@ const IndexPage = () => {
           {/* <Overlay tl={tl} homeAnimation={  homeAnimation} /> */}
           <Layout>
             <SEO
-              title="Johan Petrikovsky Développeur web à toulouse"
+              title="Développeur Web à Toulouse - Johan Petrikovsky."
               description="Développeur web depuis 8ans basé à Toulouse. J'apprécie travailler avec React, GatsbyJS, et GSAP"
             />
 
             <GridHome>
               <div className="left-col">
-                <BlockMaintTitle homeAnimation={homeAnimation} tl={tl} />
-                {/* <BlockPresentation homeAnimation={homeAnimation} tl={tl} /> */}
+                <BlockMaintTitle
+                  style={{
+                    position: 'relative',
+                    transform: `translate3d(0, ${context.scrollPosition /
+                      2}px, 0)`,
+                  }}
+                  homeAnimation={homeAnimation}
+                  tl={tl}
+                />
+              </div>
+              <div
+                className="right-col"
+                style={{
+                  position: 'relative',
+                  transform: `translate3d(0, ${context.scrollPosition /
+                    4}px, 0)`,
+                }}
+              >
+                <ImgJohanPetrikovsky />
+                {/* <BlockIllu homeAnimation={homeAnimation} tl={tl} /> */}
+              </div>
+            </GridHome>
+          </Layout>
+        </>
+      )}
+    </myContext.Consumer>
+  )
+}
 
-                {/* <p>
+/* <p>
                   Après avoir collaboré pendant 7 ans comme développeur web avec
                   des agences de communication, j’ai pu mettre en oeuvre mes
                   compétences sur plus d’une cinquantaine de projets web (sites
@@ -55,24 +80,6 @@ const IndexPage = () => {
                   suis donc êxtrêmement sensible à tout les sujets annexes qui
                   gravitent autour du développement : gestion de projets, S.E.O.
                   , S.E.A, U.X., design.
-                </p> */}
-              </div>
-              <div
-                className="right-col"
-                style={{
-                  position: 'relative',
-                  // top: (context.scrollPosition / 25) * -1 + 50,
-                }}
-              >
-                <ImgJohanPetrikovsky />
-                <BlockIllu homeAnimation={homeAnimation} tl={tl} />
-              </div>
-            </GridHome>
-          </Layout>
-        </>
-      )}
-    </myContext.Consumer>
-  )
-}
+                </p> */
 
 export default IndexPage

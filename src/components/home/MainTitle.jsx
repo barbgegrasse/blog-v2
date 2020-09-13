@@ -38,7 +38,8 @@ const BlockMainTitle = ({ tl, homeAnimation }) => {
     <>
       <SubTitle>Johan Petrikovsky</SubTitle>
       <MainTitle as="h1">
-        Développeur <span>Web</span>à Toulouse.
+        <span className="highlight">Développeur Web</span>
+        <span className="toulouse">à Toulouse</span>
         {/* <span className="hide-text">
         <span className="d-block" ref={refTitle1}>
  

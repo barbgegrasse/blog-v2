@@ -8,12 +8,14 @@ const MainTitle = styled('h1')`
   text-align: center;
   font-size: 4.8vw;
   line-height: 1;
-  font-style: italic;
 
-  span {
+  .highlight {
     display: block;
-    text-transform: uppercase;
     color: ${theme.colors.primary};
+  }
+  .toulouse {
+    font-size: 3.5vw;
+    font-family: ${theme.fonts.main};
   }
 `
 
