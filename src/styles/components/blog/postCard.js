@@ -35,7 +35,7 @@ const PostCardContainer = styled('div')`
 const PostCategory = styled('h3')`
   font-weight: lighter;
   text-transform: uppercase;
-  color: ${theme.colors.light};
+  color: ${theme.colors.secondary};
 `
 
 const PostTitle = styled('h2')`

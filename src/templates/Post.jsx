@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useContext } from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import PostSlices from '../components/blog/PostSlices'
@@ -7,8 +7,12 @@ import { MainTitle } from '../styles/common/title'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
 import { ArticleContainer } from '../styles/components/blog/postSlices'
+import { myContext } from '../../provider'
 
 const Post = ({ data: { prismicPost } }) => {
+  const contextValues = useContext(myContext)
+  contextValues.updateDamping(1) // Update scroll harschness
+
   const handleHeroImage = () => {
     if (prismicPost.data.post_hero_image.localFile.childImageSharp) {
       return (
@@ -32,7 +36,7 @@ const Post = ({ data: { prismicPost } }) => {
 
     return (
       <img
-        alt={prismicPost.data.post_hero_image}
+        alt={prismicPost.data.post_hero_image.alt}
         style={{
           display: 'block',
           marginRight: 'auto',

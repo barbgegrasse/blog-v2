@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
             onScroll={(status, data) => {
               context.updateScroll(data.offset.y)
             }}
-            damping={0.05}
+            damping={1}
           >
             <div style={{ maxHeight: '100vh' }}>
               <GlobalWrapper
