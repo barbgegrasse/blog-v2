@@ -1,6 +1,10 @@
 const post = require('./src/schemas/post.json')
 const category = require('./src/schemas/category.json')
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Johan Petrikovsky développeur web à Toulouse`,
@@ -34,8 +38,8 @@ module.exports = {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: 'kovsky-blog',
-        // accessToken: `${process.env.API_KEY}`,
-        accessToken: `MC5YYXhab1JJQUFDTUF4Qm0y.VO-_ve-_vS3vv73vv70BN--_ve-_ve-_vTHvv70M77-977-9GRtVDxNp77-9W3vvv70lSO-_vUFb77-9`,
+        accessToken: `${process.env.API_KEY}`,
+        // accessToken: `MC5YYXhab1JJQUFDTUF4Qm0y.VO-_ve-_vS3vv73vv70BN--_ve-_ve-_vTHvv70M77-977-9GRtVDxNp77-9W3vvv70lSO-_vUFb77-9`,
         // Get the correct URLs in blog posts
         linkResolver: () => blogpost => `/${blogpost.uid}`,
         lang: 'fr-fr',
@@ -69,6 +73,6 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
   ],
 }
