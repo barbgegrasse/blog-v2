@@ -1,56 +1,104 @@
 import PropTypes from 'prop-types'
 import React, { useRef, useEffect } from 'react'
-import { gsap } from 'gsap'
-// import SplitText from 'gsap/SplitText'
+import { gsap, Power3 } from 'gsap'
+import SplitText from 'gsap/SplitText'
 import { SubTitle } from '../../styles/pages/home/index'
 import { MainTitle } from '../../styles/common/title'
 
 // TypeError: Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'
-if (typeof window !== 'undefined') {
-  // gsap.registerPlugin(SplitText)
-}
+// https://greensock.com/forums/topic/20512-drawsvg-build-failed-gatsby/
+// if (typeof window !== 'undefined') {
+//   gsap.registerPlugin(SplitText)
+// }
 
 const BlockMainTitle = ({ tl, homeAnimation }) => {
   const refJob = useRef(null)
-  const refTitle2 = useRef(null)
+  const refName = useRef(null)
+  const refTown = useRef(null)
+
+  const timelineSettings = {
+    staggerValue: 0.014,
+    charsDuration: 0.5,
+  }
 
   useEffect(() => {
-    // if (typeof window !== 'undefined') {
-    //   const split = new SplitText(refJob)
-    //   console.info(split, refJob)
-    // }
-    // if (homeAnimation) {
-    // tl.current.from(
-    //   refJob.current,
-    //   1,
-    //   {
-    //     opacity: 0,
-    //     y: '50%',
-    //     ease: Expo.easeInOut,
-    //   },
-    //   '-=0.8'
-    // )
-    // tl.current.from(
-    //   refTitle2.current,
-    //   1,
-    //   {
-    //     opacity: 0,
-    //     y: '50%',
-    //     ease: Expo.easeInOut,
-    //   },
-    //   '-=0.8'
-    // )
-    // }
-  })
+    // TypeError: Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'
+    if (typeof window !== 'undefined') {
+      gsap.registerPlugin(SplitText)
+
+      const splitJob = new SplitText(refJob.current, {
+        type: 'words,chars',
+        position: 'relative',
+      })
+      const charsJob = splitJob.chars
+
+      const splitName = new SplitText(refName.current, {
+        type: 'words,chars',
+        position: 'relative',
+      })
+      const charsName = splitName.chars
+
+      const splitTown = new SplitText(refTown.current, {
+        type: 'words,chars',
+        position: 'relative',
+      })
+      const charsTown = splitTown.chars
+
+      tl.current
+        .addLabel('splitName')
+        .staggerFrom(
+          charsName,
+          timelineSettings.charsDuration,
+          {
+            ease: 'Power3.easeInOut',
+            y: '+100%',
+            opacity: 0,
+            delay: 2,
+          },
+          timelineSettings.staggerValue
+        )
+        .addLabel('splitjob')
+        .staggerFrom(
+          charsJob,
+          timelineSettings.charsDuration,
+          {
+            ease: 'Power3.easeInOut',
+            y: '+100%',
+            opacity: 0,
+          },
+          timelineSettings.staggerValue,
+          '-=0.5'
+        )
+        .addLabel('splitTown')
+        .staggerFrom(
+          charsTown,
+          timelineSettings.charsDuration,
+          {
+            ease: 'Power3.easeInOut',
+            y: '+100%',
+            opacity: 0,
+          },
+          timelineSettings.staggerValue,
+          '-=0.5'
+        )
+        .addLabel('endTown')
+
+      // const { chars } = split
+      // console.info(chars)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>
-      <SubTitle>Johan Petrikovsky</SubTitle>
+      <SubTitle ref={refName}>Johan Petrikovsky</SubTitle>
       <MainTitle as="h1">
-        <span ref={refJob} className="highlight">
+        <div ref={refJob} className="highlight">
           Développeur Web
-        </span>
-        <span className="toulouse">à Toulouse</span>
+        </div>
+        <div ref={refTown} className="toulouse">
+          à Toulouse
+        </div>
         {/* <span className="hide-text">
         <span className="d-block" ref={refJob}>
  

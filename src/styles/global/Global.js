@@ -192,7 +192,7 @@ export default function GlobalStyle() {
         }
 
         #app {
-          visibility: hidden;
+          /* visibility: hidden; */
         }
 
         /* HELPERS */
