@@ -67,42 +67,48 @@ const Line = styled('span')`
 
   background: #7d7d7d;
   &.horizontal1 {
-    width: 100%;
+    width: 0;
     height: 1px;
+
     top: 0;
     left: 0;
   }
   &.horizontal2 {
-    width: 100%;
-    height: 32px;
+    width: 0;
+    height: 1px;
+
     top: 88px;
     left: 0;
     background-color: #fff;
   }
   &.close1 {
+    width: 1px;
+    height: 0px;
+
     top: 0%;
     right: 0;
-    width: 1px;
-    height: 88px;
   }
 
   &.vertical1 {
-    height: 100%;
     width: 1px;
+    height: 0%;
+
     top: 0;
     left: 0;
   }
   &.vertical2 {
-    height: 100%;
     width: 1px;
+    height: 0%;
+
     top: 0;
     left: 88px;
   }
   &.close2 {
+    height: 1px;
+    width: 0;
+
     bottom: 0;
     left: 0;
-    height: 1px;
-    width: 88px;
   }
 `
 

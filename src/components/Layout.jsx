@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
     <myContext.Consumer>
       {context => (
         <>
-          <Header />
+          <Header tl={tl} />
           <Scrollbar
             onScroll={(status, data) => {
               context.updateScroll(data.offset.y)

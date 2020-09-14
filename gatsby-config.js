@@ -7,7 +7,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Johan Petrikovsky développeur web à Toulouse`,
+    title: `Développeur Web à Toulouse.`,
     description: `Site internet de Johan Petrikovsky, développeur front-end à Toulouse.`,
     author: `@kovskyD`,
     siteUrl: `https://www.developpeur-web.tech`,
