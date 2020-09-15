@@ -27,15 +27,15 @@ const Header = ({ tl }) => {
 
   useEffect(() => {
     tl.addLabel('horizontalLineStart')
-      .to(refLineHorizontal1.current, {
-        width: '100%',
+      .from(refLineHorizontal1.current, {
+        width: '0',
         duration: 0.5,
         ease: Power3.easeInOut,
       })
       .to(
         refLineHorizontal2.current,
         {
-          width: '100%',
+          scaleX: '0',
           duration: 0.5,
         },
         'horizontalLineStart'
@@ -43,7 +43,7 @@ const Header = ({ tl }) => {
       .to(
         refLineVertical1.current,
         {
-          height: '100%',
+          height: '0',
           duration: 0.5,
         },
         'horizontalLineStart'
@@ -51,17 +51,17 @@ const Header = ({ tl }) => {
       .to(
         refLineVertical2.current,
         {
-          height: '100%',
+          scaleY: '0',
           duration: 0.6,
         },
         'horizontalLineStart'
       )
       .to(refLineClose1.current, {
-        height: '88px',
+        scaleY: '0',
         duration: 0.5,
       })
       .to(refLineClose2.current, {
-        width: '88px',
+        scaleX: '0',
         duration: 0.5,
       })
       .addLabel('finishLine')

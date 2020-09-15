@@ -54,7 +54,6 @@ const IndexPage = () => {
                 }}
               >
                 <ImgJohanPetrikovsky />
-                {/* <BlockIllu homeAnimation={homeAnimation} tl={tl} /> */}
               </div>
             </GridHome>
             <div

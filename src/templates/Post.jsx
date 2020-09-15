@@ -14,7 +14,7 @@ const Post = ({ data: { prismicPost } }) => {
   contextValues.updateDamping(1) // Update scroll harschness
 
   const handleHeroImage = () => {
-    if (prismicPost.data.post_hero_image.localFile.childImageSharp) {
+    if (prismicPost.data.post_hero_image?.localFile?.childImageSharp) {
       return (
         <Img
           alt={prismicPost.data.post_hero_image.alt}

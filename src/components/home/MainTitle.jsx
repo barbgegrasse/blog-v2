@@ -14,6 +14,7 @@ import { MainTitle } from '../../styles/common/title'
 const BlockMainTitle = ({ tl, homeAnimation }) => {
   const refJob = useRef(null)
   const refName = useRef(null)
+  const refSep = useRef(null)
   const refTown = useRef(null)
 
   const timelineSettings = {
@@ -45,6 +46,11 @@ const BlockMainTitle = ({ tl, homeAnimation }) => {
       const charsTown = splitTown.chars
 
       tl.current
+        .from(refSep.current, {
+          scaleX: 0,
+          delay: 0.5,
+          duration: 1.5,
+        })
         .addLabel('splitName')
         .staggerFrom(
           charsName,
@@ -91,7 +97,10 @@ const BlockMainTitle = ({ tl, homeAnimation }) => {
 
   return (
     <>
-      <SubTitle ref={refName}>Johan Petrikovsky</SubTitle>
+      <SubTitle ref={refName}>
+        Johan Petrikovsky
+        <span ref={refSep} className="sep" />
+      </SubTitle>
       <MainTitle as="h1">
         <div ref={refJob} className="highlight">
           Développeur Web
@@ -99,16 +108,6 @@ const BlockMainTitle = ({ tl, homeAnimation }) => {
         <div ref={refTown} className="toulouse">
           à Toulouse
         </div>
-        {/* <span className="hide-text">
-        <span className="d-block" ref={refJob}>
- 
-        </span>
-      </span>
-      <span className="hide-text">
-        <span className="d-block" ref={refTitle2}>
-          
-        </span>
-      </span> */}
       </MainTitle>
     </>
   )

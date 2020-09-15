@@ -43,8 +43,7 @@ const SubTitle = styled('div')`
   position: relative;
   letter-spacing: 0.08em;
 
-  &:after {
-    content: '';
+  .sep {
     display: block;
     width: 64px;
     height: 2px;

@@ -67,23 +67,23 @@ const Line = styled('span')`
 
   background: #7d7d7d;
   &.horizontal1 {
-    width: 0;
+    width: 100%;
     height: 1px;
 
     top: 0;
     left: 0;
   }
   &.horizontal2 {
-    width: 0;
+    width: 100%;
     height: 1px;
 
     top: 88px;
     left: 0;
-    background-color: #fff;
+    border: 1px solid #fff;
   }
   &.close1 {
     width: 1px;
-    height: 0px;
+    height: 88px;
 
     top: 0%;
     right: 0;
@@ -91,20 +91,20 @@ const Line = styled('span')`
 
   &.vertical1 {
     width: 1px;
-    height: 0%;
+    height: 100%;
 
     top: 0;
     left: 0;
   }
   &.vertical2 {
     width: 1px;
-    height: 0%;
+    height: 100%;
 
     top: 0;
     left: 88px;
   }
   &.close2 {
-    height: 1px;
+    height: 88px;
     width: 0;
 
     bottom: 0;
