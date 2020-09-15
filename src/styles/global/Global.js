@@ -133,6 +133,9 @@ export default function GlobalStyle() {
           border-collapse: collapse;
           border-spacing: 0;
         }
+        pre {
+          font-family: monospace;
+        }
 
         /* FONTS */
 
