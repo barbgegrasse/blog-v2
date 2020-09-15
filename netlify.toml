@@ -12,8 +12,9 @@
   for = "/*"
   [headers.values]
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; script-src-elem; script-src-attr; style-src 'self'; style-src-elem; style-src-attr; img-src 'self'; font-src 'self' data: db.onlinewebfonts.com; connect-src 'self'; media-src 'self'; object-src; prefetch-src; child-src; frame-src; worker-src; frame-ancestors; form-action; base-uri; manifest-src; plugin-types; report-uri; report-to"
+    Content-Security-Policy = "default-src data: 'unsafe-inline' 'unsafe-eval' https:; script-src data: 'unsafe-inline' 'unsafe-eval' https: blob:; style-src data: 'unsafe-inline' https:; img-src data: https: blob:; font-src data: https:; connect-src https: wss: blob:; media-src https: blob:; object-src https:; child-src https: data: blob:; form-action https:; block-all-mixed-content"
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer"
-    Feature-Policy = "microphone 'none'; geolocation 'none' ;"
+    Feature-Policy = "microphone 'none'; geolocation 'none'"
+    Permissions-Policy= "geolocation=(), microphone=()"
