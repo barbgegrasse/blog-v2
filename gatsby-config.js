@@ -15,18 +15,18 @@ module.exports = {
   plugins: [
     `gatsby-plugin-emotion`,
 
-    {
-      resolve: `gatsby-plugin-csp`,
-      options: {
-        mergeScriptHashes: false,
-        mergeStyleHashes: false, // you can disable styles sha256 hashes
-        directives: {
-          'script-src': `'self' 'unsafe-inline' `,
-          'style-src': "'self' 'unsafe-inline'",
-          'font-src': `'self' data: db.onlinewebfonts.com`,
-        },
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-csp`,
+    //   options: {
+    //     mergeScriptHashes: false,
+    //     mergeStyleHashes: false, // you can disable styles sha256 hashes
+    //     directives: {
+    //       'script-src': `'self' 'unsafe-inline' `,
+    //       'style-src': "'self' 'unsafe-inline'",
+    //       'font-src': `'self' data: db.onlinewebfonts.com`,
+    //     },
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
