@@ -136,6 +136,13 @@ export default function GlobalStyle() {
         pre {
           font-family: monospace;
         }
+        em {
+          display: inline-block;
+          background: #484852;
+          color: #d3ff64;
+          padding: 0.2em 0.5em;
+          clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+        }
 
         /* FONTS */
 
