@@ -139,9 +139,14 @@ export default function GlobalStyle() {
         em {
           display: inline-block;
           background: #484852;
-          color: #d3ff64;
+          color: #d7d7ea;
           padding: 0.2em 0.5em;
-          clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+          clip-path: polygon(
+            0.2em 0%,
+            100% 0%,
+            calc(100% - 0.2em) 100%,
+            0% 100%
+          );
         }
 
         /* FONTS */
