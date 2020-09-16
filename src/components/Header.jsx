@@ -17,7 +17,7 @@ import {
 gsap.registerPlugin(DrawSVGPlugin)
 
 const Header = ({ tl }) => {
-  console.info(tl)
+  const refLineWrapper = useRef(null)
   const refLineHorizontal1 = useRef(null)
   const refLineHorizontal2 = useRef(null)
   const refLineClose1 = useRef(null)
@@ -26,13 +26,16 @@ const Header = ({ tl }) => {
   const refLineClose2 = useRef(null)
 
   useEffect(() => {
+    tl.addLabel('VisibilityWrapperLine').set(refLineWrapper.current, {
+      visibility: 'visible',
+    })
     tl.addLabel('horizontalLineStart')
       .from(refLineHorizontal1.current, {
-        width: '0',
+        scaleX: '0',
         duration: 0.5,
         ease: Power3.easeInOut,
       })
-      .to(
+      .from(
         refLineHorizontal2.current,
         {
           scaleX: '0',
@@ -40,15 +43,15 @@ const Header = ({ tl }) => {
         },
         'horizontalLineStart'
       )
-      .to(
+      .from(
         refLineVertical1.current,
         {
-          height: '0',
+          scaleY: '0',
           duration: 0.5,
         },
         'horizontalLineStart'
       )
-      .to(
+      .from(
         refLineVertical2.current,
         {
           scaleY: '0',
@@ -56,11 +59,11 @@ const Header = ({ tl }) => {
         },
         'horizontalLineStart'
       )
-      .to(refLineClose1.current, {
+      .from(refLineClose1.current, {
         scaleY: '0',
         duration: 0.5,
       })
-      .to(refLineClose2.current, {
+      .from(refLineClose2.current, {
         scaleX: '0',
         duration: 0.5,
       })
@@ -70,7 +73,7 @@ const Header = ({ tl }) => {
 
   return (
     <>
-      <LineWrapper>
+      <LineWrapper ref={refLineWrapper}>
         <LogoWrapper>
           <Logo />
         </LogoWrapper>

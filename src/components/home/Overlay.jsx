@@ -7,7 +7,7 @@ const Overlay = ({ tl, homeAnimation }) => {
   const overlay1 = useRef(null)
   const overlay2 = useRef(null)
   const overlay3 = useRef(null)
-  console.info(homeAnimation)
+
   useEffect(() => {
     if (homeAnimation) {
       tl.current.to(overlay1.current, 1.5, {

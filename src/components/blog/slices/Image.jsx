@@ -8,7 +8,6 @@ const ImageWrapper = styled('div')`
 `
 
 export default function Image({ slice }) {
-  console.info(slice)
   return (
     <ImageWrapper>
       <Img

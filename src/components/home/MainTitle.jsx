@@ -48,8 +48,8 @@ const BlockMainTitle = ({ tl, homeAnimation }) => {
       tl.current
         .from(refSep.current, {
           scaleX: 0,
+          duration: 0.25,
           delay: 0.5,
-          duration: 1.5,
         })
         .addLabel('splitName')
         .staggerFrom(
@@ -59,7 +59,6 @@ const BlockMainTitle = ({ tl, homeAnimation }) => {
             ease: 'Power3.easeInOut',
             y: '+100%',
             opacity: 0,
-            delay: 2,
           },
           timelineSettings.staggerValue
         )
@@ -88,9 +87,6 @@ const BlockMainTitle = ({ tl, homeAnimation }) => {
           '-=0.5'
         )
         .addLabel('endTown')
-
-      // const { chars } = split
-      // console.info(chars)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
