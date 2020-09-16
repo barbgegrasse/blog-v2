@@ -50,7 +50,7 @@ const IndexContent = ({
 IndexContent.propTypes = {
   homeAnimation: PropTypes.bool.isRequired,
   timeline: PropTypes.string.isRequired,
-  tl: PropTypes.object.string.isRequired,
+  tl: PropTypes.object.isRequired,
   context: PropTypes.object.isRequired,
 }
 
