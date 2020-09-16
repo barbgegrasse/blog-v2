@@ -21,6 +21,16 @@ const Layout = ({ children }) => {
     tl.play()
   })
 
+  const elements = React.Children.toArray(children)
+
+  const childrenWithProps = React.Children.map(elements, child =>
+    React.cloneElement(child, {
+      timeline: 'test',
+    })
+  )
+
+  console.info(childrenWithProps)
+
   return (
     <myContext.Consumer>
       {context => (
@@ -39,10 +49,8 @@ const Layout = ({ children }) => {
                 }}
               >
                 <GlobalStyle />
-
-                <MainContainer className="main-container">
-                  {children}
-                </MainContainer>
+                {childrenWithProps}
+                <MainContainer className="main-container"></MainContainer>
               </GlobalWrapper>
             </div>
           </Scrollbar>

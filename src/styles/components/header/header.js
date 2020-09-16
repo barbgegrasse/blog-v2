@@ -69,6 +69,7 @@ const LineWrapper = styled('div')`
   bottom: 32px;
   left: 32px;
   pointer-events: none;
+  visibility: hidden;
 `
 const Line = styled('span')`
   position: absolute;
@@ -77,6 +78,7 @@ const Line = styled('span')`
   background: #7d7d7d;
   &.horizontal1 {
     width: 100%;
+    transform: scaleX(100%);
     height: 1px;
 
     top: 0;
@@ -84,23 +86,18 @@ const Line = styled('span')`
   }
   &.horizontal2 {
     width: 100%;
+    transform: scaleX(100%);
     height: 1px;
 
     top: 88px;
     left: 0;
     border: 1px solid #fff;
   }
-  &.close1 {
-    width: 1px;
-    height: 88px;
-
-    top: 0%;
-    right: 0;
-  }
 
   &.vertical1 {
     width: 1px;
     height: 100%;
+    transform: scaleY(100%);
 
     top: 0;
     left: 0;
@@ -108,13 +105,25 @@ const Line = styled('span')`
   &.vertical2 {
     width: 1px;
     height: 100%;
+    transform: scaleY(100%);
 
     top: 0;
     left: 88px;
   }
-  &.close2 {
+
+  &.close1 {
+    width: 1px;
     height: 88px;
-    width: 0;
+    transform: scaleY(1);
+
+    top: 0%;
+    right: 0;
+  }
+
+  &.close2 {
+    width: 88px;
+    height: 1px;
+    transform: scaleX(1);
 
     bottom: 0;
     left: 0;
