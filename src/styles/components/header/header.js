@@ -19,6 +19,15 @@ const WrapperHeader = styled('div')`
   margin-right: auto;
 
   mix-blend-mode: exclusion;
+
+  ${mediaQueries.tabletLandscape} {
+    top: 16px;
+    left: 16px;
+  }
+  ${mediaQueries.mobile} {
+    top: 16px;
+    left: 16px;
+  }
   nav {
     display: flex;
     flex-grow: 1;

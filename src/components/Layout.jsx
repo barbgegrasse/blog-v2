@@ -40,7 +40,9 @@ const Layout = ({ children }) => {
               >
                 <GlobalStyle />
 
-                <MainContainer>{children}</MainContainer>
+                <MainContainer className="main-container">
+                  {children}
+                </MainContainer>
               </GlobalWrapper>
             </div>
           </Scrollbar>
