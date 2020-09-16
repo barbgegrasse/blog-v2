@@ -138,9 +138,9 @@ export default function GlobalStyle() {
         }
         em {
           display: inline-block;
-          background: #4a4a78;
-          color: #f2f8e7;
-          padding: 0.2em;
+          background: #484852;
+          color: #d3ff64;
+          padding: 0.2em 0.5em;
           clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
         }
 
