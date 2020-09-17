@@ -199,6 +199,9 @@ export default function GlobalStyle() {
             line-height: 5.833vw; */
           }
         }
+        body {
+          overscroll-behavior-y: none;
+        }
 
         a {
           color: ${theme.colors.secondary};

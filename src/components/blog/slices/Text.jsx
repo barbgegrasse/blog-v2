@@ -15,7 +15,11 @@ const PostSlice = styled('div')`
 `
 
 export default function Text({ slice }) {
-  return <PostSlice dangerouslySetInnerHTML={{ __html: slice.primary.rich_text.html }} />
+  return (
+    <PostSlice
+      dangerouslySetInnerHTML={{ __html: slice.primary.rich_text.html }}
+    />
+  )
 }
 
 Text.propTypes = {
