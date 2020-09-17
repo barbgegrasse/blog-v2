@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
+import slugify from '../../../utils/slugify'
 import theme from '../../../styles/global/theme'
 import mediaQueries from '../../../styles/global/mediaQueries'
 
@@ -73,7 +74,10 @@ const HnTitle = styled('div')`
 `
 
 const Hn = ({ slice }) => (
-  <HnTitle dangerouslySetInnerHTML={{ __html: slice.primary.hn.html }} />
+  <HnTitle
+    id={`${slugify(slice.primary.hn.text)}`}
+    dangerouslySetInnerHTML={{ __html: slice.primary.hn.html }}
+  />
 )
 
 Hn.propTypes = {

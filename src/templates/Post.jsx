@@ -6,6 +6,7 @@ import PostSlices from '../components/blog/PostSlices'
 import { MainTitle } from '../styles/common/title'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
+import Summary from '../components/blog/summary/WrapperSummary'
 import { ArticleContainer } from '../styles/components/blog/postSlices'
 import { myContext } from '../../provider'
 
@@ -60,6 +61,7 @@ const Post = ({ data: { prismicPost } }) => {
         {handleHeroImage()}
       </div>
       <ArticleContainer>
+        <Summary slices={prismicPost.data.post_body} />
         <PostSlices slices={prismicPost.data.post_body} />
       </ArticleContainer>
     </Layout>
@@ -95,6 +97,7 @@ export const query = graphql`
             id
             primary {
               hn {
+                text
                 html
               }
             }
