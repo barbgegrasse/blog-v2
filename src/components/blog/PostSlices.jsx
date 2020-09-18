@@ -1,8 +1,8 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import loadable from '@loadable/component'
 
-import Code from './slices/Code'
-
+const Code = loadable(() => import('./slices/Code'))
 const Hn = loadable(() => import('./slices/Hn'))
 const HighLight = loadable(() => import('./slices/HighLight'))
 const Image = loadable(() => import('./slices/Image'))
@@ -28,5 +28,11 @@ const PostSlices = ({ slices }) =>
     })()
     return result
   })
+
+PostSlices.propTypes = {
+  slices: PropTypes.shape({
+    map: PropTypes.func.isRequired,
+  }),
+}
 
 export default PostSlices

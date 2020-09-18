@@ -81,7 +81,7 @@ const Hn = ({ slice }) => (
 )
 
 Hn.propTypes = {
-  slice: PropTypes.element.isRequired,
+  slice: PropTypes.object.isRequired,
 }
 
 export default Hn
