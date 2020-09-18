@@ -27,13 +27,19 @@ const Item = styled('li')`
     margin-left: 128px;
   }
 `
-const ItemSummary = ({ slice }) => (
+const ItemSummary = ({ slice, handleSummaryClick }) => (
   <Item className={`item-summary${slice.primary.hn.html.substring(1, 3)}`}>
-    <a href={`#${slugify(slice.primary.hn.text)}`}>{slice.primary.hn.text}</a>
+    <a
+      onClick={() => handleSummaryClick(`#${slugify(slice.primary.hn.text)}`)}
+      href={`#${slugify(slice.primary.hn.text)}`}
+    >
+      {slice.primary.hn.text}
+    </a>
   </Item>
 )
 
 ItemSummary.propTypes = {
+  handleSummaryClick: PropTypes.func.isRequired,
   slice: PropTypes.element.isRequired,
 }
 

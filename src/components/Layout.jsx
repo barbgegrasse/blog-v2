@@ -14,9 +14,6 @@ import {
 } from '../styles/global/layout'
 
 const Layout = ({ children }) => {
-  // // Ref
-  // const refApp = useRef(null)
-  // const refScrollContainer = useRef(null)
   // Hooks
   const size = useWindowSize()
 
@@ -57,7 +54,7 @@ const Layout = ({ children }) => {
     const difference = data.current - data.rounded
     const acceleration = difference / size.width
     const velocity = +acceleration
-    const skew = velocity * 7.5
+    const skew = velocity * 1.5
 
     // Assign skew and smooth scrolling to the scroll container
     if (scrollContainer.current) {
@@ -89,7 +86,8 @@ const Layout = ({ children }) => {
 
   const childrenWithProps = React.Children.map(elements, child =>
     React.cloneElement(child, {
-      timeline: 'test',
+      timeline: tl,
+      scrollContainer,
     })
   )
 

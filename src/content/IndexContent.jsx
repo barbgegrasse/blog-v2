@@ -13,6 +13,7 @@ const IndexContent = ({
   homeAnimation,
   timeline,
 }) => {
+  console.info(timeline)
   return (
     <>
       <GridHome>
