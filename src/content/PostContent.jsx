@@ -59,7 +59,7 @@ const PostContent = ({ prismicPost }) => {
     <>
       <div>
         <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
-        {handleHeroImage()}
+        {/* {handleHeroImage()} */}
       </div>
       <ArticleContainer>
         <Summary
