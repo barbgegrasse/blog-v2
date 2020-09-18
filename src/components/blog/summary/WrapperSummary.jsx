@@ -19,7 +19,7 @@ const Wrapper = styled('nav')`
   }
 `
 
-const WrapperSummary = ({ slices }) => (
+const WrapperSummary = ({ slices, handleSummaryClick }) => (
   <Wrapper aria-label="Sommaire">
     <ul>
       {slices.map(slice => {
@@ -27,6 +27,7 @@ const WrapperSummary = ({ slices }) => (
           if (slice.__typename === 'PrismicPostPostBodyHn') {
             return (
               <ItemSummary
+                handleSummaryClick={handleSummaryClick}
                 style={{ contentVisibility: 'auto' }}
                 slice={slice}
               />
@@ -40,6 +41,7 @@ const WrapperSummary = ({ slices }) => (
 )
 
 WrapperSummary.propTypes = {
+  handleSummaryClick: PropTypes.func.isRequired,
   slices: PropTypes.object.isRequired,
 }
 

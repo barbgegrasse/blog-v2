@@ -9,6 +9,7 @@ import IndexContent from '../content/IndexContent'
 import { myContext } from '../../provider'
 
 const IndexPage = props => {
+  console.info(props)
   const tl = useRef()
   tl.current = gsap.timeline({ pause: true })
 
