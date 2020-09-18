@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types'
 import React, { useContext } from 'react'
 import { graphql } from 'gatsby'
+import loadable from '@loadable/component'
 
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
 
-import PostContent from '../content/PostContent'
 import { myContext } from '../../provider'
+
+const PostContent = loadable(() => import('../content/PostContent'))
 
 const Post = ({ data: { prismicPost } }) => {
   const contextValues = useContext(myContext)

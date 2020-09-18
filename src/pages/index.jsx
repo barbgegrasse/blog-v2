@@ -1,12 +1,12 @@
 import React, { useRef, useContext, useEffect } from 'react'
+import loadable from '@loadable/component'
 import gsap from 'gsap'
 
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
-
-import IndexContent from '../content/IndexContent'
-
 import { myContext } from '../../provider'
+
+const IndexContent = loadable(() => import('../content/IndexContent'))
 
 const IndexPage = props => {
   console.info(props)
