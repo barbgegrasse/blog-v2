@@ -1,27 +1,27 @@
 import React from 'react'
+import loadable from '@loadable/component'
 
 import Code from './slices/Code'
-import Text from './slices/Text'
-import Hn from './slices/Hn'
-import HighLight from './slices/HighLight'
-import Image from './slices/Image'
+
+const Hn = loadable(() => import('./slices/Hn'))
+const HighLight = loadable(() => import('./slices/HighLight'))
+const Image = loadable(() => import('./slices/Image'))
+const Text = loadable(() => import('./slices/Text'))
 
 const PostSlices = ({ slices }) =>
   slices.map(slice => {
     const result = (() => {
       switch (slice.__typename) {
         case 'PrismicPostPostBodyCodeSnippet':
-          return <Code style={{ contentVisibility: 'auto' }} slice={slice} />
+          return <Code slice={slice} />
         case 'PrismicPostPostBodyHighlightedText':
-          return (
-            <HighLight style={{ contentVisibility: 'auto' }} slice={slice} />
-          )
+          return <HighLight slice={slice} />
         case 'PrismicPostPostBodyHn':
-          return <Hn style={{ contentVisibility: 'auto' }} slice={slice} />
+          return <Hn slice={slice} />
         case 'PrismicPostPostBodyText':
-          return <Text style={{ contentVisibility: 'auto' }} slice={slice} />
+          return <Text slice={slice} />
         case 'PrismicPostPostBodyImage':
-          return <Image style={{ contentVisibility: 'auto' }} slice={slice} />
+          return <Image slice={slice} />
         default:
           return false
       }

@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types'
 import gsap from 'gsap'
 import React, { useRef } from 'react'
-import useWindowSize from '../hooks/useWindowSize'
 import Img from 'gatsby-image'
+import useWindowSize from '../hooks/useWindowSize'
 import Summary from '../components/blog/summary/WrapperSummary'
 import { ArticleContainer } from '../styles/components/blog/postSlices'
 import PostSlices from '../components/blog/PostSlices'
 import { MainTitle } from '../styles/common/title'
 
-const PostContent = ({ prismicPost, scrollContainer }) => {
+const PostContent = ({ prismicPost }) => {
   const windowSize = useWindowSize()
 
   const handleHeroImage = () => {
@@ -51,12 +51,7 @@ const PostContent = ({ prismicPost, scrollContainer }) => {
     console.info(document.querySelector(id).getBoundingClientRect().top)
     const linkTopPosition = document.querySelector(id).getBoundingClientRect()
       .top
-    // gsap.to(scrollContainer.current, {
-    //   duration: 2,
-    //   transform: `translate3d(0px, -${linkTopPosition}, 0px)`,
-    // })
 
-    console.info(linkTopPosition, windowSize.height)
     window.scrollTo(0, linkTopPosition + windowSize.height * 0.9)
     return false
   }

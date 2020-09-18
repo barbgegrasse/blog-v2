@@ -15,18 +15,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-emotion`,
 
-    // {
-    //   resolve: `gatsby-plugin-csp`,
-    //   options: {
-    //     mergeScriptHashes: false,
-    //     mergeStyleHashes: false,
-    //     directives: {
-    //       'script-src': `'self' 'unsafe-inline' `,
-    //       'style-src': "'self' 'unsafe-inline'",
-    //       'font-src': `'self' data: db.onlinewebfonts.com`,
-    //     },
-    //   },
-    // },
+    'gatsby-plugin-loadable-components-ssr',
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
