@@ -17,12 +17,19 @@ const GridHome = styled('section')`
     justify-content: flex-end;
 
     min-height: calc(100vh - 270px);
+    ${mediaQueries.mobile} {
+      padding-bottom: 30px;
+      min-height: 100vh;
+    }
   }
 
   .right-col {
     display: flex;
     align-items: center;
     justify-content: center;
+    ${mediaQueries.mobile} {
+      min-height: 100vh;
+    }
   }
 
   h1 {

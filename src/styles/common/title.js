@@ -6,7 +6,7 @@ const MainTitle = styled('h1')`
   margin-bottom: 1em;
 
   text-align: center;
-  font-size: 4.8vw;
+  font-size: max(4.8vw, 45px);
   line-height: 1;
   overflow: hidden;
 
@@ -15,7 +15,7 @@ const MainTitle = styled('h1')`
     color: ${theme.colors.primary};
   }
   .toulouse {
-    font-size: 3.5vw;
+    font-size: max(3.5vw, 30px);
     font-family: ${theme.fonts.main};
   }
 `
