@@ -5,8 +5,8 @@ import styled from '@emotion/styled'
 
 const ImageWrapper = styled('div')`
   position: absolute;
-  top: -64px;
-  width: min(628px, 100%);
+  bottom: 0px;
+  width: min(480px, 100%);
 `
 
 const ImgJohanPetrikovsky = () => {
@@ -25,7 +25,7 @@ const ImgJohanPetrikovsky = () => {
   `)
 
   return (
-    <ImageWrapper>
+    <ImageWrapper className="image-wrapper">
       <Img fluid={data.placeholderImage.childImageSharp.fluid} />
     </ImageWrapper>
   )

@@ -10,7 +10,7 @@ const BlockPresentation = ({ tl, homeAnimation }) => {
 
   useEffect(() => {
     if (homeAnimation) {
-      tl.current.from(
+      tl.from(
         text1.current,
         1.0,
         {
@@ -21,7 +21,7 @@ const BlockPresentation = ({ tl, homeAnimation }) => {
         '-=1'
       )
 
-      tl.current.from(
+      tl.from(
         text2.current,
         1.0,
         {
@@ -32,7 +32,7 @@ const BlockPresentation = ({ tl, homeAnimation }) => {
         '-=0.8'
       )
 
-      tl.current.from(
+      tl.from(
         text3.current,
         1.0,
         {
@@ -104,9 +104,7 @@ const BlockPresentation = ({ tl, homeAnimation }) => {
 BlockPresentation.propTypes = {
   homeAnimation: PropTypes.bool.isRequired,
   tl: PropTypes.shape({
-    current: PropTypes.shape({
-      from: PropTypes.func,
-    }),
+    from: PropTypes.func,
   }),
 }
 
