@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
-import React, { useRef, useEffect, useContext } from 'react'
+import React, { useRef, useEffect } from 'react'
 import gsap from 'gsap'
-import useWindowSize from '../hooks/useWindowSize'
-import { myContext } from '../../provider'
+// import useWindowSize from '../hooks/useWindowSize'
+// import { myContext } from '../../provider'
 import Header from './Header'
 
 import GlobalStyle from '../styles/global/Global'
@@ -14,7 +14,7 @@ import {
 
 const Layout = ({ children }) => {
   // Hooks
-  const size = useWindowSize()
+  // const size = useWindowSize()
 
   // Ref for parent div and scrolling div
   const app = useRef()
@@ -73,9 +73,9 @@ const Layout = ({ children }) => {
   const { current: tl } = useRef(gsap.timeline({ paused: true }))
 
   useEffect(() => {
-    tl.to('body', {
-      visibility: 'visible',
-    })
+    // tl.to(app.current, {
+    //   visibility: 'visible',
+    // })
     tl.play()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
