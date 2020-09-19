@@ -156,8 +156,7 @@ export default function GlobalStyle() {
           src: url('//db.onlinewebfonts.com/t/1dc8ecd8056a5ea7aa7de1db42b5b639.eot');
           src: url('//db.onlinewebfonts.com/t/1dc8ecd8056a5ea7aa7de1db42b5b639.eot?#iefix')
               format('embedded-opentype'),
-            url('//db.onlinewebfonts.com/t/1dc8ecd8056a5ea7aa7de1db42b5b639.woff2')
-              format('woff2'),
+            url('/fonts/gilroy/gilroy.woff2') format('woff2'),
             url('//db.onlinewebfonts.com/t/1dc8ecd8056a5ea7aa7de1db42b5b639.woff')
               format('woff'),
             url('//db.onlinewebfonts.com/t/1dc8ecd8056a5ea7aa7de1db42b5b639.ttf')
@@ -207,7 +206,7 @@ export default function GlobalStyle() {
         }
 
         #app {
-          /* visibility: hidden; */
+          visibility: hidden;
         }
 
         /* HELPERS */

@@ -1,6 +1,5 @@
 import React, { useRef, useContext, useEffect } from 'react'
 import loadable from '@loadable/component'
-import gsap from 'gsap'
 
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
@@ -8,18 +7,9 @@ import { myContext } from '../../provider'
 
 const IndexContent = loadable(() => import('../content/IndexContent'))
 
-const IndexPage = props => {
-  console.info(props)
-  const tl = useRef()
-  tl.current = gsap.timeline({ pause: true })
-
+const IndexPage = () => {
   const contextValue = useContext(myContext)
-  const { homeAnimation, changeHomeAnimation } = contextValue
-
-  useEffect(() => {
-    changeHomeAnimation(false)
-    tl.current.play()
-  })
+  const { homeAnimation } = contextValue
 
   return (
     <myContext.Consumer>
@@ -31,11 +21,7 @@ const IndexPage = props => {
               title="👨‍💻 Johan Petrikovsky"
               description="Développeur web à Toulouse. Développeur front-end et développeur back-end freelance. Je développe des applications web avec un focus sur l'utilisateur, les performances et l'accesibilité."
             />
-            <IndexContent
-              homeAnimation={homeAnimation}
-              tl={tl}
-              context={context}
-            />
+            <IndexContent homeAnimation={homeAnimation} context={context} />
           </Layout>
         </>
       )}

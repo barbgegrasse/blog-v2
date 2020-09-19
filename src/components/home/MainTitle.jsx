@@ -17,7 +17,7 @@ const BlockMainTitle = ({ tl, homeAnimation }) => {
   const refSep = useRef(null)
   const refTown = useRef(null)
 
-  const timelineSettings = {
+  const tlSettings = {
     staggerValue: 0.014,
     charsDuration: 0.5,
   }
@@ -45,45 +45,44 @@ const BlockMainTitle = ({ tl, homeAnimation }) => {
       })
       const charsTown = splitTown.chars
 
-      tl.current
-        .from(refSep.current, {
-          scaleX: 0,
-          duration: 0.25,
-          delay: 0.5,
-        })
+      tl.from(refSep.current, {
+        scaleX: 0,
+        duration: 0.25,
+        delay: 0.5,
+      })
         .addLabel('splitName')
         .staggerFrom(
           charsName,
-          timelineSettings.charsDuration,
+          tlSettings.charsDuration,
           {
             ease: 'Power3.easeInOut',
             y: '+100%',
             opacity: 0,
           },
-          timelineSettings.staggerValue
+          tlSettings.staggerValue
         )
         .addLabel('splitjob')
         .staggerFrom(
           charsJob,
-          timelineSettings.charsDuration,
+          tlSettings.charsDuration,
           {
             ease: 'Power3.easeInOut',
             y: '+100%',
             opacity: 0,
           },
-          timelineSettings.staggerValue,
+          tlSettings.staggerValue,
           '-=0.5'
         )
         .addLabel('splitTown')
         .staggerFrom(
           charsTown,
-          timelineSettings.charsDuration,
+          tlSettings.charsDuration,
           {
             ease: 'Power3.easeInOut',
             y: '+100%',
             opacity: 0,
           },
-          timelineSettings.staggerValue,
+          tlSettings.staggerValue,
           '-=0.5'
         )
         .addLabel('endTown')
