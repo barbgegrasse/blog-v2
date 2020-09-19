@@ -13,15 +13,21 @@ const GlobalWrapper = styled('div')`
   min-height: 100vh;
   /* visibility: hidden; */
   padding: 120px 0 0 120px;
+  ${mediaQueries.tabletLandscape} {
+    padding: 60px 0 0 60px;
+  }
+  ${mediaQueries.mobile} {
+    padding: 30px 0 0 30px;
+  }
 `
 
 const MainContainer = styled('main')`
   padding: 120px 64px 0 64px;
   ${mediaQueries.tabletLandscape} {
-    padding-top: 40px;
+    padding: 60px 32px 0 32px;
   }
   ${mediaQueries.mobile} {
-    padding: 20px 0 60px 0;
+    padding: 30px 16px 0 16px;
   }
 `
 
