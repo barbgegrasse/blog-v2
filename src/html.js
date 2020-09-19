@@ -13,10 +13,7 @@ export default function HTML(props) {
         />
         {props.headComponents}
       </head>
-      <body
-        style={{ backgroundColor: '#1c1c21', visibility: 'hidden' }}
-        {...props.bodyAttributes}
-      >
+      <body style={{ backgroundColor: '#1c1c21' }} {...props.bodyAttributes}>
         {props.preBodyComponents}
         <div
           key={`body`}
