@@ -39,11 +39,11 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic',
       options: {
-        repositoryName: 'kovsky-blog',
+        repositoryName: `${process.env.PRISMIC_REPOSITORY_NAME}`,
         accessToken: `${process.env.API_KEY}`,
-        // accessToken: `MC5YYXhab1JJQUFDTUF4Qm0y.VO-_ve-_vS3vv73vv70BN--_ve-_ve-_vTHvv70M77-977-9GRtVDxNp77-9W3vvv70lSO-_vUFb77-9`,
         // Get the correct URLs in blog posts
-        linkResolver: () => blogpost => `/${blogpost.uid}`,
+        linkResolver: ({ node }) => blogpost =>
+          `/blog/${node.data.categories[0].category.uid}/${blogpost.uid}`,
         lang: 'fr-fr',
         schemas: {
           post,
@@ -67,8 +67,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#fff700`,
+        theme_color: `#fff700`,
         display: `minimal-ui`,
         icon: `src/images/favicon/android-chrome-512x512.png`, // This path is relative to the root of the site.
       },

@@ -3,6 +3,7 @@
 // As your project grows, you should update this function according to your routes
 
 exports.linkResolver = function linkResolver(doc) {
+  console.info('link resolver !!!!!')
   // Route for blog posts
   if (doc.type === 'Post') {
     return `/blog/${doc.uid}`

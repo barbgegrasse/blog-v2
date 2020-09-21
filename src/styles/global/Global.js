@@ -206,10 +206,6 @@ export default function GlobalStyle() {
           transition: color 0.3s ease-in-out;
         }
 
-        #app {
-          /* visibility: hidden; */
-        }
-
         /* HELPERS */
         .max-container {
           max-width: ${theme.maxWidth};

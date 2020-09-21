@@ -28,19 +28,19 @@ const BlockMainTitle = ({ tl, homeAnimation }) => {
       gsap.registerPlugin(SplitText)
 
       const splitJob = new SplitText(refJob.current, {
-        type: 'words,chars',
+        type: 'chars',
         position: 'relative',
       })
       const charsJob = splitJob.chars
 
       const splitName = new SplitText(refName.current, {
-        type: 'words,chars',
+        type: 'chars',
         position: 'relative',
       })
       const charsName = splitName.chars
 
       const splitTown = new SplitText(refTown.current, {
-        type: 'words,chars',
+        type: 'chars',
         position: 'relative',
       })
       const charsTown = splitTown.chars

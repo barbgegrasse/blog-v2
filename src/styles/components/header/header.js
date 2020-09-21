@@ -91,7 +91,7 @@ const Line = styled('span')`
 
     top: 88px;
     left: 0;
-    border: 1px solid #fff;
+    border: 16px solid #fff;
   }
 
   &.vertical1 {

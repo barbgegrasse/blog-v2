@@ -33,6 +33,7 @@
     "gsap": "file:gsap-bonus.tgz",
     "preact": "^10.4.8",
     "preact-render-to-string": "^5.1.10",
+    "prismic-dom": "^2.2.3",
     "prismic-reactjs": "^1.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

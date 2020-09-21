@@ -22,3 +22,9 @@
     no-cache,
     no-store,
     must-revalidate'''
+[[redirects]]
+  from = "/blog/security-headers-gatsby-netlify"
+  to = "/blog/securite/security-headers-gatsby-netlify"
+  status = 301
+  force = true
+

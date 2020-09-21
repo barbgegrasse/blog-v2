@@ -26,49 +26,49 @@ const Header = ({ tl }) => {
   const refLineClose2 = useRef(null)
 
   useEffect(() => {
-    // tl.addLabel('VisibilityWrapperLine').set(refLineWrapper.current, {
-    //   visibility: 'visible',
-    // })
-    // tl.addLabel('horizontalLineStart')
-    //   .from(refLineHorizontal1.current, {
-    //     scaleX: '0',
-    //     duration: 0.5,
-    //     ease: Power3.easeInOut,
-    //   })
-    //   .from(
-    //     refLineHorizontal2.current,
-    //     {
-    //       scaleX: '0',
-    //       duration: 0.5,
-    //     },
-    //     'horizontalLineStart'
-    //   )
-    //   .from(
-    //     refLineVertical1.current,
-    //     {
-    //       scaleY: '0',
-    //       duration: 0.5,
-    //     },
-    //     'horizontalLineStart'
-    //   )
-    //   .from(
-    //     refLineVertical2.current,
-    //     {
-    //       scaleY: '0',
-    //       duration: 0.6,
-    //     },
-    //     'horizontalLineStart'
-    //   )
-    //   .from(refLineClose1.current, {
-    //     scaleY: '0',
-    //     duration: 0.5,
-    //   })
-    //   .from(refLineClose2.current, {
-    //     scaleX: '0',
-    //     duration: 0.5,
-    //   })
-    //   .addLabel('finishLine')
-    //   .pause()
+    tl.addLabel('VisibilityWrapperLine').set(refLineWrapper.current, {
+      visibility: 'visible',
+    })
+    tl.addLabel('horizontalLineStart')
+      .from(refLineHorizontal1.current, {
+        scaleX: '0',
+        duration: 0.5,
+        ease: Power3.easeInOut,
+      })
+      .from(
+        refLineHorizontal2.current,
+        {
+          scaleX: '0',
+          duration: 0.5,
+        },
+        'horizontalLineStart'
+      )
+      .from(
+        refLineVertical1.current,
+        {
+          scaleY: '0',
+          duration: 0.5,
+        },
+        'horizontalLineStart'
+      )
+      .from(
+        refLineVertical2.current,
+        {
+          scaleY: '0',
+          duration: 0.6,
+        },
+        'horizontalLineStart'
+      )
+      .from(refLineClose1.current, {
+        scaleY: '0',
+        duration: 0.5,
+      })
+      .from(refLineClose2.current, {
+        scaleX: '0',
+        duration: 0.5,
+      })
+      .addLabel('finishLine')
+      .pause()
   }, [])
 
   return (
@@ -88,10 +88,10 @@ const Header = ({ tl }) => {
         <nav>
           <ul>
             <li>
-              <Link to="/blog">Blog</Link>
+              <Link to="/">Bio</Link>
             </li>
             <li>
-              <Link to="/">Bio</Link>
+              <Link to="/blog">Blog</Link>
             </li>
           </ul>
         </nav>
