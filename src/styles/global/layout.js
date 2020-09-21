@@ -32,15 +32,15 @@ const MainContainer = styled('main')`
 `
 
 const Footer = styled('footer')`
-  padding: 64px 0 64px 64px;
+  padding: 64px 120px 64px 64px;
   line-height: 1.2;
   text-align: center;
 
   ${mediaQueries.tabletLandscape} {
-    padding: 32px 0 32px 32px;
+    padding: 32px 60 32px 32px;
   }
   ${mediaQueries.mobile} {
-    padding: 16px 0 16px 16px;
+    padding: 16px 30 16px 16px;
   }
 `
 
