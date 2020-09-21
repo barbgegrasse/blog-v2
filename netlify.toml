@@ -23,13 +23,13 @@
     no-store,
     must-revalidate'''
 [[redirects]]
-from = "/blog/security-headers-gatsby-netlify"
-to = "/blog/securite/security-headers-gatsby-netlify"
+from = "https://www.developpeur-web.tech/blog/security-headers-gatsby-netlify"
+to = "https://www.developpeur-web.tech/blog/securite/security-headers-gatsby-netlify"
 status = 301
 force = false
 
 [[redirects]]
-from = "/blog/illustration-gratuites-design-png-svg-style-dessin"
-to = "/blog/ressources/illustration-gratuites-design-png-svg-style-dessin"
+from = "https://www.developpeur-web.tech/blog/illustration-gratuites-design-png-svg-style-dessin"
+to = "https://www.developpeur-web.tech/blog/ressources/illustration-gratuites-design-png-svg-style-dessin"
 status = 301
 force = true
