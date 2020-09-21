@@ -75,9 +75,10 @@ const Line = styled('span')`
   position: absolute;
   display: block;
 
-  background: #7d7d7d;
+  background: ${theme.border.primary};
   &.horizontal1 {
     width: 100%;
+    transform-origin: center left;
     transform: scaleX(100%);
     height: 1px;
 
@@ -88,15 +89,16 @@ const Line = styled('span')`
     width: 100%;
     transform: scaleX(100%);
     height: 1px;
+    transform-origin: center right;
 
     top: 88px;
     left: 0;
-    border: 16px solid #fff;
   }
 
   &.vertical1 {
     width: 1px;
     height: 100%;
+    transform-origin: bottom right;
     transform: scaleY(100%);
 
     top: 0;
@@ -105,6 +107,7 @@ const Line = styled('span')`
   &.vertical2 {
     width: 1px;
     height: 100%;
+    transform-origin: top left;
     transform: scaleY(100%);
 
     top: 0;
@@ -114,6 +117,7 @@ const Line = styled('span')`
   &.close1 {
     width: 1px;
     height: 88px;
+    transform-origin: top left;
     transform: scaleY(1);
 
     top: 0%;
@@ -123,6 +127,7 @@ const Line = styled('span')`
   &.close2 {
     width: 88px;
     height: 1px;
+    transform-origin: center left;
     transform: scaleX(1);
 
     bottom: 0;

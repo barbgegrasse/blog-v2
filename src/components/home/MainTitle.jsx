@@ -45,19 +45,23 @@ const BlockMainTitle = ({ tl, homeAnimation }) => {
       })
       const charsTown = splitTown.chars
 
-      tl.from(refSep.current, {
-        scaleX: 0,
-        duration: 0.25,
-        delay: 0.5,
-      })
+      tl.from(
+        refSep.current,
+        {
+          scaleX: 0,
+          duration: 0.25,
+          delay: 0.5,
+          ease: Power3.easeIn,
+        },
+        'finishLine-=0.8'
+      )
         .addLabel('splitName')
         .staggerFrom(
           charsName,
           tlSettings.charsDuration,
           {
-            ease: 'Power3.easeInOut',
+            ease: Power3.easeOut,
             y: '+100%',
-            opacity: 0,
           },
           tlSettings.staggerValue
         )
@@ -66,9 +70,8 @@ const BlockMainTitle = ({ tl, homeAnimation }) => {
           charsJob,
           tlSettings.charsDuration,
           {
-            ease: 'Power3.easeInOut',
+            ease: Power3.easeOut,
             y: '+100%',
-            opacity: 0,
           },
           tlSettings.staggerValue,
           '-=0.5'
@@ -78,9 +81,8 @@ const BlockMainTitle = ({ tl, homeAnimation }) => {
           charsTown,
           tlSettings.charsDuration,
           {
-            ease: 'Power3.easeInOut',
+            ease: Power3.easeOut,
             y: '+100%',
-            opacity: 0,
           },
           tlSettings.staggerValue,
           '-=0.5'
