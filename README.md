@@ -1,14 +1,17 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
+  <a href="https://www.developpeur-web.tech">
     <img alt="Gatsby" src="https://www.developpeur-web.tech/static/720a2304d91f465f34fc7c489c1dde1f/ff3b2/developpeur-web-toulouse.png" width="300" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  Site personnel de Johan Petrikovsky 
 </h1>
+<h2>Développeur Web Toulouse</h2>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2305d0fc-ded5-4185-bfdf-6b5167f9eaf9/deploy-status)](https://app.netlify.com/sites/kovsky-dev/deploys)
+
+<!-->
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 

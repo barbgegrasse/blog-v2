@@ -41,10 +41,12 @@ const PostCategory = styled('h3')`
 const PostTitle = styled('h2')`
   margin: 0;
   margin-top: 0.5em;
-  color: aliceblue;
   font-size: 3rem;
   color: ${theme.colors.primary};
   line-height: 1.3;
+  a {
+    color: ${theme.colors.primary};
+  }
 
   ${mediaQueries.desktopFlorent} {
     font-size: 2.8rem;
@@ -78,8 +80,10 @@ const PostCardAction = styled(Link)`
   text-align: right;
   font-weight: 600;
   text-decoration: none;
-  color: currentColor;
   transition: all 150ms ease-in-out;
+  &:hover {
+    color: ${theme.colors.primary};
+  }
   span {
     margin-left: 1em;
     transform: translateX(-8px);
