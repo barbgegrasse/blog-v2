@@ -23,8 +23,13 @@
     no-store,
     must-revalidate'''
 [[redirects]]
-  from = "/blog/security-headers-gatsby-netlify"
-  to = "/blog/securite/security-headers-gatsby-netlify"
-  status = 301
-  force = true
+from = "/blog/security-headers-gatsby-netlify"
+to = "/blog/securite/security-headers-gatsby-netlify"
+status = 301
+force = false
 
+[[redirects]]
+from = "/blog/illustration-gratuites-design-png-svg-style-dessin"
+to = "/blog/ressources/illustration-gratuites-design-png-svg-style-dessin"
+status = 301
+force = true
