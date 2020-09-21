@@ -18,10 +18,9 @@
     Referrer-Policy = "no-referrer"
     Permissions-Policy= "geolocation=(), microphone=()"
     cache-control = '''
-    max-age=3600,
-    no-cache,
-    no-store,
-    must-revalidate'''
+    max-age=3600
+    '''
+
 [[redirects]]
 from = "https://www.developpeur-web.tech/blog/security-headers-gatsby-netlify"
 to = "https://www.developpeur-web.tech/blog/securite/security-headers-gatsby-netlify"
@@ -31,5 +30,83 @@ force = false
 [[redirects]]
 from = "https://www.developpeur-web.tech/blog/illustration-gratuites-design-png-svg-style-dessin"
 to = "https://www.developpeur-web.tech/blog/ressources/illustration-gratuites-design-png-svg-style-dessin"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.developpeur-web.tech/blog/ou-trouver-des-polices-de-qualite"
+to = "https://www.developpeur-web.tech/blog/design/ou-trouver-des-polices-de-qualite"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.developpeur-web.tech/blog/creer-son-site-avec-gatsby-et-prismic"
+to = "https://www.developpeur-web.tech/blog/gatsby/creer-son-site-avec-gatsby-et-prismic"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.developpeur-web.tech/blog/illustration-gratuites-design-png-svg-style-dessin"
+to = "https://www.developpeur-web.tech/blog/ressources/illustration-gratuites-design-png-svg-style-dessin"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.developpeur-web.tech/blog/un-guide-approfondi-pour-maitriser-le-display-flex"
+to = "https://www.developpeur-web.tech/blog/css/un-guide-approfondi-pour-maitriser-le-display-flex"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.developpeur-web.tech/blog/docker/reminder-docker"
+to = "https://www.developpeur-web.tech/blog/reminder-docker"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.developpeur-web.tech/blog/deployer-son-site-gatsby-sur-github"
+to = "https://www.developpeur-web.tech/blog/gatsby/deployer-son-site-gatsby-sur-github"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.developpeur-web.tech/blog/gatsby-error-window-is-not-defined"
+to = "https://www.developpeur-web.tech/blog/gatsby/gatsby-error-window-is-not-defined"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.developpeur-web.tech/blog/gatsby/installer-ackee-alternative-google-analytics"
+to = "https://www.developpeur-web.tech/blog/installer-ackee-alternative-google-analytics"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.developpeur-web.tech/blog/gatsby/installer-ackee-alternative-google-analytics"
+to = "https://www.developpeur-web.tech/blog/installer-ackee-alternative-google-analytics"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.developpeur-web.tech/blog/comment-bien-choisir-sa-typographie"
+to = "https://www.developpeur-web.tech/blog/design/comment-bien-choisir-sa-typographie"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.developpeur-web.tech/blog/relancer-dans-la-derniere-commande-en-super-user"
+to = "https://www.developpeur-web.tech/blog/linux/relancer-dans-la-derniere-commande-en-super-user"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.developpeur-web.tech/blog/un-bel-elephant"
+to = "https://www.developpeur-web.tech/blog/base-de-donnees/un-bel-elephant"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.developpeur-web.tech/blog/le-message-des-enfers"
+to = "https://www.developpeur-web.tech/blog/vscode/le-message-des-enfers"
 status = 301
 force = true
