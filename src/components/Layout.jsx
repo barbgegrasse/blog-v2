@@ -21,6 +21,7 @@ const Layout = ({ children }) => {
   // Ref for parent div and scrolling div
   const app = useRef()
   const scrollContainer = useRef()
+  const refFooter = useRef()
 
   // // Configs
   // const data = {
@@ -75,11 +76,9 @@ const Layout = ({ children }) => {
   const { current: tl } = useRef(gsap.timeline({ paused: true }))
 
   useEffect(() => {
-    // tl.to(app.current, {
-    //   visibility: 'visible',
-    // })
+    tl.addLabel('start')
+    tl.set(refFooter, { visibility: 'visible' })
     tl.play()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // Passing props to children
@@ -101,7 +100,7 @@ const Layout = ({ children }) => {
           <MainContainer className="main-container">
             {childrenWithProps}
           </MainContainer>
-          <Footer>
+          <Footer ref={refFooter} style={{ visibility: 'hidden' }}>
             © Johan Petrikovsky 2012/{date.getFullYear()} - Développeur web à
             Toulouse et en Haute-Garonne -{' '}
             <Link to="/mentions-legales">Mentions légales</Link> 51 av. de

@@ -2,7 +2,8 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import React, { useRef, useEffect } from 'react'
 
-import { gsap, Power3 } from 'gsap'
+import { gsap, Expo } from 'gsap'
+import SplitText from 'gsap/SplitText'
 import { DrawSVGPlugin } from 'gsap/all'
 
 import Logo from '../images/assets/logo.svg'
@@ -17,6 +18,9 @@ import {
 gsap.registerPlugin(DrawSVGPlugin)
 
 const Header = ({ tl }) => {
+  const refBio = useRef(null)
+  const refBlog = useRef(null)
+  const refLogo = useRef(null)
   const refLineWrapper = useRef(null)
   const refLineHorizontal1 = useRef(null)
   const refLineHorizontal2 = useRef(null)
@@ -25,56 +29,103 @@ const Header = ({ tl }) => {
   const refLineVertical2 = useRef(null)
   const refLineClose2 = useRef(null)
 
+  const tlSettings = {
+    staggerValue: 0.05,
+    charsDuration: 0.5,
+  }
+
   useEffect(() => {
+    const splitBio = new SplitText(refBio.current, {
+      type: 'chars',
+      position: 'relative',
+    })
+    const charsBio = splitBio.chars
+
+    const splitBlog = new SplitText(refBlog.current, {
+      type: 'chars',
+      position: 'relative',
+    })
+    const charsBlog = splitBlog.chars
+
     tl.addLabel('VisibilityWrapperLine').set(refLineWrapper.current, {
       visibility: 'visible',
     })
     tl.addLabel('horizontalLineStart')
-      .from(refLineHorizontal1.current, {
-        scaleX: '0',
-        duration: 0.5,
-        ease: Power3.easeInOut,
-      })
       .from(
-        refLineHorizontal2.current,
+        refLineHorizontal1.current,
         {
           scaleX: '0',
-          duration: 0.5,
-        },
-        'horizontalLineStart'
-      )
-      .from(
-        refLineVertical1.current,
-        {
-          scaleY: '0',
-          duration: 0.5,
-        },
-        'horizontalLineStart'
-      )
-      .from(
-        refLineVertical2.current,
-        {
-          scaleY: '0',
-          duration: 0.6,
+          duration: 0.9,
+          ease: Expo.easeOut,
         },
         'horizontalLineStart'
       )
       .from(refLineClose1.current, {
         scaleY: '0',
-        duration: 0.5,
+        duration: 0.1,
+        ease: Expo.easeOut,
       })
-      .from(refLineClose2.current, {
+      .from(refLineHorizontal2.current, {
         scaleX: '0',
-        duration: 0.5,
+        duration: 0.9,
+        ease: Expo.easeOut,
       })
+      .addLabel('horizontalLineClose')
+      // CLOSE HORIZONTAL LINES
+      .from(
+        refLineVertical2.current,
+        {
+          scaleY: '0',
+          duration: 0.9,
+          ease: Expo.easeOut,
+        },
+        'horizontalLineStart'
+      )
+      .from(
+        refLineClose2.current,
+        {
+          scaleX: '0',
+          duration: 0.1,
+          ease: Expo.easeOut,
+        },
+        'horizontalLineStart+=0.9'
+      )
+      .from(
+        refLineVertical1.current,
+        {
+          scaleY: '0',
+          duration: 0.9,
+          ease: Expo.easeOut,
+        },
+        'horizontalLineStart+=1'
+      )
       .addLabel('finishLine')
-      .pause()
+      .staggerFrom(
+        charsBio,
+        tlSettings.charsDuration,
+        {
+          ease: Expo.easeOut,
+          y: '+100%',
+        },
+        'horizontalLineClose',
+        tlSettings.staggerValue
+      )
+      .staggerFrom(
+        charsBlog,
+        tlSettings.charsDuration,
+        {
+          ease: Expo.easeOut,
+          y: '+100%',
+        },
+        'horizontalLineClose',
+        tlSettings.staggerValue
+      )
   }, [])
 
   return (
     <>
       <LineWrapper ref={refLineWrapper}>
-        <LogoWrapper>
+        <LogoWrapper id="logo-wrapper" ref={refLogo}>
           <Logo />
         </LogoWrapper>
         <Line ref={refLineHorizontal1} className="line horizontal1" />
@@ -88,9 +139,13 @@ const Header = ({ tl }) => {
         <nav>
           <ul>
             <li>
-              <Link to="/">Bio</Link>
+              <Link to="/">
+                <div style={{ overflow: 'hidden' }} ref={refBio}>
+                  Bio
+                </div>
+              </Link>
             </li>
-            <li>
+            <li style={{ overflow: 'hidden' }} ref={refBlog}>
               <Link to="/blog">Blog</Link>
             </li>
           </ul>

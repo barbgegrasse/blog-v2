@@ -6,7 +6,7 @@ import styled from '@emotion/styled'
 const ImageWrapper = styled('div')`
   position: absolute;
   bottom: 0px;
-  width: min(480px, 100%);
+  width: 23vw;
 `
 
 const ImgJohanPetrikovsky = () => {

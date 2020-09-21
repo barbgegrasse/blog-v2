@@ -8,11 +8,11 @@ const theme = {
     light: '#4972a5',
   },
   bg: {
-    main: '#1c1c21',
+    main: '#171717',
     card: '#171c22',
   },
   border: {
-    primary: '#7d7d7d',
+    primary: '#434343',
   },
   fonts: {
     main: "Gilroy, 'Helvetica Neue',Helvetica,Arial,sans-serif",
