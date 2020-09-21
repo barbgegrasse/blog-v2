@@ -32,7 +32,7 @@ const PostCardContainer = styled('div')`
   }
 `
 
-const PostCategory = styled('h3')`
+const PostCategory = styled(Link)`
   font-weight: lighter;
   text-transform: uppercase;
   color: ${theme.colors.secondary};

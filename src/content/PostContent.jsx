@@ -48,7 +48,6 @@ const PostContent = ({ prismicPost }) => {
   }
 
   const handleSummaryClick = id => {
-    console.info(document.querySelector(id).getBoundingClientRect().top)
     const linkTopPosition = document.querySelector(id).getBoundingClientRect()
       .top
 

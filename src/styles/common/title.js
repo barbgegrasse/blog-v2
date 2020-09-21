@@ -7,7 +7,7 @@ const MainTitle = styled('h1')`
 
   text-align: center;
   font-size: max(4.8vw, 45px);
-  line-height: 1;
+  line-height: 1.1;
   overflow: hidden;
 
   .highlight {

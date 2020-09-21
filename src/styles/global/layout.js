@@ -8,7 +8,7 @@ const ScrollWrapper = styled('div')`
 const GlobalWrapper = styled('div')`
   height: 100%;
   width: 100%;
-  overflow: auto;
+  /* overflow: auto; */
 
   min-height: 100vh;
   /* visibility: hidden; */
@@ -31,4 +31,17 @@ const MainContainer = styled('main')`
   }
 `
 
-export { MainContainer, GlobalWrapper, ScrollWrapper }
+const Footer = styled('footer')`
+  padding: 64px 0 64px 64px;
+  line-height: 1.2;
+  text-align: center;
+
+  ${mediaQueries.tabletLandscape} {
+    padding: 32px 0 32px 32px;
+  }
+  ${mediaQueries.mobile} {
+    padding: 16px 0 16px 16px;
+  }
+`
+
+export { MainContainer, GlobalWrapper, ScrollWrapper, Footer }

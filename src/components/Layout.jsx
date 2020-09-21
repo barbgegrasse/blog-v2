@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 import React, { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 // import useWindowSize from '../hooks/useWindowSize'
@@ -7,8 +8,9 @@ import Header from './Header'
 
 import GlobalStyle from '../styles/global/Global'
 import {
-  MainContainer,
+  Footer,
   GlobalWrapper,
+  MainContainer,
   ScrollWrapper,
 } from '../styles/global/layout'
 
@@ -89,7 +91,7 @@ const Layout = ({ children }) => {
       scrollContainer,
     })
   )
-
+  const date = new Date()
   return (
     <>
       <Header tl={tl} />
@@ -99,6 +101,12 @@ const Layout = ({ children }) => {
           <MainContainer className="main-container">
             {childrenWithProps}
           </MainContainer>
+          <Footer>
+            © Johan Petrikovsky 2012/{date.getFullYear()} - Développeur web à
+            Toulouse et en Haute-Garonne -{' '}
+            <Link to="/mentions-legales">Mentions légales</Link> 51 av. de
+            Lespinet 31400 Toulouse. 06 15 37 35 95.
+          </Footer>
         </ScrollWrapper>
       </GlobalWrapper>
     </>
