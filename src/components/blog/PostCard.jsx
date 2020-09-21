@@ -23,7 +23,9 @@ const PostCard = ({ post }) => {
   return (
     <PostCardContainer>
       <div>
-        <PostCategory>{categoryTitle}</PostCategory>
+        <PostCategory>
+          <Link to={`/blog/${categoryUid}`}>{categoryTitle}</Link>
+        </PostCategory>
         <PostTitle>
           <Link to={`/blog/${categoryUid}/${uid}`}> {title}</Link>
         </PostTitle>
