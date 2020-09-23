@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import React, { useRef, useEffect } from 'react'
-import gsap from 'gsap'
-// import useWindowSize from '../hooks/useWindowSize'
-// import { myContext } from '../../provider'
+import React, { useRef, useEffect, useContext } from 'react'
+
+import { myContext } from '../../provider'
 import Header from './Header'
 
 import GlobalStyle from '../styles/global/Global'
@@ -23,83 +22,26 @@ const Layout = ({ children }) => {
   const scrollContainer = useRef()
   const refFooter = useRef()
 
-  // // Configs
-  // const data = {
-  //   ease: 0.1,
-  //   current: 0,
-  //   previous: 0,
-  //   rounded: 0,
-  // }
-
-  // // Set the height of the body to the height of the scrolling div
-  // const setBodyHeight = () => {
-  //   document.body.style.height = `${
-  //     scrollContainer.current.getBoundingClientRect().height
-  //   }px`
-  // }
-
-  // // set the height of the body.
-  // useEffect(() => {
-  //   setBodyHeight()
-  // }, [size.height])
-
-  // // Scrolling
-  // const skewScrolling = () => {
-  //   // Set Current to the scroll position amount
-  //   data.current = window.scrollY
-  //   // Set Previous to the scroll previous position
-  //   data.previous += (data.current - data.previous) * data.ease
-  //   // Set rounded to
-  //   data.rounded = Math.round(data.previous * 100) / 100
-
-  //   // Difference between
-  //   const difference = data.current - data.rounded
-  //   const acceleration = difference / size.width
-  //   const velocity = +acceleration
-  //   const skew = velocity * 5
-
-  //   // Assign skew and smooth scrolling to the scroll container
-  //   if (scrollContainer.current) {
-  //     scrollContainer.current.style.transform = `translate3d(0, -${data.rounded}px, 0) skewY(${skew}deg)`
-  //   }
-
-  //   // loop
-  //   requestAnimationFrame(() => skewScrolling())
-  // }
-
-  // // Run scrollrender once page is loaded.
-  // useEffect(() => {
-  //   requestAnimationFrame(() => skewScrolling())
-  // }, [])
-
-  // memoise the inital timeline in a ref so it doesnt get recreated each render.
-  const { current: tl } = useRef(gsap.timeline({ paused: true }))
+  const contextValues = useContext(myContext)
 
   useEffect(() => {
-    tl.addLabel('start')
-    tl.set(refFooter, { visibility: 'visible' })
-    tl.play()
+    console.info(contextValues)
+    contextValues.globalTimeline.addLabel('start')
+    contextValues.globalTimeline.set(refFooter.current, {
+      visibility: 'visible',
+    })
+    console.info(contextValues)
+    contextValues.globalTimeline.play()
   }, [])
 
-  // Passing props to children
-  const elements = React.Children.toArray(children)
-
-  const childrenWithProps = React.Children.map(elements, child =>
-    React.cloneElement(child, {
-      tl,
-      scrollContainer,
-    })
-  )
   const date = new Date()
   return (
     <>
-      <Header tl={tl} />
+      <Header />
       <GlobalWrapper ref={app} className="GlobalWrapper">
         <ScrollWrapper ref={scrollContainer} className="ScrollWrapper">
           <GlobalStyle />
-          <MainContainer className="main-container">
-            {childrenWithProps}
-          </MainContainer>
+          <MainContainer className="main-container">{children}</MainContainer>
           <Footer ref={refFooter} style={{ visibility: 'hidden' }}>
             © Johan Petrikovsky 2012/{date.getFullYear()} - Développeur web à
             Toulouse et en Haute-Garonne -{' '}

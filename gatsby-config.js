@@ -14,7 +14,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-emotion`,
-    `gatsby-plugin-preact`,
+    // `gatsby-plugin-preact`,
     'gatsby-plugin-loadable-components-ssr',
     {
       resolve: 'gatsby-plugin-react-svg',

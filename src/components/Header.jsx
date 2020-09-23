@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useContext } from 'react'
 
-import { gsap, Expo } from 'gsap'
-import SplitText from 'gsap/SplitText'
-import { DrawSVGPlugin } from 'gsap/all'
+import { Expo } from 'gsap'
 
 import Logo from '../images/assets/logo.svg'
+import { myContext } from '../../provider'
 
 import {
   WrapperHeader,
@@ -15,11 +14,7 @@ import {
   LogoWrapper,
 } from '../styles/components/header/header'
 
-gsap.registerPlugin(DrawSVGPlugin)
-
-const Header = ({ tl }) => {
-  const refBio = useRef(null)
-  const refBlog = useRef(null)
+const Header = () => {
   const refLogo = useRef(null)
   const refLineWrapper = useRef(null)
   const refLineHorizontal1 = useRef(null)
@@ -29,23 +24,10 @@ const Header = ({ tl }) => {
   const refLineVertical2 = useRef(null)
   const refLineClose2 = useRef(null)
 
-  const tlSettings = {
-    staggerValue: 0.05,
-    charsDuration: 0.5,
-  }
+  const contextValues = useContext(myContext)
 
   useEffect(() => {
-    const splitBio = new SplitText(refBio.current, {
-      type: 'chars',
-      position: 'relative',
-    })
-    const charsBio = splitBio.chars
-
-    const splitBlog = new SplitText(refBlog.current, {
-      type: 'chars',
-      position: 'relative',
-    })
-    const charsBlog = splitBlog.chars
+    const tl = contextValues.globalTimeline
 
     tl.addLabel('VisibilityWrapperLine').set(refLineWrapper.current, {
       visibility: 'visible',
@@ -100,26 +82,6 @@ const Header = ({ tl }) => {
         'horizontalLineStart+=1'
       )
       .addLabel('finishLine')
-      .staggerFrom(
-        charsBio,
-        tlSettings.charsDuration,
-        {
-          ease: Expo.easeOut,
-          y: '+100%',
-        },
-        'horizontalLineClose',
-        tlSettings.staggerValue
-      )
-      .staggerFrom(
-        charsBlog,
-        tlSettings.charsDuration,
-        {
-          ease: Expo.easeOut,
-          y: '+100%',
-        },
-        'horizontalLineClose',
-        tlSettings.staggerValue
-      )
   }, [])
 
   return (
@@ -139,14 +101,14 @@ const Header = ({ tl }) => {
         <nav>
           <ul>
             <li>
-              <Link to="/">
-                <div style={{ overflow: 'hidden' }} ref={refBio}>
-                  Bio
-                </div>
+              <Link activeClassName="active" to="/">
+                Bio
               </Link>
             </li>
-            <li style={{ overflow: 'hidden' }} ref={refBlog}>
-              <Link to="/blog">Blog</Link>
+            <li>
+              <Link activeClassName="active" to="/blog">
+                Blog
+              </Link>
             </li>
           </ul>
         </nav>

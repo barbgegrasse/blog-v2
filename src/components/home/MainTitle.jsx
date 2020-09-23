@@ -11,7 +11,7 @@ import { MainTitle } from '../../styles/common/title'
 //   gsap.registerPlugin(SplitText)
 // }
 
-const BlockMainTitle = ({ tl, homeAnimation }) => {
+const BlockMainTitle = ({ tl }) => {
   const refJob = useRef(null)
   const refName = useRef(null)
   const refSep = useRef(null)
@@ -108,11 +108,6 @@ const BlockMainTitle = ({ tl, homeAnimation }) => {
       </MainTitle>
     </>
   )
-}
-
-BlockMainTitle.propTypes = {
-  homeAnimation: PropTypes.bool.isRequired,
-  tl: PropTypes.object.isRequired,
 }
 
 export default BlockMainTitle

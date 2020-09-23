@@ -1,16 +1,19 @@
 import PropTypes from 'prop-types'
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useContext } from 'react'
 import { Power1 } from 'gsap'
 
 import { GridHome } from '../styles/pages/home/index'
 import BlockMaintTitle from '../components/home/MainTitle'
 import BlockPresentation from '../components/home/BlockPresentation'
 import ImgJohanPetrikovsky from '../components/images/ImgJohanPetrikovsky'
+import { myContext } from '../../provider'
 
-const IndexContent = ({ tl, context: { scrollPosition }, homeAnimation }) => {
+const IndexContent = () => {
   const refRightCol = useRef(null)
   const refGridHome = useRef(null)
+  const contextValues = useContext(myContext)
 
+  const tl = contextValues.globalTimeline
   useEffect(() => {
     tl.set('#refGridHome', { visibility: 'visible' }, 'start')
       .addLabel('animation-profil')
@@ -27,26 +30,22 @@ const IndexContent = ({ tl, context: { scrollPosition }, homeAnimation }) => {
   }, [])
 
   return (
-    <div id="refGridHome" ref={refGridHome} style={{ visibility: 'hidden' }}>
-      <GridHome>
-        <div className="left-col">
-          <BlockMaintTitle homeAnimation={homeAnimation} tl={tl} />
+    <>
+      <div id="refGridHome" ref={refGridHome} style={{ visibility: 'hidden' }}>
+        <GridHome>
+          <div className="left-col">
+            <BlockMaintTitle tl={tl} />
+          </div>
+          <div ref={refRightCol} className="right-col">
+            <ImgJohanPetrikovsky tl={tl} />
+          </div>
+        </GridHome>
+        <div>
+          <BlockPresentation tl={tl} />
         </div>
-        <div ref={refRightCol} className="right-col">
-          <ImgJohanPetrikovsky tl={tl} />
-        </div>
-      </GridHome>
-      <div>
-        <BlockPresentation homeAnimation={homeAnimation} tl={tl} />
       </div>
-    </div>
+    </>
   )
-}
-
-IndexContent.propTypes = {
-  homeAnimation: PropTypes.bool.isRequired,
-  tl: PropTypes.object.isRequired,
-  context: PropTypes.object.isRequired,
 }
 
 export default IndexContent
