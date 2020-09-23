@@ -6,24 +6,26 @@ import theme from '../../../styles/global/theme'
 import mediaQueries from '../../../styles/global/mediaQueries'
 
 const HnTitle = styled('div')`
-  max-width: 100%;
+  max-width: ${theme.maxWidthContent};
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px 0 60px;
+  padding: 64px 0 32px;
 
-  text-align: center;
   color: ${theme.colors.primary};
   font-family: ${theme.fonts.title};
-  font-weight: 200;
+
+  ${mediaQueries.tabletLandscape} {
+    padding: 32px 0 16px;
+  }
 
   ${mediaQueries.mobile} {
-    text-align: left;
+    padding: 16px 0 8px;
   }
 
   h2 {
     font-size: 3em;
-    font-style: italic;
+
     ${mediaQueries.desktopFlorent} {
       font-size: 2.8em;
     }
@@ -33,7 +35,7 @@ const HnTitle = styled('div')`
   }
   h3 {
     font-size: 2.6em;
-    font-style: italic;
+
     ${mediaQueries.desktopFlorent} {
       font-size: 2.4em;
     }
@@ -43,7 +45,7 @@ const HnTitle = styled('div')`
   }
   h4 {
     font-size: 2.4em;
-    font-style: italic;
+
     ${mediaQueries.desktopFlorent} {
       font-size: 2.2em;
     }
@@ -53,7 +55,7 @@ const HnTitle = styled('div')`
   }
   h5 {
     font-size: 2.2em;
-    font-style: italic;
+
     ${mediaQueries.desktopFlorent} {
       font-size: 2.1em;
     }
@@ -63,7 +65,7 @@ const HnTitle = styled('div')`
   }
   h6 {
     font-size: 2em;
-    font-style: italic;
+
     ${mediaQueries.desktopFlorent} {
       font-size: 1.9em;
     }

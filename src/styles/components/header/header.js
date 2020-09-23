@@ -41,12 +41,33 @@ const WrapperHeader = styled('div')`
     }
     a {
       color: ${theme.colors.main};
+      display: inline-block;
       margin-left: 20px;
+      position: relative;
+      &:hover {
+        color: ${theme.colors.main};
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: ${theme.colors.main};
+        transform: scaleX(0);
+        transition: all 0.3s ease-out;
+      }
+
+      &.active,
+      &:hover {
+        &:after {
+          transform: scaleX(1);
+        }
+      }
+
       &:first-of-type {
         margin-left: 0;
-      }
-      &:hover {
-        color: ${theme.colors.secondary};
       }
     }
   }

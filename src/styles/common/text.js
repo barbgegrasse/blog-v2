@@ -6,8 +6,12 @@ const ClassicText = styled('div')`
   margin-left: auto;
   margin-right: auto;
   line-height: 1.5;
+  padding-bottom: 32px;
   p {
     margin-bottom: 32px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 `
 
