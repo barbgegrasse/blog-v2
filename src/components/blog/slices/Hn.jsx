@@ -10,10 +10,18 @@ const HnTitle = styled('div')`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px 0 60px;
+  padding: 64px 0 32px;
 
   color: ${theme.colors.primary};
   font-family: ${theme.fonts.title};
+
+  ${mediaQueries.tabletLandscape} {
+    padding: 32px 0 16px;
+  }
+
+  ${mediaQueries.mobile} {
+    padding: 16px 0 8px;
+  }
 
   h2 {
     font-size: 3em;

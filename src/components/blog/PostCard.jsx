@@ -21,7 +21,7 @@ const PostCard = ({ post }) => {
   const preview = post.data.post_preview_description
 
   return (
-    <PostCardContainer>
+    <PostCardContainer className="card">
       <div>
         <PostCategory>{categoryTitle}</PostCategory>
         <PostTitle>

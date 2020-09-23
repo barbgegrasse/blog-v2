@@ -106,7 +106,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link activeClassName="active" to="/blog">
+              <Link activeClassName="active" to="/blog/">
                 Blog
               </Link>
             </li>

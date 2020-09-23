@@ -9,18 +9,28 @@ const Wrapper = styled('nav')`
   margin: 64px auto 64px auto;
   padding-left: 64px;
   border-left: 1px solid ${theme.border.primary};
+
+  .title {
+    font-size: 32px;
+    font-family: ${theme.fonts.title};
+  }
+
   ul {
     padding: 0 0 0 3px;
     margin: 0;
     list-style-type: none;
   }
+
   .item-summaryh4 ~ .item-summaryh3:first-of-type {
     margin-top: 8px;
   }
 `
 
 const WrapperSummary = ({ slices, handleSummaryClick }) => (
-  <Wrapper aria-label="Sommaire">
+  <Wrapper aria-labelledby="summary-title">
+    <p id="summary-title" className="title">
+      Sommaire
+    </p>
     <ul>
       {slices.map(slice => {
         const result = (() => {

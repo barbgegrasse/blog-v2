@@ -8,6 +8,9 @@ import theme from '../../../styles/global/theme'
 import mediaQueries from '../../../styles/global/mediaQueries'
 
 const Item = styled('li')`
+  a {
+    color: ${theme.colors.main};
+  }
   &.item-summaryh2 {
     margin-top: 16px;
   }

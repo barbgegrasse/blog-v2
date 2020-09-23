@@ -6,6 +6,11 @@ const BlogGrid = styled('section')`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2.5em;
 
+  &:hover .card:not(:hover) {
+    opacity: 0.6;
+    scale: 0.95;
+  }
+
   ${mediaQueries.desktopFlorent} {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5em;
