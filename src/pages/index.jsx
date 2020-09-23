@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import loadable from '@loadable/component'
 
 import SEO from '../components/seo'

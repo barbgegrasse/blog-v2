@@ -3,25 +3,23 @@ import React, { useRef, useEffect } from 'react'
 import { Expo } from 'gsap'
 import { PresentationWrapper } from '../../styles/components/home/blockPresentation'
 
-const BlockPresentation = ({ tl, homeAnimation }) => {
+const BlockPresentation = ({ tl }) => {
   const text1 = useRef(null)
   const text2 = useRef(null)
   const text3 = useRef(null)
 
   useEffect(() => {
-    if (homeAnimation) {
-      tl.from(
-        text1.current,
-        1.0,
-        {
-          opacity: 0,
-          y: '25%',
-          ease: Expo.easeInOut,
-        },
-        '-=1'
-      )
-
-      tl.from(
+    tl.from(
+      text1.current,
+      1.0,
+      {
+        opacity: 0,
+        y: '25%',
+        ease: Expo.easeInOut,
+      },
+      '-=1'
+    )
+      .from(
         text2.current,
         1.0,
         {
@@ -31,8 +29,7 @@ const BlockPresentation = ({ tl, homeAnimation }) => {
         },
         '-=0.8'
       )
-
-      tl.from(
+      .from(
         text3.current,
         1.0,
         {
@@ -42,7 +39,6 @@ const BlockPresentation = ({ tl, homeAnimation }) => {
         },
         '-=0.8'
       )
-    }
   })
 
   return (
@@ -102,7 +98,6 @@ const BlockPresentation = ({ tl, homeAnimation }) => {
 }
 
 BlockPresentation.propTypes = {
-  homeAnimation: PropTypes.bool.isRequired,
   tl: PropTypes.shape({
     from: PropTypes.func,
   }),
