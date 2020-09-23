@@ -139,7 +139,8 @@ export default function GlobalStyle() {
         em {
           display: inline-block;
           background: #484852;
-          color: #d7d7ea;
+          color: ${theme.colors.main};
+          font-size: 1em;
           padding: 0.2em 0.5em;
           clip-path: polygon(
             0.2em 0%,
@@ -194,6 +195,12 @@ export default function GlobalStyle() {
             /* font-size: 3.889vw;
             line-height: 5.833vw; */
           }
+        }
+
+        strong {
+          font-family: ${theme.fonts.title};
+          font-size: 1.05em;
+          color: ${theme.colors.primary};
         }
 
         a {
