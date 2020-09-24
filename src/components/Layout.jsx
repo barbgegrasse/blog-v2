@@ -14,24 +14,25 @@ import {
 } from '../styles/global/layout'
 
 const Layout = ({ children }) => {
-  // Hooks
-  // const size = useWindowSize()
-
   // Ref for parent div and scrolling div
   const app = useRef()
   const scrollContainer = useRef()
   const refFooter = useRef()
 
   const contextValues = useContext(myContext)
+  const { globalTimeline, layoutAnimation, setLayoutAnimation } = contextValues
 
   useEffect(() => {
-    console.info(contextValues)
-    contextValues.globalTimeline.addLabel('start')
-    contextValues.globalTimeline.set(refFooter.current, {
+    globalTimeline.addLabel('start')
+    globalTimeline.set(refFooter.current, {
       visibility: 'visible',
     })
-    console.info(contextValues)
-    contextValues.globalTimeline.play()
+    if (layoutAnimation) {
+      setLayoutAnimation(false)
+    } else {
+      globalTimeline.seek('finishLine')
+    }
+    globalTimeline.play()
   }, [])
 
   const date = new Date()
