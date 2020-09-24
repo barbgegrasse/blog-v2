@@ -45,17 +45,17 @@ const BlockMainTitle = ({ tl }) => {
       })
       const charsTown = splitTown.chars
 
-      tl.from(
-        refSep.current,
-        {
-          scaleX: 0,
-          duration: 0.25,
-          delay: 0.5,
-          ease: Power3.easeIn,
-        },
-        'finishLine-=0.8'
-      )
-        .addLabel('splitName')
+      tl.addLabel('splitName')
+        .from(
+          refSep.current,
+          {
+            scaleX: 0,
+            duration: 0.25,
+            delay: 0.5,
+            ease: Power3.easeIn,
+          },
+          'finishLine-=0.8'
+        )
         .staggerFrom(
           charsName,
           tlSettings.charsDuration,
@@ -108,6 +108,12 @@ const BlockMainTitle = ({ tl }) => {
       </MainTitle>
     </>
   )
+}
+
+BlockMainTitle.propTypes = {
+  tl: PropTypes.shape({
+    addLabel: PropTypes.func.isRequired,
+  }),
 }
 
 export default BlockMainTitle
