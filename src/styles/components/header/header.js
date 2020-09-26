@@ -25,8 +25,8 @@ const WrapperHeader = styled('div')`
     left: 16px;
   }
   ${mediaQueries.mobile} {
-    top: 16px;
-    left: 16px;
+    top: 8px;
+    left: 8px;
   }
   nav {
     display: flex;
@@ -54,7 +54,7 @@ const WrapperHeader = styled('div')`
         display: block;
         width: 100%;
         height: 2px;
-        background-color: ${theme.colors.main};
+        background-color: ${theme.border.primary};
         transform: scaleX(0);
         transition: all 0.3s ease-out;
       }
@@ -90,7 +90,19 @@ const LineWrapper = styled('div')`
   bottom: 32px;
   left: 32px;
   pointer-events: none;
-  visibility: hidden;
+
+  ${mediaQueries.tabletLandscape} {
+    top: 16px;
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+  }
+  ${mediaQueries.mobile} {
+    top: 8px;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+  }
 `
 const Line = styled('span')`
   position: absolute;
@@ -125,6 +137,7 @@ const Line = styled('span')`
     top: 0;
     left: 0;
   }
+
   &.vertical2 {
     width: 1px;
     height: 100%;
@@ -156,4 +169,4 @@ const Line = styled('span')`
   }
 `
 
-export { WrapperHeader, Line, LineWrapper, LogoWrapper }
+export { Line, LineWrapper, LogoWrapper, WrapperHeader }

@@ -26,6 +26,7 @@
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.6.36",
     "gatsby-plugin-sitemap": "^2.4.13",
+    "gatsby-plugin-transition-link": "^1.20.2",
     "gatsby-source-filesystem": "^2.3.30",
     "gatsby-source-prismic": "^2.3.0-previews.12",
     "gatsby-source-prismic-graphql": "^3.5.0",
@@ -43,6 +44,7 @@
     "react-intersection-observer": "^8.28.5",
     "react-smooth-scrollbar": "^8.0.6",
     "react-syntax-highlighter": "^12.2.1",
+    "react-transition-group": "^4.4.1",
     "smooth-scrollbar": "^8.5.3",
     "smooth-scrollbar-react": "^1.0.0"
   },

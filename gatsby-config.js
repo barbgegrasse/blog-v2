@@ -14,6 +14,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-emotion`,
+    {
+      resolve: 'gatsby-plugin-transition-link',
+      options: {
+        layout: require.resolve(`./src/components/Layout.jsx`),
+      },
+    },
     // `gatsby-plugin-preact`,
     'gatsby-plugin-loadable-components-ssr',
     {

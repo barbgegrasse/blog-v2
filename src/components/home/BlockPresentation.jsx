@@ -1,45 +1,11 @@
-import PropTypes from 'prop-types'
 import React, { useRef, useEffect } from 'react'
-import { Expo } from 'gsap'
+
 import { PresentationWrapper } from '../../styles/components/home/blockPresentation'
 
-const BlockPresentation = ({ tl }) => {
+const BlockPresentation = () => {
   const text1 = useRef(null)
   const text2 = useRef(null)
   const text3 = useRef(null)
-
-  useEffect(() => {
-    tl.from(
-      text1.current,
-      1.0,
-      {
-        opacity: 0,
-        y: '25%',
-        ease: Expo.easeInOut,
-      },
-      '-=1'
-    )
-      .from(
-        text2.current,
-        1.0,
-        {
-          opacity: 0,
-          y: '25%',
-          ease: Expo.easeInOut,
-        },
-        '-=0.8'
-      )
-      .from(
-        text3.current,
-        1.0,
-        {
-          opacity: 0,
-          y: '25%',
-          ease: Expo.easeInOut,
-        },
-        '-=0.8'
-      )
-  })
 
   return (
     <PresentationWrapper>
@@ -95,12 +61,6 @@ const BlockPresentation = ({ tl }) => {
       </p>
     </PresentationWrapper>
   )
-}
-
-BlockPresentation.propTypes = {
-  tl: PropTypes.shape({
-    from: PropTypes.func,
-  }),
 }
 
 export default BlockPresentation

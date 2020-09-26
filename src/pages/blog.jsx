@@ -3,7 +3,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import SEO from '../components/seo'
-import Layout from '../components/Layout'
+
 import { BlogGrid } from '../styles/components/blog/listing'
 import { MainTitle } from '../styles/common/title'
 import PostCard from '../components/blog/PostCard'
@@ -12,7 +12,7 @@ const BlogPage = ({ data }) => {
   const listPosts = data.allPrismicPost.edges
 
   return (
-    <Layout>
+    <>
       <SEO title="Blog développeur web à Toulouse" />
       <MainTitle>Blog</MainTitle>
       <BlogGrid>
@@ -20,7 +20,7 @@ const BlogPage = ({ data }) => {
           <PostCard key={post.node.uid} post={post.node} />
         ))}
       </BlogGrid>
-    </Layout>
+    </>
   )
 }
 

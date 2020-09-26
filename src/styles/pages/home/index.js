@@ -49,12 +49,17 @@ const SubTitle = styled('div')`
   margin-bottom: 64px;
   position: relative;
   letter-spacing: 0.08em;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-size: 0.8em;
 
   .sep {
     display: block;
     width: 64px;
     height: 2px;
     margin-top: 32px;
+    transform: scaleX(1);
+    transform-origin: top left;
     background-color: ${theme.border.primary};
   }
 `
