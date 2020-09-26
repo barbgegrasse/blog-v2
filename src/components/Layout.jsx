@@ -1,11 +1,16 @@
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import gsap from 'gsap'
 import React, { useRef, useEffect, useContext } from 'react'
 
 import { myContext } from '../../provider'
-import Header from './Header'
+import Header from './header/Header'
 
 import GlobalStyle from '../styles/global/Global'
+import menuAnimation from '../animation/layout/menuAnimation'
+import linesAnimation from '../animation/layout/linesAnimation'
+import socialAnimation from '../animation/layout/socialAnimation'
+
 import {
   Footer,
   GlobalWrapper,
@@ -15,40 +20,47 @@ import {
 
 const Layout = ({ children }) => {
   // Ref for parent div and scrolling div
-  const app = useRef()
-  const scrollContainer = useRef()
+  const refApp = useRef()
   const refFooter = useRef()
+  const scrollContainer = useRef()
 
   const contextValues = useContext(myContext)
   const { globalTimeline, layoutAnimation, setLayoutAnimation } = contextValues
 
+  // memoise the inital timeline in a ref so it doesnt get recreated each render.
+  const { current: masterTl } = useRef(gsap.timeline({ paused: true }))
+
   useEffect(() => {
-    globalTimeline.addLabel('start')
-    globalTimeline.set(refFooter.current, {
+    masterTl.addLabel('start')
+    masterTl.set('body', {
       visibility: 'visible',
     })
+    masterTl.set(refFooter.current, {
+      visibility: 'visible',
+    })
+
     if (layoutAnimation) {
-      setLayoutAnimation(false)
-    } else {
-      globalTimeline.seek('finishLine')
+      masterTl.add(linesAnimation())
+      masterTl.add(menuAnimation(), 'VisibilityWrapperLine-=1.5')
+      masterTl.add(socialAnimation(), 'VisibilityWrapperLine-=1.5')
     }
-    globalTimeline.play()
+    masterTl.play()
   }, [])
 
   const date = new Date()
   return (
     <>
       <Header />
-      <GlobalWrapper ref={app} className="GlobalWrapper">
+      <GlobalWrapper ref={refApp} className="GlobalWrapper">
         <ScrollWrapper ref={scrollContainer} className="ScrollWrapper">
           <GlobalStyle />
           <MainContainer className="main-container">{children}</MainContainer>
-          <Footer ref={refFooter} style={{ visibility: 'hidden' }}>
+          {/* <Footer ref={refFooter} style={{ visibility: 'hidden' }}>
             © Johan Petrikovsky 2012/{date.getFullYear()} - Développeur web à
             Toulouse et en Haute-Garonne - 51 av. de Lespinet 31400 Toulouse -
             06 15 37 35 95 -{' '}
             <Link to="/mentions-legales">Mentions légales</Link>
-          </Footer>
+          </Footer> */}
         </ScrollWrapper>
       </GlobalWrapper>
     </>

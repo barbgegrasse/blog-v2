@@ -11,109 +11,37 @@ import { MainTitle } from '../../styles/common/title'
 //   gsap.registerPlugin(SplitText)
 // }
 
-const BlockMainTitle = ({ tl }) => {
+const BlockMainTitle = () => {
   const refJob = useRef(null)
   const refName = useRef(null)
   const refSep = useRef(null)
   const refTown = useRef(null)
 
-  const tlSettings = {
-    staggerValue: 0.014,
-    charsDuration: 0.5,
-  }
-
   useEffect(() => {
-    // TypeError: Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'
-    if (typeof window !== 'undefined') {
-      gsap.registerPlugin(SplitText)
-
-      const splitJob = new SplitText(refJob.current, {
-        type: 'chars',
-        position: 'relative',
-      })
-      const charsJob = splitJob.chars
-
-      const splitName = new SplitText(refName.current, {
-        type: 'chars',
-        position: 'relative',
-      })
-      const charsName = splitName.chars
-
-      const splitTown = new SplitText(refTown.current, {
-        type: 'chars',
-        position: 'relative',
-      })
-      const charsTown = splitTown.chars
-
-      tl.addLabel('splitName')
-        .from(
-          refSep.current,
-          {
-            scaleX: 0,
-            duration: 0.25,
-            delay: 0.5,
-            ease: Power3.easeIn,
-          },
-          'finishLine-=0.8'
-        )
-        .staggerFrom(
-          charsName,
-          tlSettings.charsDuration,
-          {
-            ease: Power3.easeOut,
-            y: '+100%',
-          },
-          tlSettings.staggerValue
-        )
-        .addLabel('splitjob')
-        .staggerFrom(
-          charsJob,
-          tlSettings.charsDuration,
-          {
-            ease: Power3.easeOut,
-            y: '+100%',
-          },
-          tlSettings.staggerValue,
-          '-=0.5'
-        )
-        .addLabel('splitTown')
-        .staggerFrom(
-          charsTown,
-          tlSettings.charsDuration,
-          {
-            ease: Power3.easeOut,
-            y: '+100%',
-          },
-          tlSettings.staggerValue,
-          '-=0.5'
-        )
-        .addLabel('endTown')
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
     <>
-      <SubTitle ref={refName}>
+      <SubTitle id="refName" ref={refName}>
         Johan Petrikovsky
-        <span ref={refSep} className="sep" />
+        <span
+          id="refSep"
+          ref={refSep}
+          className="sep"
+          aria-label="separation"
+        />
       </SubTitle>
       <MainTitle as="h1">
-        <div ref={refJob} className="highlight">
+        <div id="refJob" ref={refJob} className="highlight">
           Développeur Web
         </div>
-        <div ref={refTown} className="toulouse">
+        <div id="refTown" ref={refTown} className="toulouse">
           à Toulouse
         </div>
       </MainTitle>
     </>
   )
-}
-
-BlockMainTitle.propTypes = {
-  tl: PropTypes.shape({
-    addLabel: PropTypes.func.isRequired,
-  }),
 }
 
 export default BlockMainTitle

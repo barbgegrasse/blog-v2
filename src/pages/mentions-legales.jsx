@@ -208,7 +208,6 @@ const NotFoundPage = () => (
         ainsi visités, et n’assumera en conséquence aucune responsabilité de ce
         fait.
       </p>
-
       <h3>9. Droit applicable et attribution de juridiction.</h3>
       <p>
         Tout litige en relation avec l’utilisation du site{' '}
@@ -235,6 +234,8 @@ const NotFoundPage = () => (
         n° 78-17 du 6 janvier 1978).
       </p>
       <br />
+      Logo Twitter par Acid Beast from the Noun Project <br />
+      Logo linkedin by rivda from the Noun Project
       <p>
         Le modèle de mentions légales est offert par Subdelirium.com{' '}
         <a

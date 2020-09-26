@@ -209,6 +209,11 @@ export default function GlobalStyle() {
           transition: color 0.3s ease-in-out;
         }
 
+        /*Gatsby transition */
+        .tl-edges {
+          overflow-x: initial;
+        }
+
         /* HELPERS */
         .max-container {
           max-width: ${theme.maxWidth};
@@ -226,6 +231,10 @@ export default function GlobalStyle() {
 
         .v-hidden {
           visibility: hidden;
+        }
+
+        .o-hidden {
+          overflow: hidden;
         }
 
         .hide-text {
