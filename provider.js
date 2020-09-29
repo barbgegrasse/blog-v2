@@ -1,28 +1,27 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import gsap from 'gsap'
 
 export const myContext = React.createContext()
 
 const ProviderComponent = ({ children }) => {
-  const [layoutAnimation, setLayoutAnimation] = useState(true)
-  const [scrollPosition, setScrollPosition] = useState(0)
-  const [damping, setdamping] = useState(0.2) // Set scroll harschness
-  const [globalTimeline, setGlobalTimeline] = useState(
-    gsap.timeline({ paused: true })
-  ) // Global Timeline for animation
+  const { current: layoutTL } = useRef(gsap.timeline({ paused: true }))
+  const { current: indexTL } = useRef(gsap.timeline({ paused: true }))
+
+  const [shouldLayoutAnimate, setShouldLayoutAnimate] = useState(true)
+  const [layoutTimeline, setLayoutTimeline] = useState(layoutTL)
+  const [indexTimeline, setIndexTimeline] = useState(indexTL) // Global Timeline for animation
 
   return (
     <myContext.Provider
       value={{
-        layoutAnimation,
-        setLayoutAnimation: bool => setLayoutAnimation(bool),
-        scrollPosition,
-        updateScroll: newScrollPosition => setScrollPosition(newScrollPosition),
-        damping,
-        updateDamping: dampingValue => setdamping(dampingValue),
-        globalTimeline,
-        setGlobalTimeline: tl => setGlobalTimeline(tl),
+        shouldLayoutAnimate,
+        setShouldLayoutAnimate: bool => setShouldLayoutAnimate(bool),
+
+        layoutTimeline,
+        setLayoutTimeline: tl => setLayoutTimeline(tl),
+        indexTimeline,
+        setIndexTimeline: tl => setIndexTimeline(tl),
       }}
     >
       {children}

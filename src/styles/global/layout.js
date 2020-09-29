@@ -8,10 +8,8 @@ const ScrollWrapper = styled('div')`
 const GlobalWrapper = styled('div')`
   height: 100%;
   width: 100%;
-  /* overflow: auto; */
 
   min-height: 100vh;
-  /* visibility: hidden; */
   padding: 120px 0 0 120px;
   ${mediaQueries.tabletLandscape} {
     padding: 60px 0 0 60px;

@@ -1,4 +1,4 @@
-import { gsap, Power3 } from 'gsap'
+import { gsap, Power3, useEffect } from 'gsap'
 import SplitText from 'gsap/SplitText'
 
 const mainTitle = () => {
@@ -32,15 +32,11 @@ const mainTitle = () => {
     const charsTown = splitTown.chars
 
     tl.addLabel('splitName')
-      .from(
-        '#refSep',
-        {
-          scaleX: 0,
-          duration: 0.5,
-          ease: Power3.easeIn,
-        },
-        'finishLine'
-      )
+      .from('#refSep', {
+        scaleX: 0,
+        duration: 0.5,
+        ease: Power3.easeIn,
+      })
       .staggerFrom(
         wordsName,
         tlSettings.charsDuration,

@@ -29,7 +29,7 @@ const BlockPresentation = () => {
 
       <div className="hide-text">
         <p ref={text3}>
-          Après avoir collaboré pendant <span className="highlight">7 ans</span>{' '}
+          Après avoir collaboré pendant <span className="highlight">7 ans</span>
           comme <span className="highlight">développeur web</span> avec des
           agences de communication, j’ai pu mettre en oeuvre mes compétences sur
           plus d’une cinquantaine de projets web (sites institutionnels, sites
@@ -54,7 +54,7 @@ const BlockPresentation = () => {
 
       <p>
         Pendant mon temps libre, j'aime réaliser des animations sur la librairie
-        avascript gsap.{' '}
+        Javascript Gsap.
         <span className="highlight">
           J'apprends actuellement à écrire de meilleurs tests avec Cypress.
         </span>
