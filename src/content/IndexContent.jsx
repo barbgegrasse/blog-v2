@@ -1,40 +1,45 @@
-import PropTypes from 'prop-types'
 import React, { useRef, useEffect, useContext } from 'react'
-import gsap from 'gsap'
+import { Power1 } from 'gsap'
 
 import { GridHome } from '../styles/pages/home/index'
 import BlockMaintTitle from '../components/home/MainTitle'
 import BlockPresentation from '../components/home/BlockPresentation'
 import ImgJohanPetrikovsky from '../components/images/ImgJohanPetrikovsky'
 import { myContext } from '../../provider'
-import profilAnimation from '../animation/index/profilAnimation'
-import mainTitleAnimation from '../animation/index/mainTitleAnimation'
+// import profilAnimation from '../animation/index/profilAnimation'
+// import mainTitleAnimation from '../animation/index/mainTitleAnimation'
 
 const IndexContent = () => {
+  const refIndexContent = useRef(null)
+  const refRightCol = useRef(null)
   const contextValues = useContext(myContext)
+  const { indexTimeline, setIndexTimeline } = contextValues
 
-  const { layoutAnimation, setLayoutAnimation } = contextValues
-
-  const { current: indexTl } = useRef(gsap.timeline({ paused: true }))
   useEffect(() => {
-    if (layoutAnimation) {
-      indexTl.add(mainTitleAnimation(), '+=2')
-      setLayoutAnimation(false)
-    } else {
-      indexTl.add(mainTitleAnimation())
-    }
-    indexTl.add(profilAnimation(), '-=0.5')
-    indexTl.play()
-  }, [])
+    indexTimeline.set(refIndexContent.current, { visibility: 'visible' })
+
+    indexTimeline.addLabel('animation-profil').from(
+      refRightCol.current,
+      {
+        duration: 0.8,
+        y: '+=2%',
+        opacity: 0,
+        ease: Power1.easeOut,
+      },
+      '-=0.5'
+    )
+    setIndexTimeline(indexTimeline)
+    indexTimeline.play('5')
+  }, [indexTimeline, setIndexTimeline])
 
   return (
     <>
-      <div>
+      <div ref={refIndexContent}>
         <GridHome>
           <div className="left-col">
             <BlockMaintTitle />
           </div>
-          <div id="right-col" className="right-col">
+          <div ref={refRightCol}>
             <ImgJohanPetrikovsky />
           </div>
         </GridHome>

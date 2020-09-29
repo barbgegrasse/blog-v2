@@ -1,15 +1,13 @@
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import gsap from 'gsap'
-import React, { useRef, useEffect, useContext } from 'react'
+import React, { useRef, useEffect, useContext, useState } from 'react'
 
 import { myContext } from '../../provider'
 import Header from './header/Header'
 
 import GlobalStyle from '../styles/global/Global'
-import menuAnimation from '../animation/layout/menuAnimation'
-import linesAnimation from '../animation/layout/linesAnimation'
-import socialAnimation from '../animation/layout/socialAnimation'
+// import menuAnimation from '../animation/layout/menuAnimation'
+// import linesAnimation from '../animation/layout/linesAnimation'
+// import socialAnimation from '../animation/layout/socialAnimation'
 
 import {
   Footer,
@@ -19,35 +17,33 @@ import {
 } from '../styles/global/layout'
 
 const Layout = ({ children }) => {
+  const [animate, setAnimate] = useState(true)
   // Ref for parent div and scrolling div
   const refApp = useRef()
-  const refFooter = useRef()
   const scrollContainer = useRef()
 
   const contextValues = useContext(myContext)
-  const { globalTimeline, layoutAnimation, setLayoutAnimation } = contextValues
+  const {
+    layoutTimeline,
+    setLayoutTimeline,
+    setShouldLayoutAnimate,
+  } = contextValues
 
-  // memoise the inital timeline in a ref so it doesnt get recreated each render.
-  const { current: masterTl } = useRef(gsap.timeline({ paused: true }))
+  layoutTimeline.addLabel('start')
+  if (typeof window !== `undefined`) {
+    layoutTimeline.set('body', {
+      visibility: 'visible',
+    })
+  }
+  setLayoutTimeline(layoutTimeline)
 
   useEffect(() => {
-    masterTl.addLabel('start')
-    masterTl.set('body', {
-      visibility: 'visible',
-    })
-    masterTl.set(refFooter.current, {
-      visibility: 'visible',
-    })
-
-    if (layoutAnimation) {
-      masterTl.add(linesAnimation())
-      masterTl.add(menuAnimation(), 'VisibilityWrapperLine-=1.5')
-      masterTl.add(socialAnimation(), 'VisibilityWrapperLine-=1.5')
-    }
-    masterTl.play()
+    layoutTimeline.play()
+    setShouldLayoutAnimate(false)
   }, [])
 
   const date = new Date()
+
   return (
     <>
       <Header />

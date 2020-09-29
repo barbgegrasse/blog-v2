@@ -6,14 +6,9 @@ import loadable from '@loadable/component'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
 
-import { myContext } from '../../provider'
-
 const PostContent = loadable(() => import('../content/PostContent'))
 
 const Post = ({ data: { prismicPost } }) => {
-  const contextValues = useContext(myContext)
-  contextValues.updateDamping(1) // Update scroll harschness
-
   return (
     <Layout>
       <SEO

@@ -24,6 +24,7 @@ const GridHome = styled('section')`
   }
 
   .right-col {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;

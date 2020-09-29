@@ -97,6 +97,7 @@ const LineWrapper = styled('div')`
     bottom: 16px;
     left: 16px;
   }
+
   ${mediaQueries.mobile} {
     top: 8px;
     right: 8px;

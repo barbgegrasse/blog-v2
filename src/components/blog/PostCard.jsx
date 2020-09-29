@@ -23,7 +23,7 @@ const PostCard = ({ post }) => {
   return (
     <PostCardContainer className="card">
       <div>
-        <PostCategory>{categoryTitle}</PostCategory>
+        <PostCategory to="/">{categoryTitle}</PostCategory>
         <PostTitle>
           <Link to={`/blog/${categoryUid}/${uid}`}> {title}</Link>
         </PostTitle>
@@ -35,9 +35,9 @@ const PostCard = ({ post }) => {
         <PostCardAction to={`/blog/${categoryUid}/${uid}`}>
           En savoir plus <span>&#8594;</span>
         </PostCardAction>
-        <PostMetas>
+        {/* <PostMetas>
           <PostDate>{Date}</PostDate>
-        </PostMetas>
+        </PostMetas> */}
       </div>
     </PostCardContainer>
   )
