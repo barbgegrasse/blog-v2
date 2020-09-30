@@ -14,16 +14,6 @@ const MainTitle = styled('h1')`
   ${mediaQueries.desktopFlorent} {
     font-size: max(4.7vw, 45px);
   }
-
-  .highlight {
-    display: block;
-    color: ${theme.colors.primary};
-  }
-
-  .toulouse {
-    font-size: max(3.5vw, 30px);
-    font-family: ${theme.fonts.main};
-  }
 `
 
 export { MainTitle }

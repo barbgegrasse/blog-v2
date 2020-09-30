@@ -29,7 +29,7 @@ const IndexContent = () => {
       '-=0.5'
     )
     setIndexTimeline(indexTimeline)
-    indexTimeline.play('5')
+    indexTimeline.play()
   }, [indexTimeline, setIndexTimeline])
 
   return (

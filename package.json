@@ -10,6 +10,7 @@
     "@emotion/styled": "^10.0.27",
     "@loadable/component": "^5.13.2",
     "@netlify/plugin-lighthouse": "^1.4.2",
+    "@sentry/browser": "^5.24.2",
     "@willthevideoman/gatsby-plugin-ackee-tracker": "^1.5.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.24.66",

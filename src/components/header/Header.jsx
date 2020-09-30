@@ -131,10 +131,21 @@ const Header = () => {
                 activeClassName="active"
                 to="/"
                 entry={{
-                  trigger: ({ exit, node }) => {
-                    indexTimeline.play()
-                  },
                   length: 1,
+                }}
+                trigger={async pages => {
+                  // wait until we have access to both pages
+                  const exit = await pages.exit
+                  const entry = await pages.entry
+                  // here we can access both pages
+
+                  // You could measure the entry element here
+
+                  // start exit animation based on measurements if you want
+                  // wait for the entering page to become visible
+                  await entry.visible
+                  indexTimeline.seek(0)
+                  indexTimeline.play()
                 }}
               >
                 Bio

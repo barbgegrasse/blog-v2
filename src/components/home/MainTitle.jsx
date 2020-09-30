@@ -2,8 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useRef, useEffect, useContext } from 'react'
 import { gsap, Power3 } from 'gsap'
 import SplitText from 'gsap/SplitText'
-import { SubTitle } from '../../styles/pages/home/index'
-import { MainTitle } from '../../styles/common/title'
+import { SubTitle, MainTitle } from '../../styles/pages/home/index'
 import { myContext } from '../../../provider'
 // TypeError: Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'
 // https://greensock.com/forums/topic/20512-drawsvg-build-failed-gatsby/
@@ -54,10 +53,9 @@ const BlockMainTitle = () => {
           {
             scaleX: 0,
             duration: 0.25,
-            delay: 0.5,
             ease: Power3.easeIn,
           },
-          'finishLine-=0.8'
+          '-=0'
         )
         .addLabel('splitName')
         .staggerFrom(
