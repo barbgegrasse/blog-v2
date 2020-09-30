@@ -7,6 +7,7 @@ const ImageWrapper = styled('div')`
   position: absolute;
   bottom: 0px;
   width: 23vw;
+  transform: translateX(50%);
 `
 
 const ImgJohanPetrikovsky = () => {

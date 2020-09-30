@@ -15,10 +15,14 @@ const GridHome = styled('section')`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    padding-bottom: 64px;
 
     min-height: calc(100vh - 270px);
+    ${mediaQueries.tabletLandscape} {
+      padding-bottom: 32px;
+    }
     ${mediaQueries.mobile} {
-      padding-bottom: 30px;
+      padding-bottom: 16px;
       min-height: 100vh;
     }
   }
@@ -33,16 +37,33 @@ const GridHome = styled('section')`
     }
   }
 
-  h1 {
-    margin-bottom: 64px;
-    text-align: left;
-    font-family: ${theme.fonts.title};
-  }
-
   p {
     font-size: 24px;
     line-height: 1.4;
     padding-bottom: 20px;
+  }
+`
+
+const MainTitle = styled('h1')`
+  font-family: ${theme.fonts.title};
+  font-size: max(4.8vw, 45px);
+  text-align: left;
+  line-height: 1.1;
+
+  overflow: hidden;
+
+  ${mediaQueries.desktopFlorent} {
+    font-size: max(4.7vw, 45px);
+  }
+
+  .highlight {
+    display: block;
+    color: ${theme.colors.primary};
+  }
+
+  .toulouse {
+    font-size: max(3.5vw, 30px);
+    font-family: ${theme.fonts.main};
   }
 `
 
@@ -53,6 +74,13 @@ const SubTitle = styled('div')`
   overflow: hidden;
   text-transform: uppercase;
   font-size: 0.8em;
+
+  ${mediaQueries.tabletLandscape} {
+    margin-bottom: 32px;
+  }
+  ${mediaQueries.mobile} {
+    margin-bottom: 16px;
+  }
 
   .sep {
     display: block;
@@ -65,4 +93,4 @@ const SubTitle = styled('div')`
   }
 `
 
-export { GridHome, SubTitle }
+export { GridHome, SubTitle, MainTitle }
