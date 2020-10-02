@@ -21,29 +21,26 @@ const SocialIcons = () => {
         '.logo-wrapper',
         {
           opacity: 0,
-          left: '-=50%',
+          left: '-=20%',
           duration: 0.5,
           ease: Power1.easeOut,
-          stagger: 0.5,
+          stagger: 0.2,
         },
-        '+=0.2'
+        '+=0.6'
       )
       socialTL.play()
     }
-  })
+  }, [])
 
   return (
     <SocialWrapper>
-      <div className="o-hidden">
-        <LogoWrapper className="logo-wrapper">
-          <Linkedin />
-        </LogoWrapper>
-      </div>
-      <div className="o-hidden">
-        <LogoWrapper className="logo-wrapper">
-          <Twitter />
-        </LogoWrapper>
-      </div>
+      <LogoWrapper className="logo-wrapper">
+        <Linkedin />
+      </LogoWrapper>
+
+      <LogoWrapper className="logo-wrapper">
+        <Twitter />
+      </LogoWrapper>
     </SocialWrapper>
   )
 }

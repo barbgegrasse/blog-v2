@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types'
 import Link from 'gatsby-plugin-transition-link'
 import React, { useRef, useEffect, useContext } from 'react'
-import gsap, { Expo } from 'gsap'
-
-// import profilAnimation from '../../animation/index/profilAnimation'
-// import mainTitleAnimation from '../../animation/index/mainTitleAnimation'
+import { Expo } from 'gsap'
+import { myContext } from '../../../provider'
+import NavWrapper from './nav/NavWrapper'
 
 import Logo from '../../images/assets/logo.svg'
 import {
@@ -14,16 +13,13 @@ import {
   LogoWrapper,
 } from '../../styles/components/header/header'
 import SocialIcons from './SocialIcons'
-import { myContext } from '../../../provider'
 
 const Header = () => {
   const contextValues = useContext(myContext)
   const {
-    indexTimeline,
     layoutTimeline,
     setLayoutTimeline,
     shouldLayoutAnimate,
-    setShouldLayoutAnimate,
   } = contextValues
 
   const refLogo = useRef(null)
@@ -114,7 +110,6 @@ const Header = () => {
         <LogoWrapper id="logo-wrapper" ref={refLogo}>
           <Logo />
         </LogoWrapper>
-
         <Line ref={refLineHorizontal1} className="line horizontal1" />
         <Line ref={refLineHorizontal2} className="line horizontal2" />
         <Line ref={refLineClose1} className="line close1" />
@@ -124,51 +119,7 @@ const Header = () => {
         <SocialIcons />
       </LineWrapper>
       <WrapperHeader>
-        <nav>
-          <ul>
-            <li className="item-menu">
-              <Link
-                activeClassName="active"
-                to="/"
-                entry={{
-                  length: 1,
-                }}
-                trigger={async pages => {
-                  // wait until we have access to both pages
-                  const exit = await pages.exit
-                  const entry = await pages.entry
-                  // here we can access both pages
-
-                  // You could measure the entry element here
-
-                  // start exit animation based on measurements if you want
-                  // wait for the entering page to become visible
-                  await entry.visible
-                  indexTimeline.seek(0)
-                  indexTimeline.play()
-                }}
-              >
-                Bio
-              </Link>
-            </li>
-            <li className="item-menu">
-              <Link
-                to="/blog/"
-                exit={{
-                  trigger: ({ exit, node }) => {
-                    indexTimeline.reverse()
-                  },
-                  length: 1,
-                }}
-                entry={{
-                  delay: 2,
-                }}
-              >
-                Blog
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <NavWrapper />
       </WrapperHeader>
     </>
   )

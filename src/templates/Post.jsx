@@ -8,17 +8,15 @@ import Layout from '../components/Layout'
 
 const PostContent = loadable(() => import('../content/PostContent'))
 
-const Post = ({ data: { prismicPost } }) => {
-  return (
-    <Layout>
-      <SEO
-        title={prismicPost.data.post_title.text}
-        description={prismicPost.data.post_preview_description.text}
-      />
-      <PostContent prismicPost={prismicPost} />
-    </Layout>
-  )
-}
+const Post = ({ data: { prismicPost } }) => (
+  <>
+    <SEO
+      title={prismicPost.data.post_title.text}
+      description={prismicPost.data.post_preview_description.text}
+    />
+    <PostContent prismicPost={prismicPost} />
+  </>
+)
 
 Post.propTypes = {
   data: PropTypes.object.isRequired,

@@ -7,10 +7,12 @@ export const myContext = React.createContext()
 const ProviderComponent = ({ children }) => {
   const { current: layoutTL } = useRef(gsap.timeline({ paused: true }))
   const { current: indexTL } = useRef(gsap.timeline({ paused: true }))
+  const { current: blogTL } = useRef(gsap.timeline({ paused: true }))
 
   const [shouldLayoutAnimate, setShouldLayoutAnimate] = useState(true)
   const [layoutTimeline, setLayoutTimeline] = useState(layoutTL)
-  const [indexTimeline, setIndexTimeline] = useState(indexTL) // Global Timeline for animation
+  const [indexTimeline, setIndexTimeline] = useState(indexTL)
+  const [blogTimeline, setBlogTimeline] = useState(blogTL)
 
   return (
     <myContext.Provider
@@ -20,8 +22,12 @@ const ProviderComponent = ({ children }) => {
 
         layoutTimeline,
         setLayoutTimeline: tl => setLayoutTimeline(tl),
+
         indexTimeline,
         setIndexTimeline: tl => setIndexTimeline(tl),
+
+        blogTimeline,
+        setBlogTimeline: tl => setBlogTimeline(tl),
       }}
     >
       {children}
