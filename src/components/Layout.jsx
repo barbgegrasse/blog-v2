@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { useRef, useEffect, useContext, useState } from 'react'
+import Link from 'gatsby'
 
 import { myContext } from '../../provider'
 import Header from './header/Header'
@@ -17,10 +18,9 @@ import {
 } from '../styles/global/layout'
 
 const Layout = ({ children }) => {
-  const [animate, setAnimate] = useState(true)
   // Ref for parent div and scrolling div
   const refApp = useRef()
-  const scrollContainer = useRef()
+  const refFooter = useRef()
 
   const contextValues = useContext(myContext)
   const {
@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
     <>
       <Header />
       <GlobalWrapper ref={refApp} className="GlobalWrapper">
-        <ScrollWrapper ref={scrollContainer} className="ScrollWrapper">
+        <ScrollWrapper className="ScrollWrapper">
           <GlobalStyle />
           <MainContainer className="main-container">{children}</MainContainer>
           {/* <Footer ref={refFooter} style={{ visibility: 'hidden' }}>

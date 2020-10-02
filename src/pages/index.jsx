@@ -8,7 +8,6 @@ import { myContext } from '../../provider'
 const IndexContent = loadable(() => import('../content/IndexContent'))
 
 const IndexPage = ({ transitionStatus }) => {
-  console.info(transitionStatus)
   const contextValue = useContext(myContext)
   const { homeAnimation } = contextValue
 
