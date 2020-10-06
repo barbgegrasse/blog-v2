@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
+import Vector from '../../images/assets/vector-home-1.svg'
 
 const ImageWrapper = styled('div')`
   position: absolute;
@@ -27,6 +28,7 @@ const ImgJohanPetrikovsky = () => {
 
   return (
     <ImageWrapper className="image-wrapper">
+      {/* <Vector /> */}
       <Img fluid={data.placeholderImage.childImageSharp.fluid} />
     </ImageWrapper>
   )
