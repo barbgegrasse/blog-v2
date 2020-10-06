@@ -4,6 +4,23 @@ import PropTypes from 'prop-types'
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
+      MMMMMMMMMMMMMNd,:0WMWXo,lKWMMMMMMMMMMMMM
+      MMMMMMMMMMMNOc..:OXko:...;xXMMMMMMMMMMMM
+      MMMMMMMMMNOc..;x0k:...,c;..;xXMMMMMMMMMM
+      MMMMMMMNOc..;x0k:..,:oKWXx;..;xXMMMMMMMM
+      MMMMMNOc..;x0k:..,dKWWMMMMXx;..;xXMMMMMM
+      MMMNOc..;x0k:..,dKWMMMMMMMMMXx;..;xXMMMM
+      MNk:..;x0k:..,dKWMMMMMMMMMMMMMXk:..;xXMM
+      k:..;x0x:..,dKWMMMMMMMMMMMMMMMMMNk:..;xX
+      :..'dKk,..'dNMMMMMMMMMMMMMMMMMMMMWO;..'o
+      Xx;..:xkl'.'l0WMMMMMMMMMMMMMMMMWKd,..:kN
+      MWXx;..:xkl'.'l0WMMMMMMMMMMMMWKd,..:kNMM
+      MMMMXx;..;xkl'.'l0WMMMMMMMMWKd,..:kNMMMM
+      MMMMMMXx;..;dkl'.'l0XWMMMWKo,..:kNMMMMMM
+      MMMMMMMMXx;..;dko'.';l0NKo,..:kNMMMMMMMM
+      MMMMMMMMMMXx;..;dko,..';'..:kNMMMMMMMMMM
+      MMMMMMMMMMMMXx;..oXKOo,..:kNMMMMMMMMMMMM
+      MMMMMMMMMMMMMMKlc0WMMWOcdXMMMMMMMMMMMMMM
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
