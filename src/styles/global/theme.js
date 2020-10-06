@@ -2,7 +2,7 @@ const theme = {
   colors: {
     main: '#f2f8e7',
     primary: '#fff700',
-    secondary: '#f078ff',
+    // secondary: '#f078ff',
     tertiary: '#35efde',
     important: '#15dfff',
     light: '#4972a5',
@@ -16,8 +16,7 @@ const theme = {
   },
   fonts: {
     main: "Gilroy, 'Helvetica Neue',Helvetica,Arial,sans-serif",
-    title: "'Gilroy-Bold'",
-    // title: "'Druk Wide Bold'",
+    title: "'Gilroy-Bold', 'Helvetica Neue',Helvetica,Arial,sans-serif",
   },
   maxWidth: '90%',
   maxWidthContent: '980px',

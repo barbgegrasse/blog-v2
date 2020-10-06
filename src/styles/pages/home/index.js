@@ -33,6 +33,7 @@ const GridHome = styled('section')`
     align-items: center;
     justify-content: center;
     ${mediaQueries.mobile} {
+      display: none;
       min-height: 100vh;
     }
   }

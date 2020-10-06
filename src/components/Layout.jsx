@@ -46,7 +46,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header />
       <GlobalWrapper ref={refApp} className="GlobalWrapper">
         <ScrollWrapper className="ScrollWrapper">
           <GlobalStyle />
@@ -58,6 +57,7 @@ const Layout = ({ children }) => {
             <Link to="/mentions-legales">Mentions légales</Link>
           </Footer> */}
         </ScrollWrapper>
+        <Header />
       </GlobalWrapper>
     </>
   )

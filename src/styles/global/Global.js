@@ -177,6 +177,26 @@ export default function GlobalStyle() {
               format('svg');
         }
 
+        html::-webkit-scrollbar {
+          width: 4px;
+          height: 4px;
+        }
+        html::-webkit-scrollbar-thumb {
+          background: ${theme.colors.primary};
+
+          box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+            inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+        }
+        html::-webkit-scrollbar-track {
+          background: linear-gradient(
+            90deg,
+            #201c29,
+            #201c29 1px,
+            #100e17 0,
+            #100e17
+          );
+        }
+
         body {
           background: ${theme.bg.main};
           color: ${theme.colors.main};

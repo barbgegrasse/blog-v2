@@ -74,16 +74,11 @@ status = 301
 force = true
 
 [[redirects]]
-from = "https://www.developpeur-web.tech/blog/gatsby/installer-ackee-alternative-google-analytics"
-to = "https://www.developpeur-web.tech/blog/installer-ackee-alternative-google-analytics"
+from = "https://www.developpeur-web.tech/blog/installer-ackee-alternative-google-analytics"
+to = "https://www.developpeur-web.tech/blog/gatsby/installer-ackee-alternative-google-analytics"
 status = 301
 force = true
 
-[[redirects]]
-from = "https://www.developpeur-web.tech/blog/gatsby/installer-ackee-alternative-google-analytics"
-to = "https://www.developpeur-web.tech/blog/installer-ackee-alternative-google-analytics"
-status = 301
-force = true
 
 [[redirects]]
 from = "https://www.developpeur-web.tech/blog/comment-bien-choisir-sa-typographie"
