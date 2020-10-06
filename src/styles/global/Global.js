@@ -224,7 +224,7 @@ export default function GlobalStyle() {
         }
 
         a {
-          color: ${theme.colors.secondary};
+          color: ${theme.colors.primary};
           text-decoration: none;
           transition: color 0.3s ease-in-out;
         }
