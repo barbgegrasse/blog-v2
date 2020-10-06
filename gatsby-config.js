@@ -36,7 +36,7 @@ module.exports = {
         domainId: 'e35ba5a9-5290-4fd2-bf34-901d049b4462',
         // URL to Server eg: "https://analytics.test.com".
         server: 'https://ackee-dev-blog.herokuapp.com',
-        // Disabled analytic tracking when running localy
+        // Disabled analytic tracking when   running localy
         ignoreLocalhost: true,
         // If enabled it will collect info on OS, BrowserInfo, Device  & ScreenSize
         detailed: true,
@@ -82,5 +82,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    `gatsby-plugin-remove-serviceworker`,
   ],
 }
