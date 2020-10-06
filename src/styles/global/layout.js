@@ -15,7 +15,7 @@ const GlobalWrapper = styled('div')`
     padding: 60px 0 0 60px;
   }
   ${mediaQueries.mobile} {
-    padding: 30px 0 0 30px;
+    padding: 8px 0 0 8px;
   }
 `
 
@@ -25,7 +25,7 @@ const MainContainer = styled('main')`
     padding: 60px 32px 0 32px;
   }
   ${mediaQueries.mobile} {
-    padding: 30px 16px 0 16px;
+    padding: 30px 8px 0 8px;
   }
 `
 
