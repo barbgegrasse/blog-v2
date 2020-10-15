@@ -3,24 +3,21 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import loadable from '@loadable/component'
 import SEO from '../components/seo'
-import Layout from '../components/Layout'
 
 const CategoryContent = loadable(() => import('../content/CategoryContent'))
 
-const Category = ({ data: { prismicCategory, allPrismicPost } }) => {
-  return (
-    <Layout>
-      <SEO
-        title={prismicCategory.data.meta_title}
-        description={prismicCategory.data.meta_description}
-      />
-      <CategoryContent
-        allPrismicPost={allPrismicPost.edges}
-        prismicCategory={prismicCategory.data}
-      />
-    </Layout>
-  )
-}
+const Category = ({ data: { prismicCategory, allPrismicPost } }) => (
+  <>
+    <SEO
+      title={prismicCategory.data.meta_title}
+      description={prismicCategory.data.meta_description}
+    />
+    <CategoryContent
+      allPrismicPost={allPrismicPost.edges}
+      prismicCategory={prismicCategory.data}
+    />
+  </>
+)
 
 export const query = graphql`
   query CategoryByUid($categoryUid: String!) {

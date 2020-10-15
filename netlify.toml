@@ -61,8 +61,8 @@ status = 301
 force = true
 
 [[redirects]]
-from = "https://www.developpeur-web.tech/blog/docker/reminder-docker"
-to = "https://www.developpeur-web.tech/blog/reminder-docker"
+from = "https://www.developpeur-web.tech/blog/reminder-docker"
+to = "https://www.developpeur-web.tech/blog/docker/reminder-docker"
 status = 301
 force = true
 

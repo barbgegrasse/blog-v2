@@ -46,19 +46,19 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <GlobalWrapper ref={refApp} className="GlobalWrapper">
-        <ScrollWrapper className="ScrollWrapper">
-          <GlobalStyle />
-          <MainContainer className="main-container">{children}</MainContainer>
-          {/* <Footer ref={refFooter} style={{ visibility: 'hidden' }}>
+      {/* <GlobalWrapper ref={refApp} className="GlobalWrapper"> */}
+      <ScrollWrapper className="ScrollWrapper">
+        <GlobalStyle />
+        <MainContainer className="main-container">{children}</MainContainer>
+        {/* <Footer ref={refFooter} style={{ visibility: 'hidden' }}>
             © Johan Petrikovsky 2012/{date.getFullYear()} - Développeur web à
             Toulouse et en Haute-Garonne - 51 av. de Lespinet 31400 Toulouse -
             06 15 37 35 95 -{' '}
             <Link to="/mentions-legales">Mentions légales</Link>
-          </Footer> */}
-        </ScrollWrapper>
-        <Header />
-      </GlobalWrapper>
+  </Footer> */}
+      </ScrollWrapper>
+      <Header />
+      {/* </GlobalWrapper> */}
     </>
   )
 }

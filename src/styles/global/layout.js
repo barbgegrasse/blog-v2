@@ -20,7 +20,7 @@ const GlobalWrapper = styled('div')`
 `
 
 const MainContainer = styled('main')`
-  padding: 120px 64px 0 64px;
+  padding: 120px 0 0 0px;
   ${mediaQueries.tabletLandscape} {
     padding: 60px 32px 0 32px;
   }
