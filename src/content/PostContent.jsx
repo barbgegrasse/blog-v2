@@ -56,11 +56,8 @@ const PostContent = ({ prismicPost }) => {
   }
   return (
     <>
-      <div>
-        <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
-        {/* {handleHeroImage()} */}
-      </div>
       <ArticleContainer>
+        <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
         <Summary
           handleSummaryClick={handleSummaryClick}
           slices={prismicPost.data.post_body}
