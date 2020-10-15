@@ -1,12 +1,19 @@
 import styled from '@emotion/styled'
 import theme from '../../global/theme'
+import mediaQueries from '../../global/mediaQueries'
 
-const PresentationWrapper = styled('div')`
-  margin-top: 64px;
-  font-size: 3vw;
+const ExperiencesWrapper = styled('section')`
+  padding: 0 20vw 64px;
+
   letter-spacing: 0.03em;
+
+  ${mediaQueries.mobile} {
+    padding: 0 8px;
+  }
+
   p {
-    line-height: 1.5;
+    line-height: 1.7;
+    margin-bottom: 16px;
   }
   .highlight {
     font-family: ${theme.fonts.title};
@@ -14,4 +21,4 @@ const PresentationWrapper = styled('div')`
   }
 `
 
-export { PresentationWrapper }
+export { ExperiencesWrapper }

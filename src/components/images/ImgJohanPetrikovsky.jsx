@@ -2,20 +2,30 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
-import Vector from '../../images/assets/vector-home-1.svg'
+import LinesWrapper from '../home/lines/LinesWrapper'
+import mediaQueries from '../../styles/global/mediaQueries'
 
 const ImageWrapper = styled('div')`
   position: absolute;
-  bottom: 0px;
-  width: 23vw;
-  transform: translateX(50%);
+  right: 20vw;
+  max-width: 628px;
+  width: min(50vw, 100%);
+
+  ${mediaQueries.tabletLandscape} {
+    right: initial;
+    left: 0;
+  }
+
+  ${mediaQueries.mobile} {
+    width: 100%;
+  }
 `
 
 const ImgJohanPetrikovsky = () => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(
-        relativePath: { eq: "developpeur-web-toulouse.png" }
+        relativePath: { eq: "assets/johan_petrikovsky.png" }
       ) {
         childImageSharp {
           fluid(maxWidth: 628) {
@@ -28,8 +38,11 @@ const ImgJohanPetrikovsky = () => {
 
   return (
     <ImageWrapper className="image-wrapper">
-      {/* <Vector /> */}
-      <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+      <LinesWrapper />
+      <Img
+        alt="Johan Petrikovsky développeur web"
+        fluid={data.placeholderImage.childImageSharp.fluid}
+      />
     </ImageWrapper>
   )
 }

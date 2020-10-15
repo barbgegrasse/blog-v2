@@ -2,40 +2,15 @@ import styled from '@emotion/styled'
 import theme from '../../global/theme'
 import mediaQueries from '../../global/mediaQueries'
 
-const GridHome = styled('section')`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  ${mediaQueries.mobile} {
-    grid-template-columns: 1fr;
-    grid-row-gap: 40px;
-  }
-
-  .left-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: 64px;
-
-    min-height: calc(100vh - 270px);
-    ${mediaQueries.tabletLandscape} {
-      padding-bottom: 32px;
-    }
-    ${mediaQueries.mobile} {
-      padding-bottom: 16px;
-      min-height: 100vh;
-    }
-  }
-
-  .right-col {
+const PresentationSection = styled('section')`
+  padding-left: 20vw;
+  min-height: calc(100vh - 48px);
+  ${mediaQueries.tabletLandscape} {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    ${mediaQueries.mobile} {
-      display: none;
-      min-height: 100vh;
-    }
+  }
+  ${mediaQueries.mobile} {
+    position: relative;
+    min-height: calc(100vh - 16px);
   }
 
   p {
@@ -44,12 +19,31 @@ const GridHome = styled('section')`
     padding-bottom: 20px;
   }
 `
+const WrapperTitle = styled('div')`
+  position: relative;
+  z-index: 20;
+  padding-top: 15vw;
+
+  ${mediaQueries.tabletLandscape} {
+    position: absolute;
+    bottom: 16px;
+    left: 32px;
+    padding-top: 0;
+  }
+
+  ${mediaQueries.mobile} {
+    bottom: 32px;
+    left: 8px;
+  }
+`
 
 const MainTitle = styled('h1')`
   font-family: ${theme.fonts.title};
   font-size: max(4.8vw, 45px);
   text-align: left;
   line-height: 1.1;
+  text-transform: uppercase;
+  z-index: 20;
 
   overflow: hidden;
 
@@ -65,6 +59,7 @@ const MainTitle = styled('h1')`
   .toulouse {
     font-size: max(3.5vw, 30px);
     font-family: ${theme.fonts.main};
+    text-transform: capitalize;
   }
 `
 
@@ -79,6 +74,7 @@ const SubTitle = styled('div')`
   ${mediaQueries.tabletLandscape} {
     margin-bottom: 32px;
   }
+
   ${mediaQueries.mobile} {
     margin-bottom: 16px;
   }
@@ -94,4 +90,4 @@ const SubTitle = styled('div')`
   }
 `
 
-export { GridHome, SubTitle, MainTitle }
+export { PresentationSection, SubTitle, MainTitle, WrapperTitle }

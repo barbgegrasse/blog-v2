@@ -1,8 +1,11 @@
-import PropTypes from 'prop-types'
 import React, { useRef, useEffect, useContext } from 'react'
 import { gsap, Power3 } from 'gsap'
 import SplitText from 'gsap/SplitText'
-import { SubTitle, MainTitle } from '../../styles/pages/home/index'
+import {
+  WrapperTitle,
+  SubTitle,
+  MainTitle,
+} from '../../styles/pages/home/index'
 import { myContext } from '../../../provider'
 // TypeError: Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'
 // https://greensock.com/forums/topic/20512-drawsvg-build-failed-gatsby/
@@ -96,14 +99,14 @@ const BlockMainTitle = () => {
   }, [])
 
   return (
-    <>
+    <WrapperTitle>
       <SubTitle id="refName" ref={refName}>
         Johan Petrikovsky
         <span
           id="refSep"
           ref={refSep}
           className="sep"
-          aria-label="separation"
+          aria-label="séparation"
         />
       </SubTitle>
       <MainTitle as="h1">
@@ -111,10 +114,10 @@ const BlockMainTitle = () => {
           Développeur Web
         </div>
         <div id="refTown" ref={refTown} className="toulouse">
-          à Toulouse
+          Toulouse
         </div>
       </MainTitle>
-    </>
+    </WrapperTitle>
   )
 }
 

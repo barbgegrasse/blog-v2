@@ -12,9 +12,9 @@ const HeaderTop = () => (
   <HeaderTopWrapper>
     <LogoWrapper>
       <Logo />
-      <Name className="naaaaaaaaaaaame">
+      {/* <Name>
         Johan <span className="name">Petrikovsky</span>
-      </Name>
+      </Name> */}
     </LogoWrapper>
     <nav>
       <ul>

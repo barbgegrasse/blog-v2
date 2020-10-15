@@ -15,10 +15,8 @@ const IndexPage = ({ transitionStatus }) => {
     <myContext.Consumer>
       {context => (
         <>
-          {/* <Overlay tl={tl} homeAnimation={  homeAnimation} /> */}
-
           <SEO
-            title="Johan Petrikovsky développeur freelance, développeur front-end, backend-end."
+            title="Développeur web à Toulouse, développeur freelance, je suis développeur front-end, back-end et Wordpress."
             description="Développeur web à Toulouse. Développeur front-end et développeur back-end freelance. Je développe des applications web avec un focus sur l'utilisateur, les performances et l'accesibilité."
           />
           <IndexContent homeAnimation={homeAnimation} context={context} />

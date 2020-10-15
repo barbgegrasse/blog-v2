@@ -151,7 +151,6 @@ export default function GlobalStyle() {
         }
 
         /* FONTS */
-
         @font-face {
           font-family: 'Gilroy';
           src: url('//db.onlinewebfonts.com/t/1dc8ecd8056a5ea7aa7de1db42b5b639.eot');
@@ -169,8 +168,8 @@ export default function GlobalStyle() {
           src: url('//db.onlinewebfonts.com/t/1064f0ad1cb65fdab43bb592ddd8aa91.eot');
           src: url('//db.onlinewebfonts.com/t/1064f0ad1cb65fdab43bb592ddd8aa91.eot?#iefix')
               format('embedded-opentype'),
-            url('/fonts/gilroy/gilroy-bold.woff2') format('woff2'),
-            url('/fonts/gilroy/gilroy-bold.woff') format('woff'),
+            url('/fonts/gilroy/gilroy-extrabold.woff2') format('woff2'),
+            url('/fonts/gilroy/gilroy-extrabold.woff') format('woff'),
             url('//db.onlinewebfonts.com/t/1064f0ad1cb65fdab43bb592ddd8aa91.ttf')
               format('truetype'),
             url('//db.onlinewebfonts.com/t/1064f0ad1cb65fdab43bb592ddd8aa91.svg#Gilroy-Bold')
