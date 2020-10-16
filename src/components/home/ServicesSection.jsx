@@ -6,8 +6,11 @@ import { LineTitle } from '../../styles/common/title'
 const BlockPresentation = () => {
   return (
     <ExperiencesWrapper>
-      <LineTitle>Services</LineTitle>
-      <p>
+      <LineTitle data-scroll data-scroll-speed="1">
+        Services
+      </LineTitle>
+
+      <p data-scroll data-scroll-speed="2">
         Actuellement, le web est présent dans la vie de chaque personne. Pour
         plus de 90% de la population française, le premier réflexe pour une
         recherche d’informations ou d’achat est d’aller vers Google. Alors nous
@@ -15,7 +18,7 @@ const BlockPresentation = () => {
         entrepreneurs, infopreneurs, artisans et associations d’être visible et
         présent sur le NET.
       </p>
-      <p>
+      <p data-scroll data-scroll-speed="2">
         Aujourd’hui, l’internet nous accompagne partout. Que vous soyez en
         vacances, au travail ou chez vous Google est présent. Ainsi, sur votre
         smartphone, tablette ou ordinateur, vous n’hésitez plus à rechercher des

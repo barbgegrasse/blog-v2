@@ -1,10 +1,6 @@
 import styled from '@emotion/styled'
 import mediaQueries from './mediaQueries'
 
-const ScrollWrapper = styled('div')`
-  min-height: 100vh;
-`
-
 const GlobalWrapper = styled('div')`
   height: 100%;
   width: 100%;
@@ -42,4 +38,4 @@ const Footer = styled('footer')`
   }
 `
 
-export { MainContainer, GlobalWrapper, ScrollWrapper, Footer }
+export { MainContainer, GlobalWrapper, Footer }

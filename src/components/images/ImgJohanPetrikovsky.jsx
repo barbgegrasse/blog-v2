@@ -8,6 +8,7 @@ import mediaQueries from '../../styles/global/mediaQueries'
 const ImageWrapper = styled('div')`
   position: absolute;
   right: 20vw;
+  top: 50px;
   max-width: 628px;
   width: min(50vw, 100%);
 
@@ -37,8 +38,8 @@ const ImgJohanPetrikovsky = () => {
   `)
 
   return (
-    <ImageWrapper className="image-wrapper">
-      <LinesWrapper />
+    <ImageWrapper className="image-wrapper" data-scroll data-scroll-speed="-2">
+      {/* <LinesWrapper /> */}
       <Img
         alt="Johan Petrikovsky développeur web"
         fluid={data.placeholderImage.childImageSharp.fluid}
