@@ -100,7 +100,7 @@ const BlockMainTitle = () => {
 
   return (
     <WrapperTitle>
-      <SubTitle id="refName" ref={refName}>
+      <SubTitle id="refName" ref={refName} data-scroll data-scroll-speed="1">
         Johan Petrikovsky
         <span
           id="refSep"
@@ -109,7 +109,7 @@ const BlockMainTitle = () => {
           aria-label="séparation"
         />
       </SubTitle>
-      <MainTitle as="h1">
+      <MainTitle as="h1" data-scroll data-scroll-speed="2">
         <div id="refJob" ref={refJob} className="highlight">
           Développeur Web
         </div>

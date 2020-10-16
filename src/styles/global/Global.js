@@ -176,7 +176,7 @@ export default function GlobalStyle() {
               format('svg');
         }
 
-        html::-webkit-scrollbar {
+        /* html::-webkit-scrollbar {
           width: 4px;
           height: 4px;
         }
@@ -194,6 +194,65 @@ export default function GlobalStyle() {
             #100e17 0,
             #100e17
           );
+        } */
+
+        /* LOCOMOTIVE */
+        /*! locomotive-scroll v3.5.4 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+        html.has-scroll-smooth {
+          overflow: hidden;
+        }
+
+        html.has-scroll-dragging {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        .has-scroll-smooth body {
+          overflow: hidden;
+        }
+
+        /* Specifying the scroll container manually */
+        .has-scroll-smooth #___gatsby,
+        .has-scroll-smooth [data-scroll-container] {
+          min-height: 100vh;
+        }
+
+        .c-scrollbar {
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 11px;
+          height: 100vh;
+          transform-origin: center right;
+          transition: transform 0.3s, opacity 0.3s;
+          opacity: 0;
+        }
+        .c-scrollbar:hover {
+          transform: scaleX(1.45);
+        }
+        .c-scrollbar:hover,
+        .has-scroll-scrolling .c-scrollbar,
+        .has-scroll-dragging .c-scrollbar {
+          opacity: 1;
+        }
+
+        .c-scrollbar_thumb {
+          position: absolute;
+          top: 0;
+          right: 0;
+          background-color: ${theme.colors.primary};
+          opacity: 0.5;
+          width: 7px;
+          border-radius: 10px;
+          margin: 2px;
+          cursor: -webkit-grab;
+          cursor: grab;
+        }
+        .has-scroll-dragging .c-scrollbar_thumb {
+          cursor: -webkit-grabbing;
+          cursor: grabbing;
         }
 
         body {
@@ -229,9 +288,9 @@ export default function GlobalStyle() {
         }
 
         /*Gatsby transition */
-        .tl-edges {
+        /* .tl-edges {
           overflow-x: initial;
-        }
+        } */
 
         /* HELPERS */
         .max-container {

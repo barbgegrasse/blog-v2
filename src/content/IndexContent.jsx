@@ -43,8 +43,8 @@ const IndexContent = () => {
           <BlockMaintTitle />
         </PresentationSection>
 
-        <ExperiencesSection />
-        <ServicesSection />
+        <ExperiencesSection data-scroll data-scroll-speed="-3" />
+        <ServicesSection data-scroll data-scroll-speed="-4" />
       </div>
     </>
   )
