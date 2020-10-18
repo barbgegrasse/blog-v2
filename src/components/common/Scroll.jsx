@@ -19,7 +19,9 @@ const scroll = {
 const Scroll = ({ callbacks, scrollRef }) => {
   useEffect(() => {
     const locomotiveScroll = new LocomotiveScroll({
-      el: scrollRef.current,
+      // el: document.querySelector(scroll.container),
+      // el: scrollRef.current,
+      el: document.querySelector(scroll.container),
       ...scroll.options,
     })
     locomotiveScroll.update()
@@ -35,7 +37,7 @@ const Scroll = ({ callbacks, scrollRef }) => {
     return () => {
       if (locomotiveScroll) locomotiveScroll.destroy()
     }
-  }, [callbacks])
+  }, [callbacks, scrollRef])
 
   return null
 }

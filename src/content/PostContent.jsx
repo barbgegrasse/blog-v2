@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import gsap from 'gsap'
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
+import LocomotiveScroll from 'locomotive-scroll'
 import Img from 'gatsby-image'
 import useWindowSize from '../hooks/useWindowSize'
 import Summary from '../components/blog/summary/WrapperSummary'
@@ -10,6 +11,14 @@ import { MainTitle } from '../styles/common/title'
 
 const PostContent = ({ prismicPost }) => {
   const windowSize = useWindowSize()
+  const refPostContent = useRef(null)
+
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: refPostContent.current,
+      smooth: true,
+    })
+  })
 
   const handleHeroImage = () => {
     if (prismicPost.data.post_hero_image?.localFile?.childImageSharp) {
@@ -54,17 +63,22 @@ const PostContent = ({ prismicPost }) => {
     window.scrollTo(0, linkTopPosition + windowSize.height * 0.9)
     return false
   }
+
   return (
-    <>
+    <div data-scroll-container ref={refPostContent}>
       <ArticleContainer>
-        <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
-        <Summary
-          handleSummaryClick={handleSummaryClick}
-          slices={prismicPost.data.post_body}
-        />
-        <PostSlices slices={prismicPost.data.post_body} />
+        <div data-scroll-section>
+          <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
+          <Summary
+            handleSummaryClick={handleSummaryClick}
+            slices={prismicPost.data.post_body}
+          />
+        </div>
+        <div data-scroll-section>
+          <PostSlices slices={prismicPost.data.post_body} />
+        </div>
       </ArticleContainer>
-    </>
+    </div>
   )
 }
 
@@ -94,7 +108,6 @@ PostContent.propTypes = {
       }),
     }),
   }),
-  scrollContainer: PropTypes.object.isRequired,
 }
 
 export default PostContent

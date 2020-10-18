@@ -1,20 +1,6 @@
 import styled from '@emotion/styled'
 import mediaQueries from './mediaQueries'
 
-const GlobalWrapper = styled('div')`
-  height: 100%;
-  width: 100%;
-
-  min-height: 100vh;
-  padding: 120px 0 0 120px;
-  ${mediaQueries.tabletLandscape} {
-    padding: 60px 0 0 60px;
-  }
-  ${mediaQueries.mobile} {
-    padding: 8px 0 0 8px;
-  }
-`
-
 const MainContainer = styled('main')`
   padding: 120px 0 0 0px;
   ${mediaQueries.tabletLandscape} {
@@ -38,4 +24,4 @@ const Footer = styled('footer')`
   }
 `
 
-export { MainContainer, GlobalWrapper, Footer }
+export { MainContainer, Footer }

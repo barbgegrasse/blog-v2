@@ -23,4 +23,8 @@ const ExperiencesWrapper = styled('section')`
   }
 `
 
-export { ExperiencesWrapper }
+const ServicesWrapper = styled(ExperiencesWrapper)`
+  padding-bottom: 120px;
+`
+
+export { ExperiencesWrapper, ServicesWrapper }
