@@ -288,9 +288,9 @@ export default function GlobalStyle() {
         }
 
         /*Gatsby transition */
-        /* .tl-edges {
+        .tl-edges {
           overflow-x: initial;
-        } */
+        }
 
         /* HELPERS */
         .max-container {

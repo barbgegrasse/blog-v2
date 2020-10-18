@@ -6,10 +6,8 @@ import { LineTitle } from '../../styles/common/title'
 const BlockPresentation = () => {
   return (
     <ExperiencesWrapper>
-      <LineTitle data-scroll data-scroll-speed="1">
-        Expériences
-      </LineTitle>
-      <div data-scroll data-scroll-speed="2">
+      <LineTitle>Expériences</LineTitle>
+      <div>
         <p>
           Bonjour 👋 je suis Johan Petrikovsky{' '}
           <strong>développeur freelance</strong> basé à Toulouse.

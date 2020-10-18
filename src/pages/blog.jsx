@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { useContext, useRef, useEffect } from 'react'
+import LocomotiveScroll from 'locomotive-scroll'
 
 import { graphql } from 'gatsby'
 import { gsap, Power3 } from 'gsap'
@@ -14,11 +15,17 @@ import { myContext } from '../../provider'
 const BlogPage = ({ data }) => {
   const listPosts = data.allPrismicPost.edges
   const refBlogTitle = useRef(null)
+  const refBlogContent = useRef(null)
 
   const contextValues = useContext(myContext)
   const { blogTimeline, setBlogTimeline } = contextValues
 
-  useEffect(() => {}, [])
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: refBlogContent.current,
+      smooth: true,
+    })
+  })
 
   useEffect(() => {
     // TypeError: Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'
@@ -68,12 +75,14 @@ const BlogPage = ({ data }) => {
         title="Blog développeur web à Toulouse"
         description="Retrouvez une série d'articles où je parle de mes découvertes en tant que développeur full stack, développeur front-end, back-end, sans oublier les C.M.S."
       />
-      <MainTitle ref={refBlogTitle}>Blog</MainTitle>
-      <BlogGrid>
-        {listPosts.map(post => (
-          <PostCard key={post.node.uid} post={post.node} />
-        ))}
-      </BlogGrid>
+      <div ref={refBlogContent}>
+        <MainTitle ref={refBlogTitle}>Blog</MainTitle>
+        <BlogGrid>
+          {listPosts.map(post => (
+            <PostCard key={post.node.uid} post={post.node} />
+          ))}
+        </BlogGrid>
+      </div>
     </>
   )
 }

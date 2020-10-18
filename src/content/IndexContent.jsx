@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useContext } from 'react'
 import { Power1 } from 'gsap'
-
+import LocomotiveScroll from 'locomotive-scroll'
 import { PresentationSection } from '../styles/pages/home/index'
 import BlockMaintTitle from '../components/home/MainTitle'
 import ExperiencesSection from '../components/home/ExperiencesSection'
@@ -16,6 +16,13 @@ const IndexContent = () => {
 
   const contextValues = useContext(myContext)
   const { indexTimeline, setIndexTimeline } = contextValues
+
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: refIndexContent.current,
+      smooth: true,
+    })
+  })
 
   useEffect(() => {
     indexTimeline.set(refIndexContent.current, { visibility: 'visible' })
@@ -43,8 +50,9 @@ const IndexContent = () => {
           <BlockMaintTitle />
         </PresentationSection>
 
-        <ExperiencesSection data-scroll data-scroll-speed="-3" />
-        <ServicesSection data-scroll data-scroll-speed="-4" />
+        <ExperiencesSection />
+
+        <ServicesSection />
       </div>
     </>
   )
