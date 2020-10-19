@@ -176,7 +176,7 @@ export default function GlobalStyle() {
               format('svg');
         }
 
-        /* html::-webkit-scrollbar {
+        html::-webkit-scrollbar {
           width: 4px;
           height: 4px;
         }
@@ -194,7 +194,7 @@ export default function GlobalStyle() {
             #100e17 0,
             #100e17
           );
-        } */
+        }
 
         /* LOCOMOTIVE */
         /*! locomotive-scroll v3.5.4 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
