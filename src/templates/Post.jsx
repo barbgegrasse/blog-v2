@@ -1,22 +1,25 @@
 import PropTypes from 'prop-types'
-import React, { useContext } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { graphql } from 'gatsby'
-import loadable from '@loadable/component'
+// import loadable from '@loadable/component'
 
 import SEO from '../components/seo'
-import Layout from '../components/Layout'
 
-const PostContent = loadable(() => import('../content/PostContent'))
+// const PostContent = loadable(() => import('../content/PostContent'))
+import PostContent from '../content/PostContent'
 
-const Post = ({ data: { prismicPost } }) => (
-  <>
-    <SEO
-      title={prismicPost.data.post_title.text}
-      description={prismicPost.data.post_preview_description.text}
-    />
-    <PostContent prismicPost={prismicPost} />
-  </>
-)
+const Post = ({ location, data: { prismicPost } }) => {
+  return (
+    <>
+      <SEO
+        title={prismicPost.data.post_title.text}
+        description={prismicPost.data.post_preview_description.text}
+      />
+
+      <PostContent prismicPost={prismicPost} />
+    </>
+  )
+}
 
 Post.propTypes = {
   data: PropTypes.object.isRequired,

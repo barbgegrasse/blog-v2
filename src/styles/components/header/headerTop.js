@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import Link from 'gatsby-plugin-transition-link'
+import { Link } from 'gatsby'
 
 import theme from '../../global/theme'
 import mediaQueries from '../../global/mediaQueries'
