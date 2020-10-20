@@ -1,71 +1,59 @@
 import PropTypes from 'prop-types'
 import gsap from 'gsap'
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import LocomotiveScroll from 'locomotive-scroll'
 import Img from 'gatsby-image'
-import useWindowSize from '../hooks/useWindowSize'
-import Summary from '../components/blog/summary/WrapperSummary'
+// import useWindowSize from '../hooks/useWindowSize'
+// import Summary from '../components/blog/summary/WrapperSummary'
 import { ArticleContainer } from '../styles/components/blog/postSlices'
 import PostSlices from '../components/blog/PostSlices'
 import { MainTitle } from '../styles/common/title'
 
-const PostContent = ({ prismicPost }) => {
-  const windowSize = useWindowSize()
+const PostContent = ({ location, prismicPost }) => {
+  // const windowSize = useWindowSize()
 
-  const handleHeroImage = () => {
-    if (prismicPost.data.post_hero_image?.localFile?.childImageSharp) {
-      return (
-        <Img
-          alt={prismicPost.data.post_hero_image.alt}
-          style={{
-            display: 'block',
-            marginRight: 'auto',
-            marginLeft: 'auto',
-            marginBottom: '60px',
-            maxWidth: prismicPost.data.post_hero_image.dimensions.width,
-            maxHeight: prismicPost.data.post_hero_image.dimensions.height,
-          }}
-          durationFadeIn={250}
-          fluid={
-            prismicPost.data.post_hero_image.localFile.childImageSharp.fluid
-          }
-        />
-      )
+  // const handleSummaryClick = id => {
+  //   const linkTopPosition = document.querySelector(id).getBoundingClientRect()
+  //     .top
+
+  //   window.scrollTo(0, linkTopPosition + windowSize.height * 0.9)
+  //   return false
+  // }
+
+  useEffect(() => {
+    const locomotiveScroll = new LocomotiveScroll({
+      el: document.querySelector('#___gatsby'),
+      smooth: true,
+    })
+    // Exposing to the global scope for ease of use.
+    window.scroll = locomotiveScroll
+
+    locomotiveScroll.on('scroll', func => {
+      // Update `data-direction` with scroll direction.
+      document.documentElement.setAttribute('data-direction', func.direction)
+    })
+
+    setTimeout(() => {
+      locomotiveScroll.update()
+    }, 300)
+
+    return () => {
+      if (locomotiveScroll) locomotiveScroll.destroy()
     }
-
-    return (
-      <img
-        alt={prismicPost.data.post_hero_image.alt}
-        style={{
-          display: 'block',
-          marginRight: 'auto',
-          marginLeft: 'auto',
-          maxHeight: '430px',
-          maxWidth: '980px',
-        }}
-        src={prismicPost.dataRaw.post_hero_image.url}
-      />
-    )
-  }
-
-  const handleSummaryClick = id => {
-    const linkTopPosition = document.querySelector(id).getBoundingClientRect()
-      .top
-
-    window.scrollTo(0, linkTopPosition + windowSize.height * 0.9)
-    return false
-  }
+  }, [location])
 
   return (
-    <ArticleContainer>
-      <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
-      <Summary
+    <div>
+      <ArticleContainer>
+        <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
+        {/* <Summary
         handleSummaryClick={handleSummaryClick}
         slices={prismicPost.data.post_body}
-      />
+      /> */}
 
-      <PostSlices slices={prismicPost.data.post_body} />
-    </ArticleContainer>
+        <PostSlices slices={prismicPost.data.post_body} />
+      </ArticleContainer>
+    </div>
   )
 }
 
