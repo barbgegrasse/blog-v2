@@ -20,9 +20,11 @@ const PostContent = ({ location, prismicPost }) => {
   //   return false
   // }
 
+  const refPostContent = useRef(null)
+
   useEffect(() => {
     const locomotiveScroll = new LocomotiveScroll({
-      el: document.querySelector('#___gatsby'),
+      el: refPostContent.current,
       smooth: true,
     })
     // Exposing to the global scope for ease of use.
@@ -35,7 +37,7 @@ const PostContent = ({ location, prismicPost }) => {
 
     setTimeout(() => {
       locomotiveScroll.update()
-    }, 300)
+    }, 400)
 
     return () => {
       if (locomotiveScroll) locomotiveScroll.destroy()
@@ -43,7 +45,7 @@ const PostContent = ({ location, prismicPost }) => {
   }, [location])
 
   return (
-    <div>
+    <div ref={refPostContent}>
       <ArticleContainer>
         <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
         {/* <Summary

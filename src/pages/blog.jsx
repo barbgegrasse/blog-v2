@@ -21,10 +21,14 @@ const BlogPage = ({ data }) => {
   const { blogTimeline, setBlogTimeline } = contextValues
 
   useEffect(() => {
-    const scroll = new LocomotiveScroll({
+    const locomotiveScroll = new LocomotiveScroll({
       el: refBlogContent.current,
       smooth: true,
     })
+
+    return () => {
+      if (locomotiveScroll) locomotiveScroll.destroy()
+    }
   })
 
   useEffect(() => {
