@@ -11,17 +11,21 @@ import { myContext } from '../../provider'
 // import profilAnimation from '../animation/index/profilAnimation'
 // import mainTitleAnimation from '../animation/index/mainTitleAnimation'
 
-const IndexContent = () => {
+const IndexContent = ({ location }) => {
   const refIndexContent = useRef(null)
 
   const contextValues = useContext(myContext)
   const { indexTimeline, setIndexTimeline } = contextValues
 
   useEffect(() => {
-    const scroll = new LocomotiveScroll({
+    const locomotiveScroll = new LocomotiveScroll({
       el: refIndexContent.current,
       smooth: true,
     })
+
+    return () => {
+      if (locomotiveScroll) locomotiveScroll.destroy()
+    }
   })
 
   useEffect(() => {
