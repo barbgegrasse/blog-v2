@@ -26,7 +26,7 @@ const Wrapper = styled('nav')`
   }
 `
 
-const WrapperSummary = ({ slices, handleSummaryClick }) => (
+const WrapperSummary = ({ slices }) => (
   <Wrapper aria-labelledby="summary-title">
     <p id="summary-title" className="title">
       Sommaire
@@ -37,7 +37,6 @@ const WrapperSummary = ({ slices, handleSummaryClick }) => (
           if (slice.__typename === 'PrismicPostPostBodyHn') {
             return (
               <ItemSummary
-                handleSummaryClick={handleSummaryClick}
                 style={{ contentVisibility: 'auto' }}
                 slice={slice}
               />

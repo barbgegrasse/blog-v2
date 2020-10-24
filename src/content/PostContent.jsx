@@ -3,55 +3,20 @@ import gsap from 'gsap'
 import React, { useRef, useEffect, useState } from 'react'
 import LocomotiveScroll from 'locomotive-scroll'
 import Img from 'gatsby-image'
-// import useWindowSize from '../hooks/useWindowSize'
-// import Summary from '../components/blog/summary/WrapperSummary'
+import useWindowSize from '../hooks/useWindowSize'
+import Summary from '../components/blog/summary/WrapperSummary'
 import { ArticleContainer } from '../styles/components/blog/postSlices'
 import PostSlices from '../components/blog/PostSlices'
 import { MainTitle } from '../styles/common/title'
 
 const PostContent = ({ location, prismicPost }) => {
-  // const windowSize = useWindowSize()
-
-  // const handleSummaryClick = id => {
-  //   const linkTopPosition = document.querySelector(id).getBoundingClientRect()
-  //     .top
-
-  //   window.scrollTo(0, linkTopPosition + windowSize.height * 0.9)
-  //   return false
-  // }
-
   const refPostContent = useRef(null)
-
-  useEffect(() => {
-    const locomotiveScroll = new LocomotiveScroll({
-      el: refPostContent.current,
-      smooth: true,
-    })
-    // Exposing to the global scope for ease of use.
-    window.scroll = locomotiveScroll
-
-    locomotiveScroll.on('scroll', func => {
-      // Update `data-direction` with scroll direction.
-      document.documentElement.setAttribute('data-direction', func.direction)
-    })
-
-    setTimeout(() => {
-      locomotiveScroll.update()
-    }, 400)
-
-    return () => {
-      if (locomotiveScroll) locomotiveScroll.destroy()
-    }
-  }, [location])
 
   return (
     <div ref={refPostContent}>
       <ArticleContainer>
         <MainTitle>{prismicPost.data.post_title.text}</MainTitle>
-        {/* <Summary
-        handleSummaryClick={handleSummaryClick}
-        slices={prismicPost.data.post_body}
-      /> */}
+        <Summary slices={prismicPost.data.post_body} />
 
         <PostSlices slices={prismicPost.data.post_body} />
       </ArticleContainer>
@@ -60,6 +25,7 @@ const PostContent = ({ location, prismicPost }) => {
 }
 
 PostContent.propTypes = {
+  location: PropTypes.object.isRequired,
   prismicPost: PropTypes.shape({
     data: PropTypes.shape({
       post_body: PropTypes.array.isRequired,
