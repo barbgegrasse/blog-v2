@@ -39,7 +39,6 @@ const ItemSummary = ({ slice }) => {
 }
 
 ItemSummary.propTypes = {
-  handleSummaryClick: PropTypes.func.isRequired,
   slice: PropTypes.element.isRequired,
 }
 
