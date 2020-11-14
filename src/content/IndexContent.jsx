@@ -5,6 +5,7 @@ import { PresentationSection } from '../styles/pages/home/index'
 import BlockMaintTitle from '../components/home/MainTitle'
 import ExperiencesSection from '../components/home/ExperiencesSection'
 import ServicesSection from '../components/home/ServicesSection'
+import CMSsection from '../components/home/CMSsection'
 import ImgJohanPetrikovsky from '../components/images/ImgJohanPetrikovsky'
 import { myContext } from '../../provider'
 
@@ -18,14 +19,13 @@ const IndexContent = ({ location }) => {
   const { indexTimeline, setIndexTimeline } = contextValues
 
   useEffect(() => {
-    const locomotiveScroll = new LocomotiveScroll({
-      el: refIndexContent.current,
-      smooth: true,
-    })
-
-    return () => {
-      if (locomotiveScroll) locomotiveScroll.destroy()
-    }
+    // const locomotiveScroll = new LocomotiveScroll({
+    //   el: refIndexContent.current,
+    //   smooth: true,
+    // })
+    // return () => {
+    //   if (locomotiveScroll) locomotiveScroll.destroy()
+    // }
   })
 
   useEffect(() => {
@@ -57,6 +57,7 @@ const IndexContent = ({ location }) => {
         <ExperiencesSection />
 
         <ServicesSection />
+        <CMSsection />
       </div>
     </>
   )
