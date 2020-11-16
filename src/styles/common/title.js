@@ -66,4 +66,17 @@ const LineTitle = styled('h2')`
   }
 `
 
-export { MainTitle, LineTitle }
+const SubTitle = styled('h2')`
+  position: relative;
+  margin: 64px 0 32px 0;
+
+  text-align: left;
+  text-transform: uppercase;
+  color: ${theme.colors.primary};
+  font-size: min(3.8vw, 45px);
+  font-family: ${theme.fonts.title};
+
+  line-height: 1;
+`
+
+export { MainTitle, LineTitle, SubTitle }

@@ -4,14 +4,12 @@ import {
   ServicesWrapper,
   Intro,
 } from '../../styles/components/home/blockPresentation'
-import { LineTitle } from '../../styles/common/title'
+import { LineTitle, SubTitle } from '../../styles/common/title'
 
 const BlockPresentation = () => {
   return (
     <ServicesWrapper as="div">
-      <LineTitle as="h3">
-        Pourquoi faire appel à une développeur CMS ?
-      </LineTitle>
+      <LineTitle as="h3">Développeur CMS à Toulouse</LineTitle>
       <Intro>
         <p>
           Aujourd’hui, pour la gestion efficace de vos contenus, vous devez
@@ -29,7 +27,7 @@ const BlockPresentation = () => {
           Chaque C.M.S. a son mode de fonctionnement spécifique. Parcourons
           ensemble leur mode de fonctionnement.
         </p>
-        <h5>Prestashop</h5>
+        <SubTitle as="h5">Prestashop</SubTitle>
         <p>
           Selon la définition de Wikipédia, PrestaShop est un système de gestion
           de contenu gratuit (CMS) et open source, conçu pour créer à partir de
@@ -87,7 +85,7 @@ const BlockPresentation = () => {
         </p>
       </Intro>
       <Intro>
-        <h5>Drupal</h5>
+        <SubTitle as="h5">Drupal</SubTitle>
         <p>
           Selon Wikipédia Drupal est un système et un framework de gestion de
           contenu (appelé. CMF content management framework) écrit en PHP est
@@ -134,7 +132,7 @@ const BlockPresentation = () => {
         </p>
       </Intro>
       <Intro>
-        <h5>Magento</h5>
+        <SubTitle as="h5">Magento</SubTitle>
         <p>
           Selon Wikipédia Magento est une plateforme de commerce électronique
           appartenant à Adobe. De plus, il existe deux versions: Magento Open
@@ -173,7 +171,7 @@ const BlockPresentation = () => {
           back-office qui lui permet d’effectuer des mises à jour groupées. Du
           côté SEO, le CMS Magento permet à l’aide de paramétrages précis de
           remonter facilement des sites e-commerce parmi les premiers résultats
-          des SERPs.il est très apprécié des développeurs.
+          des SERPs. il est très apprécié des développeurs.
         </p>
       </Intro>
     </ServicesWrapper>
